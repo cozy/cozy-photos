@@ -1,9 +1,9 @@
-[![Travis build status shield](https://img.shields.io/travis/cozy/cozy-drive.svg?branch=master)](https://travis-ci.org/cozy/cozy-drive)
-[![Github Release version shield](https://img.shields.io/github/tag/cozy/cozy-drive.svg)](https://github.com/cozy/cozy-drive/releases)
-[![NPM Licence shield](https://img.shields.io/github/license/cozy/cozy-drive.svg)](https://github.com/cozy/cozy-drive/blob/master/LICENSE)
+[![Travis build status shield](https://img.shields.io/travis/cozy/cozy-photos.svg?branch=master)](https://travis-ci.org/cozy/cozy-photos)
+[![Github Release version shield](https://img.shields.io/github/tag/cozy/cozy-photos.svg)](https://github.com/cozy/cozy-photos/releases)
+[![NPM Licence shield](https://img.shields.io/github/license/cozy/cozy-photos.svg)](https://github.com/cozy/cozy-photos/blob/master/LICENSE)
 
 
-[Cozy] Drive
+[Cozy] Photos
 =====
 
 
@@ -15,10 +15,10 @@ What's Cozy?
 [Cozy] is a platform that brings all your web services in the same private space.  With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
 
 
-What's Drive?
+What's photos?
 ----
 
-Cozy Drive makes your file management easy. Main features are:
+Cozy photos makes your file management easy. Main features are:
 
 - File tree
 - Files and folders upload.
@@ -33,19 +33,19 @@ _:pushpin: Note:_ [Yarn] is the official Node package manager of Cozy. Don't hes
 
 ### Install
 
-Starting the Drive app requires you to [setup a dev environment][setup].
+Starting the photos app requires you to [setup a dev environment][setup].
 
 You can then clone the app repository and install dependencies:
 
 ```sh
-$ git clone https://github.com/cozy/cozy-drive.git
-$ cd cozy-drive
+$ git clone https://github.com/cozy/cozy-photos.git
+$ cd cozy-photos
 $ yarn install
 ```
 
 :pushpin: Don't forget to set the local node version indicated in the `.nvmrc` before doing a `yarn install`.
 
-:warning: During its early ages, _cozy-drive_ uses beta versions of [cozy-ui] and [cozy-client-js], take a look at the ["living on the edge" note](#living-on-the-edge) below to know how to install and configure the latest available versions.
+:warning: During its early ages, _cozy-photos_ uses beta versions of [cozy-ui] and [cozy-client-js], take a look at the ["living on the edge" note](#living-on-the-edge) below to know how to install and configure the latest available versions.
 
 Cozy's apps use a standard set of _npm scripts_ to run common tasks, like watch, lint, test, build…
 
@@ -53,19 +53,19 @@ Cozy's apps use a standard set of _npm scripts_ to run common tasks, like watch,
 
 Using a watcher - with Hot Module Replacement:
 ```sh
-$ cd cozy-drive
-$ yarn watch:drive:browser
-$ cozy-stack serve --appdir drive:/<project_absolute_path>/cozy-drive/build/drive --disable-csp
+$ cd cozy-photos
+$ yarn watch:photos:browser
+$ cozy-stack serve --appdir photos:/<project_absolute_path>/cozy-photos/build/photos --disable-csp
 ```
 
 Or directly build the app (static file generated):
 ```sh
-$ cd cozy-drive
-$ yarn build:drive
-$ cozy-stack serve --appdir drive:/<project_absolute_path>/cozy-drive/build/drive
+$ cd cozy-photos
+$ yarn build:photos
+$ cozy-stack serve --appdir photos:/<project_absolute_path>/cozy-photos/build/photos
 ```
 
-Your app is available at http://drive.cozy.localhost:8080/#/folder
+Your app is available at http://photos.cozy.localhost:8080/#/folder
 
 Note: it's mandatory to explicit to cozy-stack the folder of the build that should be served, to be able to run the app.
 
@@ -75,16 +75,16 @@ You can easily view your current running app, you can use the [cozy-stack docker
 
 ```sh
 # in a terminal, run your app in watch mode
-$ cd cozy-drive
-$ yarn watch:drive:browser
+$ cd cozy-photos
+$ yarn watch:photos:browser
 ```
 
 ```sh
 # in another terminal, run the docker container
-$ docker run --rm -it -p 8080:8080 -v "$(pwd)/build/drive":/data/cozy-app/drive cozy/cozy-app-dev
+$ docker run --rm -it -p 8080:8080 -v "$(pwd)/build/photos":/data/cozy-app/photos cozy/cozy-app-dev
 ```
 
-Your app is available at http://drive.cozy.tools:8080.
+Your app is available at http://photos.cozy.tools:8080.
 
 Advanced case
 ----
@@ -105,10 +105,10 @@ Bob sees Alice's shared folder in his own cozy.
 If you develop with the [cozy-stack CLI](https://github.com/cozy/cozy-stack/blob/master/docs/cli/cozy-stack.md), you have to run [MailHog](https://github.com/mailhog/MailHog) on your computer and tell `cozy-stack serve` where to find the mail server with some [options](https://github.com/cozy/cozy-stack/blob/master/docs/cli/cozy-stack_serve.md#options):
 
 ```
-./cozy-stack serve --appdir drive:../cozy-drive/build,settings:../cozy-settings/build --mail-disable-tls --mail-port 1025
+./cozy-stack serve --appdir photos:../cozy-photos/build,settings:../cozy-settings/build --mail-disable-tls --mail-port 1025
 ```
 
-_This commands assumes you `git clone` [cozy-drive](https://github.com/cozy/cozy-drive) and [cozy-settings](https://github.com/cozy/cozy-settings) in the same folder than you `git clone` [cozy-stack](https://github.com/cozy/cozy-stack)._
+_This commands assumes you `git clone` [cozy-photos](https://github.com/cozy/cozy-photos) and [cozy-settings](https://github.com/cozy/cozy-settings) in the same folder than you `git clone` [cozy-stack](https://github.com/cozy/cozy-stack)._
 
 Then simply run `mailhog` and open http://cozy.tools:8025/.
 
@@ -119,7 +119,7 @@ With MailHog, **every email** sent by cozy-stack is caught. That means the email
 
 ### Run on you mobile phone or your tablet :phone:
 
-[See specific documentation](src/drive/targets/mobile/README.md).
+[See specific documentation](src/photos/targets/mobile/README.md).
 
 
 ### Living on the edge
@@ -136,7 +136,7 @@ yarn link
 then go back to your app project and replace the distributed cozy-ui module with the linked one:
 
 ```sh
-cd cozy-drive
+cd cozy-photos
 yarn link cozy-ui
 ```
 
@@ -154,7 +154,7 @@ Consider using [rlink] instead of `yarn link`
 Tests are run by [jest] under the hood, and written using [chai] and [sinon]. You can easily run the tests suite with:
 
 ```sh
-$ cd cozy-drive
+$ cd cozy-photos
 $ yarn test
 ```
 
@@ -163,7 +163,7 @@ $ yarn test
 
 ### Open a Pull-Request
 
-If you want to work on Drive and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about how to properly open pull-requests.
+If you want to work on photos and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about how to properly open pull-requests.
 
 
 Community
@@ -181,16 +181,16 @@ If you were using a [transifex-client](tx-client), you must move to [Transifex C
 
 The transifex configuration file is still in an old version. Please use the previous client for the moment [https://github.com/transifex/transifex-client/](https://github.com/transifex/transifex-client/).
 
-###### Drive specificity
+###### photos specificity
 
-CozyDrive and CozyPhotos share this mono-repository but the translations are split into two projects Transifex.
+Cozyphotos and CozyPhotos share this mono-repository but the translations are split into two projects Transifex.
 That is why the translation files are not present in this repository.
 
 To update the translation in other language, make the changes directly on [tx-translate]. Select one language and click on **global**
 
 ### Maintainer
 
-The lead maintainer for Cozy Drive is @Crash--, send him/her a :beers: to say hello!
+The lead maintainer for Cozy photos is @Crash--, send him/her a :beers: to say hello!
 
 ### Get in touch
 
@@ -205,7 +205,7 @@ You can reach the Cozy Community by:
 License
 -------
 
-Cozy Drive is developed by Cozy Cloud and distributed under the [AGPL v3 license][agpl-3.0].
+Cozy photos is developed by Cozy Cloud and distributed under the [AGPL v3 license][agpl-3.0].
 
 
 
@@ -225,8 +225,8 @@ Cozy Drive is developed by Cozy Cloud and distributed under the [AGPL v3 license
 [contribute]: CONTRIBUTING.md
 [tx]: https://www.transifex.com/cozy/
 [tx-signin]: https://www.transifex.com/signin/
-[tx-app]: https://www.transifex.com/cozy/cozy-drive/dashboard/
-[tx-translate]: https://www.transifex.com/cozy/cozy-drive/translate/
+[tx-app]: https://www.transifex.com/cozy/cozy-photos/dashboard/
+[tx-translate]: https://www.transifex.com/cozy/cozy-photos/translate/
 [tx-cli]: https://developers.transifex.com/docs/cli
 [tx-client]: https://github.com/transifex/transifex-client
 [libera]: https://web.libera.chat/#cozycloud

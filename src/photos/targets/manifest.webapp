@@ -7,7 +7,7 @@
   "licence": "AGPL-3.0",
   "icon": "public/app-icon.svg",
   "categories": ["cozy"],
-  "source": "https://github.com/cozy/cozy-drive",
+  "source": "https://github.com/cozy/cozy-photos",
   "editor": "Cozy",
   "developer": {
     "name": "Cozy Cloud",
