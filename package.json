@@ -1,5 +1,5 @@
 {
-  "name": "cozy-drive",
+  "name": "cozy-photos",
   "version": "1.64.0",
   "main": "src/main.jsx",
   "scripts": {
@@ -56,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cozy/cozy-drive.git"
+    "url": "git+https://github.com/cozy/cozy-photos.git"
   },
   "author": "Cozy Cloud <contact@cozycloud.cc> (https://cozy.io/)",
   "contributors": [
@@ -74,9 +74,9 @@
   ],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/cozy/cozy-drive/issues"
+    "url": "https://github.com/cozy/cozy-photos/issues"
   },
-  "homepage": "https://github.com/cozy/cozy-drive#readme",
+  "homepage": "https://github.com/cozy/cozy-photos#readme",
   "devDependencies": {
     "@sentry/cli": "1.72.1",
     "@testing-library/jest-dom": "5.17.0",
