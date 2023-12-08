@@ -1,16 +1,7 @@
-dist: focal
-node-preset: &node # Used internally to share configuration, ignored by travis.
-  language: node_js
-  node_js:
-    - 16
-    - 20
-  cache:
-    yarn: true
-    directories:
-      - node_modules
-  before_install:
-    - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.4
-    - export PATH="$HOME/build/cozy/cozy-photos:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+language: node_js
+node_js: 16
+dist: jammy
+cache: yarn
 branches:
   only:
     - master
@@ -32,56 +23,44 @@ stages:
   - build
 jobs:
   include:
-    - name: "Lint"
-      stage: "prebuild"
-      <<: *node
+    - name: 'Lint'
+      stage: 'prebuild'
       script: yarn lint
-    - name: "Unit tests node 16"
-      stage: "prebuild"
-      <<: *node
-      node_js:
-        - 16
+    - name: 'Unit tests node 16'
+      stage: 'prebuild'
+      node_js: 16
       script: yarn test
-    - name: "Unit tests node 20"
-      stage: "prebuild"
-      <<: *node
-      node_js:
-        - 20
+    - name: 'Unit tests node 20'
+      stage: 'prebuild'
+      node_js: 20
       script: yarn test
-    - name: "Photos web"
-      stage: "build"
-      <<: *node
-      env:
-        - COZY_APP_SLUG=photos
+    - name: 'Build app'
+      stage: 'build'
+      script:
+        - echo 'pull langages' && echo -en 'travis_fold:start:txpull\\r'
+        - yarn tx
+        - echo -en 'travis_fold:end:txpull\\r'
+        - echo 'build' && echo -en 'travis_fold:start:build\\r'
+        - yarn build
+        - echo -en 'travis_fold:end:build\\r'
       before_script:
         - yarn run cozy-ci-transifex
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && openssl aes-256-cbc -K $encrypted_497d1a9dc404_key -iv $encrypted_497d1a9dc404_iv -in id_rsa_downcloud_photos.enc -out id_rsa_downcloud_photos -d'
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && eval "$(ssh-agent -s)"'
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && chmod 600 id_rsa_downcloud_photos'
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && ssh-add id_rsa_downcloud_photos'
-      script:
-        - echo 'pull langages' && echo -en 'travis_fold:start:txpull\\r'
-        - yarn tx
-        - echo -en 'travis_fold:end:txpull\\r'
-        - echo 'build' && echo -en 'travis_fold:start:build\\r'
-        - yarn build:$COZY_APP_SLUG:browser
-        - echo -en 'travis_fold:end:build\\r'
-        #- echo 'create and deploy' && echo -en 'travis_fold:start:createanddeploy\\r'
-        #- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/create-deploy-test.sh; fi
-        #- echo -en 'travis_fold:end:createanddeploy\\r'
-        #- echo 'delete instance' && echo -en 'travis_fold:start:deleteinstance\\r'
-        #- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/delete-instance.sh; fi
-        #- echo -en 'travis_fold:end:deleteinstance\\r'
       before_deploy:
-        - yarn add cozy-app-publish
+        - yarn add cozy-app-publish # to be sure to have the last version before deploy
       deploy:
         - &deploy
           provider: script
           repo: cozy/cozy-photos
           skip-cleanup: true
-          script: yarn run deploy:$COZY_APP_SLUG
+          script: yarn run deploy
           on:
+            # deploy the build on a build branch and publish to the Cozy registry
             branch: master
         - <<: *deploy
           on:
+            # publish stable or beta versions using Github Releases (git tag)
             tags: true
