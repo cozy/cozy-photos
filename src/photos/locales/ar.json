@@ -1,0 +1,69 @@
+{
+  "Nav": {
+    "photos": "الصور",
+    "albums": "الألبومات",
+    "btn-client-web": "تحصل على كوزي"
+  },
+  "Toolbar": {
+    "album_delete": "حذف",
+    "album_download": "تنزيل",
+    "menu": {
+      "photo_upload": "تحميل الصور"
+    }
+  },
+  "Board": {
+    "select_all": "تحديد الكل",
+    "unselect_all": "إلغاء تحديد الكل"
+  },
+  "SelectionBar": {
+    "delete": "حذف",
+    "download": "تنزيل",
+    "close": "إغلاق"
+  },
+  "Share": {
+    "status": {
+      "error": "خطأ",
+      "unregistered": "خطأ",
+      "mail-not-sent": "خطأ",
+      "revoked": "خطأ"
+    }
+  },
+  "Albums": {
+    "share": {
+      "shareByEmail": {
+        "send": "إرسال"
+      },
+      "sharingLink": {
+        "copy": "نسخ"
+      },
+      "protectedShare": {
+        "title": "عن قريب !"
+      },
+      "close": "إغلاق"
+    },
+    "create": {
+      "panel_form": {
+        "cancel": "إلغاء",
+        "submit": "إنشاء ألبوم جديد"
+      }
+    }
+  },
+  "Viewer": {
+    "close": "إغلاق",
+    "actions": {
+      "download": "تنزيل"
+    }
+  },
+  "destroyconfirmation": {
+    "cancel": "إلغاء"
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "cancel": "إلغاء",
+      "delete": "حذف"
+    }
+  },
+  "UploadQueue": {
+    "close": "إغلاق"
+  }
+}

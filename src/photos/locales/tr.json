@@ -1,0 +1,64 @@
+{
+  "Nav": {
+    "photos": "Fotoğraflar",
+    "albums": "Albümler",
+    "banner-btn-client": "İndir"
+  },
+  "Toolbar": {
+    "photo_upload": "Yükle",
+    "album_download": "İndir"
+  },
+  "SelectionBar": {
+    "delete": "Sil",
+    "trash": "Delete"
+  },
+  "Share": {
+    "status": {
+      "error": "Hata",
+      "unregistered": "Hata",
+      "mail-not-sent": "Hata",
+      "revoked": "Hata"
+    }
+  },
+  "Albums": {
+    "share": {
+      "cta": "Paylaş",
+      "shareByEmail": {
+        "send": "Gönder"
+      }
+    },
+    "create": {
+      "panel_form": {
+        "cancel": "İptal et"
+      },
+      "inline_form": {
+        "create_button": "Oluştur"
+      }
+    }
+  },
+  "Viewer": {
+    "close": "Kapat",
+    "actions": {
+      "download": "İndir"
+    },
+    "loading": {
+      "retry": "Yeniden dene"
+    }
+  },
+  "destroyconfirmation": {
+    "cancel": "İptal et",
+    "delete": "Kalıcı olarak sil"
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "cancel": "İptal et",
+      "delete": "Kaldır"
+    }
+  },
+  "UploadQueue": {
+    "path_photos": "Fotoğraflar"
+  },
+  "quotaalert": {
+    "increase": "Disk boşluğunuzu artırın"
+  }
+}

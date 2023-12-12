@@ -1,0 +1,264 @@
+{
+  "Nav": {
+    "photos": "Fotos",
+    "albums": "Alben",
+    "shared": "Von mir geteilt",
+    "trash": "Papierkorb",
+    "btn-client": "Hol' dir Cozy Drive auf den Desktop!",
+    "btn-client-web": "Hol' dir Cozy",
+    "btn-client-mobile": "Hol' dir Cozy Drive auf dein Handy!",
+    "banner-txt-client": "Hol' dir Cozy Drive für den Desktop und synchronisiere deine Dateien sicher, um sie jederzeit zugänglich zu machen.",
+    "banner-btn-client": "Herunterladen",
+    "link-client": "https://cozy.io/en/download/",
+    "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
+    "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
+    "link-client-ios": "https://itunes.apple.com/us/app/cozy-drive/id1224102389?mt=8",
+    "link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
+  },
+  "empty": {
+    "timeline_photos_title": "Du hast noch keine Fotos.",
+    "albums_title": "Du hast noch kein Album.",
+    "shared_album_photos_title": "Es gibt noch kein Foto in diesem Album.",
+    "shared_album_photos_text": "Komme später wieder"
+  },
+  "Error": {
+    "albums_title": "Beim Abrufen der Albumliste ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "album_photos_title": "Beim Abrufen der Album-Fotoliste ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "timeline_photos_title": "Beim Abrufen der Fotosliste ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "public_album_error_title": "Beim Abrufen der Fotosliste ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "public_album_unshared_title": "Dieser Link ist leider nicht mehr verfügbar.",
+    "public_album_unshared_text": "Eins verloren, zehn gefunden ... oder bitte einfach nur den Besitzer um Hilfe. Diese Datei ist möglicherweise nicht verloren.",
+    "refresh": "Jetzt aktualisieren",
+    "generic": "Es ist ein Fehler aufgetreten. Versuche es erneut.",
+    "album_rename_abort": "Der Albumname darf nicht leer sein."
+  },
+  "Toolbar": {
+    "photo_upload": "Hochladen",
+    "album_new": "Neues Album",
+    "album_delete": "Löschen",
+    "album_quit": "Geteiltes Album verlassen und löschen",
+    "album_download": "Herunterladen",
+    "more": "Mehr",
+    "menu": {
+      "select_items": "Fotos auswählen",
+      "photo_upload": "Fotos hochladen",
+      "rename_album": "Album umbenennen",
+      "album_delete": "Album löschen",
+      "album_quit": "Geteiltes Album verlassen und löschen",
+      "download_album": "Album downloaden",
+      "add_photos": "Fotos zum Album hinzufügen"
+    }
+  },
+  "loading": {
+    "photos_indexing": "Deine Fotos werden gerade indexiert. Bitte warten.",
+    "albums_indexing": "Deine Alben werden gerade indexiert. Bitte warten.",
+    "photos_fetching": "Lädt",
+    "albums_fetching": "Lädt",
+    "photos_upload": "Lädt hoch"
+  },
+  "Board": {
+    "load_more": "Lade mehr Fotos",
+    "select_all": "Alle auswählen",
+    "unselect_all": "Alle abwählen"
+  },
+  "Alerter": {
+    "photos": {
+      "fetching_error": "Beim Holen der Fotos ist ein Fehler aufgetreten.",
+      "already_added_photo": "Dieses Album enthält bereits dieses Foto."
+    }
+  },
+  "SelectionBar": {
+    "selected_count": "ausgewähltes Foto |||| ausgewählte Fotos",
+    "delete": "Löschen",
+    "trash": "Löschen",
+    "album-add": "Zum Album hinzufügen",
+    "album-remove": "Aus dem Album entfernen",
+    "download": "Herunterladen",
+    "close": "Schließen"
+  },
+  "Share": {
+    "status": {
+      "pending": "Ausstehend",
+      "accepted": "Akzeptiert",
+      "refused": "Verweigert",
+      "error": "Fehler",
+      "unregistered": "Fehler",
+      "mail-not-sent": "Fehler",
+      "revoked": "Fehler"
+    },
+    "type": {
+      "one-way": "Kann sehen (demnächst)",
+      "two-way": "Kann ändern"
+    },
+    "create-cozy": "Erstelle meinen Cozy"
+  },
+  "Albums": {
+    "album_item_description": "%{smart_count} Foto |||| %{smart_count} Fotos",
+    "album_item_shared_ro": "Geteilt (lesend)",
+    "album_item_shared_rw": "Geteilt (lesen/schreiben)",
+    "load_more": "Mehr Alben laden",
+    "add_photos": {
+      "title": "Zum Album hinzufügen",
+      "success": "Album %{name} wurde mit %{smart_count} Foto aktualisiert. |||| Album %{name} wurde mit %{smart_count} Fotos aktualisiert.",
+      "error": {
+        "generic": "Beim Aktualisieren des Albums ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+        "reference": "Einige Fotos wurden nicht zum Album hinzugefügt. Bitte überprüfe das und versuche es erneut.",
+        "response": {
+          "Forbidden": "Die Anwendung ist nicht berechtigt, Alben zu aktualisieren."
+        }
+      }
+    },
+    "share": {
+      "cta": "Teilen",
+      "title": "Mit Anderen teilen",
+      "details": {
+        "title": "Freigabe-Details",
+        "createdAt": "Am %{date}",
+        "ro": "Nur Lesen",
+        "rw": "Lesen/schreiben"
+      },
+      "sharedByMe": "Geteilt",
+      "sharedWithMe": "Mit mir geteilt",
+      "shareByLink": {
+        "subtitle": "Mit öffentlichem Link",
+        "desc": "Jeder kann mit dem Link deine Fotos sehen und herunterladen.",
+        "fetchFailed": "Hoppla! Deine Verbindung scheint limitert zu sein, versuche es später erneut, wenn Besserung eintritt.",
+        "creating": "Erstellt deinen Link...",
+        "copy": "Link kopieren",
+        "copied": "Link wurde in die Zwischenablage kopiert",
+        "failed": "Unfähig in die Zwischenablage zu kopieren"
+      },
+      "shareByEmail": {
+        "title": "per E-Mail",
+        "subtitle": "per E-Mail",
+        "email": "E-Mail",
+        "emailPlaceholder": "Gib die E-Mail-Adresse oder den Namen des Empfängers ein",
+        "send": "Sende",
+        "genericSuccess": "Du hast eine Einladung an %{count} Kontakte gesendet.",
+        "success": "Du hast eine Einladung an %{email} gesendet.",
+        "comingsoon": "Demnächst! Du wirst Dokumente und Fotos mit einem einzigen Klick mit deiner Familie, deinen Freunden und sogar deinen Kollegen teilen können. Keine Sorge, wir geben dir Bescheid, wenn es soweit ist."
+      },
+      "unshare": {
+        "title": "Aus dem Album entfernen",
+        "success": "Du hast dieses geteilte Album von %{email} entfernt."
+      },
+      "sharingLink": {
+        "title": "Link zum Teilen",
+        "copy": "Kopieren",
+        "copied": "Kopiert"
+      },
+      "whoHasAccess": {
+        "title": "Wer hat Zugriff"
+      },
+      "protectedShare": {
+        "title": "Demnächst!",
+        "desc": "Teile etwas per E-Mail mit Familie und Freunden!"
+      },
+      "close": "Schließen",
+      "gettingLink": "Deinen Link bekommen ...",
+      "error": {
+        "generic": "Beim Erstellen des Album-Share-Links ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+        "revoke": "Beim Widerrufen des Album Freigabelinks ist ein Fehler aufgetreten, bitte versuche es erneut."
+      }
+    },
+    "create": {
+      "panel_form": {
+        "label": "Füge deinem neuen Album einen Namen hinzu",
+        "placeholder": "Unbenanntes Album",
+        "cancel": "Abbruch",
+        "submit": "Erstelle neues Album",
+        "update": "Fotos zum Album hinzufügen"
+      },
+      "inline_form": {
+        "placeholder": "Neuer Albumname",
+        "create_label": "Erstelle ein neues Album",
+        "create_button": "Erstellen"
+      },
+      "success": "Album %{name} erstellt mit %{smart_count} Foto. |||| Album %{name} erstellt mit %{smart_count} Fotos.",
+      "error": {
+        "generic": "Beim Erstellen des Albums ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+        "already_exists": "Das Album %{name} existiert bereits, bitte wähle ein Anderes aus.",
+        "name_missing": "Du musst deinem Album einen Namen geben."
+      }
+    },
+    "fetchAlbums": {
+      "error": {
+        "index_missing": "Ein Alben-Index muss bereitgestellt werden, um Alben zu holen."
+      }
+    },
+    "remove_photos": {
+      "success": "Das Foto wurde aus dem Album %{album_name} entfernt",
+      "error": {
+        "generic": "Beim Entfernen des Fotos ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      }
+    },
+    "remove_album": {
+      "success": "Album %{name} wurde gelöscht.",
+      "error": {
+        "generic": "Beim Entfernen des Albums ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+      }
+    },
+    "quit_album": {
+      "success": "Album %{name} wurde gelöscht.",
+      "error": {
+        "generic": "Beim Verlassen des Albums ist ein Fehler aufgetreten, bitte versuche es erneut."
+      }
+    }
+  },
+  "Viewer": {
+    "close": "Schließen",
+    "noviewer": {
+      "title": "Die Ansicht dieses Dateitypens wird derzeit noch nicht unterstützt.",
+      "download": "Diese Datei herunterladen",
+      "openWith": "Öffnen mit..."
+    },
+    "actions": {
+      "download": "Herunterladen"
+    },
+    "loading": {
+      "error": "Die Datei konnte nicht geladen werden. Hast du gerade eine funktionierende Internetverbindung?",
+      "retry": "Wiederholen"
+    }
+  },
+  "destroyconfirmation": {
+    "title": "Dieses Album dauerhaft löschen?",
+    "cancel": "Abbruch",
+    "delete": "Dauerhaft löschen",
+    "forbidden": "Sie können nicht mehr auf dieses Album oder die Auswahl zugreifen.",
+    "eye": "Deine Fotos werden nicht gelöscht.",
+    "link": "Wenn du es geteilt hast, können die Leute nicht darauf zugreifen."
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "title": "Dieses Element löschen? |||| Diese Elemente löschen?",
+      "trash": "Es wird in den Papierkorb verschoben. |||| Sie werden in den Papierkorb verschoben.",
+      "restore": "Du kannst es wiederherstellen wann immer du willst. |||| Du kannst sie wiederherstellen wann immer du willst.",
+      "shared": "Wenn du es geteilt hast, können die Leute nicht darauf zugreifen. |||| Wenn du sie geteilt hast, können die Leute nicht darauf zugreifen.",
+      "related": "Einige der Fotos in der Auswahl beziehen sich auf ein Album. Sie werden aus ihm entfernt, wenn du sie löschst.",
+      "cancel": "Abbruch",
+      "delete": "Löschen"
+    }
+  },
+  "UploadQueue": {
+    "path_photos": "Fotos",
+    "path_upload": "Hochgeladen von Cozy Photos",
+    "header": "%{smart_count} Foto zu Cozy Fotos hochgeladen. |||| %{smart_count} Fotos zu Cozy Fotos hochgeladen.",
+    "header_mobile": "Hochladen %{done} von %{total}",
+    "header_done": "%{done} von %{total} erfolgreich hochgeladen",
+    "close": "Schließen",
+    "item": {
+      "pending": "Ausstehend"
+    },
+    "alert": {
+      "success": "%{smart_count} Foto erfolgreich hochgeladen. |||| %{smart_count} Fotos erfolgreich hochgeladen.",
+      "success_conflicts": "%{smart_count} Foto hochgeladen mit %{conflictNumber} Konflikt(en). |||| %{smart_count} Fotos hochgeladen mit %{conflictNumber} Konflikt(en).",
+      "errors": "Beim Upload der Fotos sind Fehler aufgetreten."
+    }
+  },
+  "quotaalert": {
+    "title": "Dein Speicherkontingent ist ausgeschöpft :(",
+    "desc": "Bitte entferne Dateien, lerre deinen Mülleimer oder erweitere deinen Speicherplatz, bevor du wieder Dateien hochlädst.",
+    "confirm": "OK",
+    "increase": "Deinen Speicherplatz erweitern"
+  }
+}

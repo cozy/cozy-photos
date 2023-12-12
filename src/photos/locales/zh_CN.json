@@ -1,0 +1,16 @@
+{
+  "Nav": {
+    "photos": "照片",
+    "albums": "相册",
+    "shared": "我分享的",
+    "trash": "垃圾"
+  },
+  "Toolbar": {
+    "photo_upload": "上传"
+  },
+  "Alerter": {
+    "photos": {
+      "fetching_error": "读取照片时发生错误。"
+    }
+  }
+}

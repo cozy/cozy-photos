@@ -1,0 +1,187 @@
+{
+  "Nav": {
+    "photos": "Foto",
+    "albums": "Album",
+    "shared": "Condivisi con me",
+    "trash": "Cestino",
+    "btn-client": "Scarica Cozy Drive per il computer",
+    "btn-client-web": "Scarica Cozy",
+    "btn-client-mobile": "Scarica Cozy Drive sul tuo smartphone!",
+    "link-client": "https://cozy.io/en/download/",
+    "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
+    "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
+    "link-client-ios": "https://itunes.apple.com/us/app/cozy-drive/id1224102389?mt=8",
+    "link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
+  },
+  "empty": {
+    "timeline_photos_title": "Non hai ancora nessuna foto.",
+    "albums_title": "Non hai ancora nessun album.",
+    "shared_album_photos_title": "Non c'è ancora nessuna foto in questo album.",
+    "shared_album_photos_text": "Torna dopo"
+  },
+  "Error": {
+    "public_album_unshared_title": "Spiacente, il collegamento non è più disponibile.",
+    "refresh": "Aggiorna adesso",
+    "generic": "Si è verificato un errore, per favore riprova.",
+    "album_rename_abort": "Il nome dell'album non può essere vuoto."
+  },
+  "Toolbar": {
+    "photo_upload": "Carica",
+    "album_new": "Nuovo album",
+    "album_delete": "Elimina",
+    "album_quit": "Lascia e elimina album condiviso",
+    "album_download": "Scarica",
+    "more": "Altro",
+    "menu": {
+      "select_items": "Seleziona foto",
+      "photo_upload": "Carica foto",
+      "rename_album": "Rinomina album",
+      "album_delete": "Elimina album",
+      "album_quit": "Lascia e elimina album condiviso",
+      "download_album": "Scarica album",
+      "add_photos": "Aggiungi foto all'album"
+    }
+  },
+  "loading": {
+    "photos_fetching": "Caricamento",
+    "albums_fetching": "Caricamento"
+  },
+  "Board": {
+    "load_more": "Carica altre foto",
+    "select_all": "Seleziona tutto",
+    "unselect_all": "Deseleziona tutto"
+  },
+  "Alerter": {
+    "photos": {
+      "already_added_photo": "Questo album contiene già questa foto."
+    }
+  },
+  "SelectionBar": {
+    "delete": "Elimina",
+    "trash": "Elimina",
+    "album-add": "Aggiungi ad album",
+    "album-remove": "Rimuovi da album",
+    "download": "Scarica",
+    "close": "Chiudi"
+  },
+  "Share": {
+    "status": {
+      "pending": "In attesa",
+      "accepted": "Accettato",
+      "refused": "Rifiutato",
+      "error": "Errore",
+      "unregistered": "Errore",
+      "mail-not-sent": "Errore",
+      "revoked": "Errore"
+    },
+    "type": {
+      "one-way": "Può visualizzare (in arrivo)",
+      "two-way": "Può cambiare"
+    },
+    "create-cozy": "Crea mio cozy"
+  },
+  "Albums": {
+    "album_item_shared_ro": "Condiviso (solo lettura)",
+    "album_item_shared_rw": "Condiviso (lettura/scrittura)",
+    "add_photos": {
+      "title": "Aggiungi ad album"
+    },
+    "share": {
+      "cta": "Condividi",
+      "title": "Condividi con altri",
+      "details": {
+        "title": "Dettagli condivisione",
+        "createdAt": "Il %{date}",
+        "ro": "Solo lettura",
+        "rw": "Lettura/Scrittura"
+      },
+      "sharedByMe": "Condiviso",
+      "sharedWithMe": "Condiviso con me",
+      "shareByLink": {
+        "copy": "Copia link",
+        "copied": "Il link è stato copiato negli appunti",
+        "failed": "Impossibile copiare negli appunti"
+      },
+      "shareByEmail": {
+        "title": "Per email",
+        "subtitle": "Per email",
+        "email": "email",
+        "send": "Invia"
+      },
+      "unshare": {
+        "title": "Rimuovi da album"
+      },
+      "sharingLink": {
+        "title": "Collegamento da condividere",
+        "copy": "Copia",
+        "copied": "Copiato"
+      },
+      "protectedShare": {
+        "title": "In arrivo!",
+        "desc": "Condividi qualsiasi cosa tramite email con la tua famiglia e i tuoi amici!"
+      },
+      "close": "Chiudi"
+    },
+    "create": {
+      "panel_form": {
+        "label": "Aggiungi un nome al tuo album",
+        "placeholder": "Album senza titolo",
+        "cancel": "Annulla",
+        "submit": "Crea nuovo album",
+        "update": "Aggiungi foto ad album"
+      },
+      "inline_form": {
+        "placeholder": "Nome nuovo album",
+        "create_label": "Crea nuovo album",
+        "create_button": "Crea"
+      },
+      "error": {
+        "name_missing": "Devi dare un nome al tuo album."
+      }
+    },
+    "remove_photos": {
+      "success": "La foto è stata rimossa dall'album %{album_name}"
+    },
+    "remove_album": {
+      "success": "L'album %{name} è stato eliminato."
+    },
+    "quit_album": {
+      "success": "L'album %{name} è stato eliminato."
+    }
+  },
+  "Viewer": {
+    "close": "Chiudi",
+    "noviewer": {
+      "download": "Scarica questo file",
+      "openWith": "Apri con..."
+    },
+    "actions": {
+      "download": "Scarica"
+    },
+    "loading": {
+      "retry": "Riprova"
+    }
+  },
+  "destroyconfirmation": {
+    "title": "Eliminare in modo permanente questo album?",
+    "cancel": "Annulla",
+    "delete": "Elimina permanentemente",
+    "eye": "Le tue foto non saranno eliminate."
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "cancel": "Annulla",
+      "delete": "Rimuovi"
+    }
+  },
+  "UploadQueue": {
+    "path_photos": "Foto",
+    "close": "chiudi",
+    "item": {
+      "pending": "In attesa"
+    }
+  },
+  "quotaalert": {
+    "confirm": "OK"
+  }
+}
