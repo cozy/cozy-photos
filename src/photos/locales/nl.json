@@ -1,0 +1,125 @@
+{
+  "Nav": {
+    "photos": "Foto's",
+    "albums": "Albums",
+    "shared": "Gedeeld door mij",
+    "trash": "Prullenbak",
+    "btn-client-mobile": "Haal Cozy mobiel op jouw telefoon!"
+  },
+  "Error": {
+    "albums_title": "Er is een fout opgetreden tijdens het laden van de album lijst. Probeer het later nog eens.",
+    "album_photos_title": "Er is een fout opgetreden tijdens het laden van de lijst van foto's in dit album. Probeer het later nog eens.",
+    "timeline_photos_title": "Er is een fout opgetreden tijdens het laden van de lijst van foto's. Probeer het later nog eens.",
+    "refresh": "Ververs nu",
+    "generic": "Er is een fout opgetreden, probeer het opnieuw.",
+    "album_rename_abort": "De naam van het album kan niet leeg zijn."
+  },
+  "Toolbar": {
+    "photo_upload": "Upload",
+    "album_delete": "Verwijderen",
+    "more": "Meer",
+    "menu": {
+      "select_items": "Selecteer foto's",
+      "photo_upload": "Upload foto's",
+      "rename_album": "Hernoem album",
+      "album_delete": "Verwijder album"
+    }
+  },
+  "Board": {
+    "load_more": "Laad meer foto's"
+  },
+  "Alerter": {
+    "photos": {
+      "fetching_error": "Er is een fout opgetreden tijdens het ophalen van de foto's.",
+      "already_added_photo": "Dit album bevat deze foto al."
+    }
+  },
+  "SelectionBar": {
+    "close": "Afsluiten"
+  },
+  "Albums": {
+    "album_item_description": "%{smart_count} foto |||| %{smart_count} foto's",
+    "load_more": "Meer albums laden",
+    "add_photos": {
+      "title": "Voeg toe aan album",
+      "success": "Album %{name} is bijgewerkt met %{smart_count} foto. |||| Album %{name} is bijgewerkt met %{smart_count} foto's.",
+      "error": {
+        "generic": "Er is een fout opgetreden tijdens het bijwerken van het album, probeer het opnieuw.",
+        "reference": "Sommige foto's zijn niet toegevoegd aan het album. Controleer en probeer nog eens.",
+        "response": {
+          "Forbidden": "Toepassing heeft geen toestemming om albums aan te passen."
+        }
+      }
+    },
+    "share": {
+      "cta": "Delen",
+      "title": "Deel met anderen",
+      "shareByLink": {
+        "desc": "Iedereen die de gedeelde snelkoppeling heeft kan deze foto's zien en downloaden."
+      },
+      "sharingLink": {
+        "title": "Snelkoppeling om te delen",
+        "copy": "Kopiëren"
+      },
+      "protectedShare": {
+        "title": "Binnenkort beschikbaar!",
+        "desc": "Deel alles via e-mail met jouw vrienden en familie!"
+      },
+      "close": "Sluiten",
+      "error": {
+        "generic": "Er is een fout opgetreden tijdens het genereren van de snelkoppeling, probeer het opnieuw."
+      }
+    },
+    "create": {
+      "inline_form": {
+        "placeholder": "Nieuwe album naam",
+        "create_label": "Creëer een nieuw album",
+        "create_button": "Creëer"
+      },
+      "success": "Album %{name} is gecreëerd met %{smart_count} foto. |||| Album %{name} is gecreëerd met %{smart_count} foto's.",
+      "error": {
+        "generic": "Er is een fout opgetreden tijdens het creëren van het album, probeer het later nog eens.",
+        "already_exists": "Het album %{name} bestaat al, kies een andere naam.",
+        "name_missing": "Je moet het album een naam geven."
+      }
+    },
+    "fetchAlbums": {
+      "error": {
+        "index_missing": "Je moet een album index opgeven om albums op te halen."
+      }
+    },
+    "remove_photos": {
+      "success": "De foto is verwijderd uit album %{album_name}",
+      "error": {
+        "generic": "Er is een fout opgetreden tijdens het verwijderen van de foto, probeer het opnieuw."
+      }
+    },
+    "remove_album": {
+      "error": {
+        "generic": "Er is een fout opgetreden tijdens het verwijderen van de foto, probeer het opnieuw."
+      }
+    }
+  },
+  "Viewer": {
+    "close": "Afsluiten"
+  },
+  "destroyconfirmation": {
+    "title": "Dit album permanent verwijderen?",
+    "cancel": "Annuleren",
+    "delete": "Verwijder permanent",
+    "forbidden": "Je kunt dit album of deze selectie niet meer benaderen.",
+    "eye": "Jouw foto's worden niet verwijderd.",
+    "link": "Als je het hebt gedeeld, kunnen mensen het niet meer benaderen."
+  },
+  "UploadQueue": {
+    "header": "Uploaden van %{smart_count} foto naar Cozy Foto's |||| Uploaden van %{smart_count} foto's naar Cozy Foto's",
+    "item": {
+      "pending": "In behandeling"
+    },
+    "alert": {
+      "success": "%{smart_count} foto succesvol ge-upload. |||| %{smart_count} foto's succesvol ge-upload.",
+      "success_conflicts": "%{smart_count} foto ge-upload met %{conflictNumber} conflict(en). |||| %{smart_count} foto's ge-upload met %{conflictNumber} conflict(en).",
+      "errors": "Er is iets fout gegaan tijdens het uploaden van de foto's."
+    }
+  }
+}

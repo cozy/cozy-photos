@@ -1,0 +1,325 @@
+{
+  "Nav": {
+    "photos": "Photos",
+    "albums": "Albums",
+    "shared": "Mes photos partagées",
+    "trash": "Corbeille",
+    "backup": "Sauvegarde",
+    "btn-client": "Téléchargez Cozy Drive ",
+    "btn-client-web": "Créer un Cozy",
+    "btn-client-mobile": "Téléchargez Cozy Drive sur votre mobile !",
+    "banner-txt-client": "Installez Cozy Drive pour ordinateur et synchronisez vos fichiers pour les rendre accessibles à tout moment.",
+    "banner-btn-client": "Télécharger",
+    "link-client": "https://cozy.io/en/download/",
+    "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
+    "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
+    "link-client-ios": "https://itunes.apple.com/us/app/cozy-drive/id1224102389?mt=8",
+    "link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
+  },
+  "empty": {
+    "timeline_photos_title": "Vous n'avez pas encore de photos.",
+    "timeline_photos_text": "Cliquez sur le bouton « Importer des photos » pour ajouter des photos.",
+    "timeline_photos_mobile_text": "Cliquez en haut à droite sur « ... » puis « Importer des photos » pour ajouter des photos.",
+    "albums_title": "Vous n'avez pas encore d'albums.",
+    "albums_text": "Cliquer sur le bouton « Nouvel album » pour créer votre premier album.",
+    "albums_mobile_text": "Cliquez en haut à droite sur « ... » puis « Nouvel album » pour créer votre premier album.",
+    "album_with_photos_title": "Il n'y a pas encore de photos dans cet album.",
+    "album_with_photos_text": "Cliquez en haut à droite sur « ... » puis « Ajouter des photos » pour en ajouter.",
+    "album_with_photos_mobile_text": "Cliquez en haut à droite sur « ... » puis « Ajouter des photos » pour en ajouter.",
+    "shared_album_photos_title": "Il n'y a pas encore de photos dans cet album.",
+    "shared_album_photos_text": "Revenez plus tard",
+    "shared_album_photos_mobile_text": "Revenez plus tard"
+  },
+  "Error": {
+    "albums_title": "Une erreur est survenue en récupérant la liste des albums. Merci de réessayer plus tard.",
+    "album_photos_title": "Une erreur est survenue en récupérant la liste des photos de l'album. Merci de réessayer plus tard.",
+    "timeline_photos_title": "Une erreur est survenue en récupérant la liste des photos. Merci de réessayer plus tard.",
+    "public_album_error_title": "Une erreur est survenue lors de la récupération de l'album. Merci de réessayer plus tard.",
+    "public_album_unshared_title": "Ce lien n'est plus actif.",
+    "public_album_unshared_text": "Un seul lien vous manque et tout vous semble dépeuplé ? Séchez vos larmes et contactez son propriétaire. Tout n'est peut-être pas perdu.",
+    "refresh": "Recharger la page",
+    "generic": "Une erreur est survenue. Merci de réessayer.",
+    "album_rename_abort": "Le nom de l'album ne peut pas être vide.",
+    "back_homepage": "Retour"
+  },
+  "Toolbar": {
+    "photo_upload": "Importer des photos",
+    "album_new": "Créer un album",
+    "album_delete": "Supprimer",
+    "album_quit": "Quitter & supprimer cet album",
+    "album_download": "Télécharger",
+    "more": "Plus",
+    "menu": {
+      "select_items": "Sélectionner des photos",
+      "photo_upload": "Importer des photos",
+      "rename_album": "Renommer l'album",
+      "album_delete": "Supprimer l'album",
+      "album_quit": "Quitter & supprimer cet album",
+      "download_album": "Télécharger l'album",
+      "add_photos": "Ajouter des photos"
+    }
+  },
+  "loading": {
+    "photos_indexing": "Vos photos sont en cours d'indexation, veuillez patienter.",
+    "albums_indexing": "Vos albums sont en cours d'indexation, veuillez patienter.",
+    "photos_fetching": "Chargement",
+    "albums_fetching": "Chargement",
+    "photos_upload": "Import en cours"
+  },
+  "Board": {
+    "load_more": "Plus de photos",
+    "select_all": "Tout sélectionner",
+    "unselect_all": "Tout déselectionner"
+  },
+  "Alerter": {
+    "photos": {
+      "fetching_error": "Une erreur est survenue durant la récupération des photos.",
+      "already_added_photo": "Cet album contient déjà cette photo."
+    }
+  },
+  "SelectionBar": {
+    "selected_count": "élément sélectionné |||| éléments sélectionnés",
+    "delete": "Supprimer",
+    "trash": "Supprimer",
+    "album-add": "Ajouter à un album",
+    "album-remove": "Supprimer de l'album",
+    "download": "Télécharger",
+    "close": "Fermer"
+  },
+  "Share": {
+    "status": {
+      "pending": "En attente",
+      "accepted": "Accepté",
+      "refused": "Refusé",
+      "error": "Erreur",
+      "unregistered": "Erreur",
+      "mail-not-sent": "Erreur",
+      "revoked": "Erreur"
+    },
+    "type": {
+      "one-way": "Peut afficher (bientôt disponible)",
+      "two-way": "Peut modifier"
+    },
+    "create-cozy": "Créer mon Cozy"
+  },
+  "Albums": {
+    "album_item_description": "%{smart_count} photo |||| %{smart_count} photos",
+    "album_item_shared_ro": "Partagé (lecture seule)",
+    "album_item_shared_rw": "Partagé (lecture/écriture)",
+    "load_more": "Charger plus d'albums",
+    "add_photos": {
+      "title": "Ajouter à un album",
+      "success": " %{smart_count} photo a été ajoutée à l'album %{name}. ||||  %{smart_count} photos ont été ajoutées à l'album %{name}.",
+      "error": {
+        "generic": "Une erreur est survenue en mettant l'album à jour. Merci de réessayer plus tard.",
+        "reference": "Certaines photos n'ont pas pu être ajoutées à l'album. Merci de réessayer.",
+        "response": {
+          "Forbidden": "L'application n'a pas la permission de modifier un album."
+        }
+      }
+    },
+    "share": {
+      "cta": "Partager",
+      "title": "Partager avec d'autres",
+      "details": {
+        "title": "Détails du partage",
+        "createdAt": "Depuis le %{date}",
+        "ro": "Permission de lecture",
+        "rw": "Permission d'écriture et de lecture"
+      },
+      "sharedByMe": "Partagé",
+      "sharedWithMe": "Partagé avec moi",
+      "shareByLink": {
+        "subtitle": "Par lien public",
+        "desc": "Chaque personne possédant le lien fourni peut voir et télécharger vos photos.",
+        "fetchFailed": "Oups ! Il semblerait que votre connexion internet soit limitée, réessayez plus tard quand le réseau sera meilleur.",
+        "creating": "Création de votre lien...",
+        "copy": "Copier le lien",
+        "copied": "Lien copié dans le presse-papier",
+        "failed": "Impossible de copier dans le presse-papier"
+      },
+      "shareByEmail": {
+        "title": "Par e-mail",
+        "subtitle": "Par email",
+        "email": "e-mail",
+        "emailPlaceholder": "Saisissez l'email ou le nom du destinataire.",
+        "send": "Envoyer",
+        "genericSuccess": "Vous avez envoyé une invitation à %{count} contacts.",
+        "success": "Vous avez envoyé une invitation à %{email}.",
+        "comingsoon": "Bientôt disponible ! Vous pourrez partager vos documents et vos photos en un seul clic avec votre famille, vos amis et même vos collaborateurs. Ne vous inquiétez pas, on vous préviendra quand ce sera prêt !\n"
+      },
+      "unshare": {
+        "title": "Arrêter le partage avec ce contact",
+        "success": "Vous avez cessé de partager cet album avec %{email}."
+      },
+      "sharingLink": {
+        "title": "Partager",
+        "copy": "Copier",
+        "copied": "Copié"
+      },
+      "whoHasAccess": {
+        "title": "Qui a accès"
+      },
+      "protectedShare": {
+        "title": "Prochainement !",
+        "desc": "Partagez ce que vous souhaitez par email avec votre famille et vos amis !"
+      },
+      "close": "Fermer",
+      "gettingLink": "Récupération du lien...",
+      "error": {
+        "generic": "Une erreur est survenue lors de la création du lien de partage de l'album, merci de réessayer",
+        "revoke": "Une erreur est survenue lors de la révocation du lien de partage de l'album, merci de réessayer"
+      }
+    },
+    "create": {
+      "panel_form": {
+        "label": "Donnez un nom à votre album",
+        "placeholder": "Album sans titre",
+        "cancel": "Annuler",
+        "submit": "Valider la création",
+        "update": "Ajouter les photos à l'album"
+      },
+      "inline_form": {
+        "placeholder": "Indiquez le nom de l'album",
+        "create_label": "Créer un nouvel album",
+        "create_button": "Créer"
+      },
+      "success": "L'album %{name} a été créé avec %{smart_count} photo. |||| L'album %{name} a été créé %{smart_count} photos.",
+      "error": {
+        "generic": "Une erreur est survenue lors de la création de l'album, merci de réessayer",
+        "already_exists": " L'album %{name} existe déjà, merci d'en choisir un autre.",
+        "name_missing": "Vous devez préciser le nom du nouvel album."
+      }
+    },
+    "fetchAlbums": {
+      "error": {
+        "index_missing": "Un index d'albums doit être fourni pour récupérer les albums."
+      }
+    },
+    "remove_photos": {
+      "success": "La photo a été supprimée de l'album %{album_name}",
+      "error": {
+        "generic": "Une erreur est survenue lors de la suppression de la photo, merci de réessayer."
+      }
+    },
+    "remove_album": {
+      "success": "L'album %{name} a été supprimé.",
+      "error": {
+        "generic": "Une erreur est survenue lors de la suppression de l'album, merci de réessayer."
+      }
+    },
+    "quit_album": {
+      "success": "L'album %{name} a été supprimé.",
+      "error": {
+        "generic": "Une erreur est survenue lors de la suppression de l'album, merci de réessayer."
+      }
+    }
+  },
+  "Viewer": {
+    "close": "Fermer",
+    "noviewer": {
+      "title": "La visionneuse ne sait pas encore lire ce type de fichier.",
+      "download": "Télécharger ce fichier",
+      "openWith": "Ouvrir avec..."
+    },
+    "actions": {
+      "download": "Télécharger"
+    },
+    "loading": {
+      "error": "Ce fichier n'a pas pu être chargé. Avez-vous une connexion internet qui fonctionne actuellement ?",
+      "retry": "Réessayer"
+    }
+  },
+  "destroyconfirmation": {
+    "title": "Supprimer définitivement cet album ?",
+    "cancel": "Annuler",
+    "delete": "Supprimer définitivement",
+    "forbidden": "À l'avenir, vous ne pourrez plus accéder à cet album ou à cette sélection.",
+    "eye": "Vos photos ne seront pas supprimées.",
+    "link": "Si vous l'avez partagé, personne ne va pouvoir y accéder."
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "title": "Supprimer cet élément ? |||| Supprimer ces éléments ?",
+      "trash": "Il/elle sera déplacé(e) dans la corbeille. |||| Ils/elles seront déplacé(e)s dans la corbeille.",
+      "restore": "Vous pouvez toujours le/la restaurer quand vous voulez. |||| Vous pouvez toujours les restaurer quand vous voulez.",
+      "shared": "Les gens auxquels vous l'aviez partagé-e ne pourront plus y accéder.",
+      "related": "Certaines photos sélectionnées sont liées à un album. Elles seront retirées de ce dernier si vous procédez à la suppression.",
+      "cancel": "Annuler",
+      "delete": "Supprimer"
+    }
+  },
+  "UploadQueue": {
+    "path_photos": "Photos",
+    "path_upload": "Importées depuis Cozy Photos",
+    "header": "Import de %{smart_count} photo dans votre Cozy |||| Import de %{smart_count} photos dans votre Cozy",
+    "header_mobile": "Import %{done} sur %{total}",
+    "header_done": "Importé avec succès %{done} sur un total de %{total}",
+    "close": "fermer",
+    "item": {
+      "pending": "En attente"
+    },
+    "alert": {
+      "success": "%{smart_count} photo importée avec succès. |||| %{smart_count} photos importées avec succès.",
+      "success_conflicts": "%{smart_count} photo importée et %{conflictNumber} conflit(s). |||| %{smart_count} photos importées et %{conflictNumber} conflit(s).",
+      "errors": "Des erreurs sont survenues lors de l'import des photos."
+    }
+  },
+  "quotaalert": {
+    "title": "Votre espace disque est plein :(",
+    "desc": "Veuillez supprimer des fichiers, vider votre corbeille ou augmenter votre espace de stockage avant d'importer de nouveaux fichiers.",
+    "confirm": "OK",
+    "increase": "Augmenter votre espace de stockage"
+  },
+  "button": {
+    "back": "Retour"
+  },
+  "PushBanner": {
+    "quota": {
+      "text": "Vous n'avez presque plus d'espace de stockage. Si vous atteignez la limite, vous ne pourrez plus ajouter de fichiers. Vous pouvez supprimer des fichiers, vider votre corbeille ou changer d'offre.",
+      "actions": {
+        "first": "J'ai compris",
+        "second": "Voir les offres"
+      }
+    }
+  },
+  "Backup": {
+    "header": {
+      "title": "Sauvegarder mes photos et videos"
+    },
+    "actions": {
+      "startBackup": "Sauvegarder",
+      "backupInProgress": "Sauvegarde en cours %{alreadyBackupedCount} / %{totalCount}",
+      "openInDrive": "Voir dans Drive",
+      "viewMyPhotos": "Voir mes photos sauvegardées",
+      "saved": "Sauvegardé",
+      "cancel": "Arrêter"
+    },
+    "description": {
+      "first": "Mettez vos photos & videos en sécurité en les sauvegardant directement dans votre Cozy, et retrouvez-les en cas de perte ou casse de votre smartphone !",
+      "second": "Remarque : Pour faciliter la sauvegarde, assurez-vous d'avoir une connexion internet illimitée, suffisamment de batterie, et de garder l'application ouverte."
+    },
+    "info": {
+      "analysisInProgress": "Analyse en cours",
+      "notBackedUpElements": "%{smart_count} élément à sauvegarder |||| %{smart_count} éléments à sauvegarder",
+      "pressStartBackup": "Démarrer la sauvegarde pour les mettre en sécurité dans votre Cozy.",
+      "successTitle": "Sauvegarde réussie",
+      "successDescription": "Les photos et vidéos de votre mobile ont été sauvegardées avec succès.",
+      "errorTitle": "Sauvegarde interrompue",
+      "errorDescription": "%{backedUpMediaCount}/%{smart_count} élément sauvegardé. |||| %{backedUpMediaCount}/%{smart_count} éléments sauvegardés."
+    },
+    "InstallAppAlert": {
+      "description": "Sauvegardez automatiquement toutes vos photos et vidéos depuis vos appareils mobiles",
+      "install": "Installez l'app Cozy"
+    },
+    "UpdateAppAlert": {
+      "description": "Mettez à jour votre app pour sauvegarder automatiquement toutes vos photos et vidéos"
+    },
+    "AllowPermissionsModal": {
+      "title": "Autoriser l'accès aux photos et videos",
+      "description": "Cozy a besoin de votre autorisation pour accéder aux photos et videos stockées sur votre appareil.",
+      "cancel": "Annuler",
+      "allow": "Autoriser"
+    }
+  }
+}

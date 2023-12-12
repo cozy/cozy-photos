@@ -1,0 +1,264 @@
+{
+  "Nav": {
+    "photos": "写真",
+    "albums": "アルバム",
+    "shared": "自分で共有",
+    "trash": "ゴミ箱",
+    "btn-client": "デスクトップ用 Cozy ドライブを入手",
+    "btn-client-web": "Cozy を入手",
+    "btn-client-mobile": "お使いのモバイルで Cozy ドライブを入手しましょう!",
+    "banner-txt-client": "デスクトップ用 Cozy ドライブを入手して、ファイルを安全に同期し、いつでもアクセスできるようにしましょう。",
+    "banner-btn-client": "ダウンロード",
+    "link-client": "https://cozy.io/en/download/",
+    "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
+    "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
+    "link-client-ios": "https://itunes.apple.com/us/app/cozy-drive/id1224102389?mt=8",
+    "link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
+  },
+  "empty": {
+    "timeline_photos_title": "まだ写真はありません。",
+    "albums_title": "まだアルバムはありません。",
+    "shared_album_photos_title": "このアルバムにまだ写真はありません。",
+    "shared_album_photos_text": "後でもう一度ご覧ください"
+  },
+  "Error": {
+    "albums_title": "アルバムのリストを取得中にエラーが発生しました。後でもう一度やり直してください。",
+    "album_photos_title": "アルバムの写真リストを取得中にエラーが発生しました。後でもう一度やり直してください。",
+    "timeline_photos_title": "写真リストを取得中にエラーが発生しました。後でもう一度やり直してください。",
+    "public_album_error_title": "写真リストを取得中にエラーが発生しました。後でもう一度やり直してください。",
+    "public_album_unshared_title": "申し訳ありません。このリンクはもう利用できません。",
+    "public_album_unshared_text": "1 つ失われ、10 見つかりました... または所有者を確認してください。 このファイルは失われないかもしれません。",
+    "refresh": "今すぐ更新",
+    "generic": "エラーが発生しました。もう一度やり直してください。",
+    "album_rename_abort": "アルバム名は空にできません。"
+  },
+  "Toolbar": {
+    "photo_upload": "アップロード",
+    "album_new": "新しいアルバム",
+    "album_delete": "削除",
+    "album_quit": "共有したアルバムを捨てて、削除",
+    "album_download": "ダウンロード",
+    "more": "さらに",
+    "menu": {
+      "select_items": "写真を選択",
+      "photo_upload": "写真をアップロード",
+      "rename_album": "アルバムの名前を変更",
+      "album_delete": "アルバムを削除",
+      "album_quit": "共有したアルバムを捨てて、削除",
+      "download_album": "アルバムをダウンロード",
+      "add_photos": "写真をアルバムに追加"
+    }
+  },
+  "loading": {
+    "photos_indexing": "写真は現在インデックス中です。 しばらくお待ちください。",
+    "albums_indexing": "アルバムは現在インデックス中です。 しばらくお待ちください。",
+    "photos_fetching": "読み込み中",
+    "albums_fetching": "読み込み中",
+    "photos_upload": "アップロード中"
+  },
+  "Board": {
+    "load_more": "さらに写真を読み込む",
+    "select_all": "すべて選択",
+    "unselect_all": "すべて選択解除"
+  },
+  "Alerter": {
+    "photos": {
+      "fetching_error": "写真の取得中にエラーが発生しました。",
+      "already_added_photo": "このアルバムは、すでにこの写真があります。"
+    }
+  },
+  "SelectionBar": {
+    "selected_count": "アイテム選択済 |||| アイテム選択済",
+    "delete": "削除",
+    "trash": "削除",
+    "album-add": "アルバムに追加",
+    "album-remove": "アルバムから削除",
+    "download": "ダウンロード",
+    "close": "閉じる"
+  },
+  "Share": {
+    "status": {
+      "pending": "保留",
+      "accepted": "承認済",
+      "refused": "拒否",
+      "error": "エラー",
+      "unregistered": "エラー",
+      "mail-not-sent": "エラー",
+      "revoked": "エラー"
+    },
+    "type": {
+      "one-way": "表示可能 (まもなく登場)",
+      "two-way": "変更可能"
+    },
+    "create-cozy": "自分の Cozy を作成する"
+  },
+  "Albums": {
+    "album_item_description": "%{smart_count} 枚の写真 |||| %{smart_count} 枚の写真",
+    "album_item_shared_ro": "共有 (読み取り専用)",
+    "album_item_shared_rw": "共有 (読み取り/書き込み)",
+    "load_more": "さらにアルバムを読み込む",
+    "add_photos": {
+      "title": "アルバムに追加",
+      "success": "アルバム %{name} の %{smart_count} 枚の写真が更新されました。 |||| アルバム %{name} の %{smart_count} 枚の写真が更新されました。",
+      "error": {
+        "generic": "アルバムの更新中にエラーが発生しました。もう一度やり直してください。",
+        "reference": "一部の写真がアルバムに追加されませんでした。確認してもう一度やり直してください。",
+        "response": {
+          "Forbidden": "アプリケーションはアルバムを更新する権限がありません。"
+        }
+      }
+    },
+    "share": {
+      "cta": "共有",
+      "title": "他の人と共有します",
+      "details": {
+        "title": "共有の詳細",
+        "createdAt": "日付 %{date}",
+        "ro": "読み取り専用",
+        "rw": "読み取り/書き込み"
+      },
+      "sharedByMe": "共有しました",
+      "sharedWithMe": "自分と共有",
+      "shareByLink": {
+        "subtitle": "公開リンクで",
+        "desc": "誰でも提供されたリンクであなたの写真を見たりダウンロードしたりすることができます。",
+        "fetchFailed": "接続が制限されているようです。後でもう一度やり直してください。",
+        "creating": "リンクの作成中...",
+        "copy": "リンクをコピー",
+        "copied": "リンクをクリップボードにコピーしました",
+        "failed": "クリップボードにコピーできません"
+      },
+      "shareByEmail": {
+        "title": "メールで",
+        "subtitle": "メールで",
+        "email": "メール",
+        "emailPlaceholder": "受信者のメールアドレスまたは名前を入力してください",
+        "send": "送信",
+        "genericSuccess": "%{count} 人の連絡先に招待状を送信しました。",
+        "success": "%{email} に招待状を送信しました。",
+        "comingsoon": "まもなく登場します! 家族や友人、さらには同僚とでもワンクリックで文書や写真を共有できます。 心配しないで、準備ができたらお知らせします!"
+      },
+      "unshare": {
+        "title": "アルバムから削除",
+        "success": "この共有済アルバムを %{email} から削除しました。"
+      },
+      "sharingLink": {
+        "title": "共有するリンク",
+        "copy": "コピー",
+        "copied": "コピーしました"
+      },
+      "whoHasAccess": {
+        "title": "アクセス許可をもつ人"
+      },
+      "protectedShare": {
+        "title": "まもなく登場!",
+        "desc": "家族や友達とメールで何でも共有できます!"
+      },
+      "close": "閉じる",
+      "gettingLink": "リンクの取得中...",
+      "error": {
+        "generic": "アルバム共有リンクの作成中にエラーが発生しました。もう一度やり直してください。",
+        "revoke": "アルバムの共有リンクを削除する際にエラーが発生しました。もう一度やり直してください。"
+      }
+    },
+    "create": {
+      "panel_form": {
+        "label": "新しいアルバムに名前を追加",
+        "placeholder": "無題のアルバム",
+        "cancel": "キャンセル",
+        "submit": "新しいアルバムを作成",
+        "update": "写真をアルバムに追加"
+      },
+      "inline_form": {
+        "placeholder": "新しいアルバム名",
+        "create_label": "新しいアルバムを作成",
+        "create_button": "作成"
+      },
+      "success": "アルバム %{name} が %{smart_count} 枚の写真で作成されました。 |||| アルバム %{name} が %{smart_count} 枚の写真で作成されました。",
+      "error": {
+        "generic": "アルバムの作成中にエラーが発生しました。もう一度やり直してください。",
+        "already_exists": "アルバム %{name} はすでに存在します。別の名前を選んでください。",
+        "name_missing": "アルバムに名前をつける必要があります。"
+      }
+    },
+    "fetchAlbums": {
+      "error": {
+        "index_missing": "アルバムを取得するために、アルバムのインデックスを作成する必要があります。"
+      }
+    },
+    "remove_photos": {
+      "success": "アルバム %{album_name} から写真が削除されました。",
+      "error": {
+        "generic": "写真の削除中にエラーが発生しました。もう一度やり直してください。"
+      }
+    },
+    "remove_album": {
+      "success": "アルバム %{name} が削除されました。",
+      "error": {
+        "generic": "アルバムの削除中にエラーが発生しました。もう一度やり直してください。"
+      }
+    },
+    "quit_album": {
+      "success": "アルバム %{name} が削除されました。",
+      "error": {
+        "generic": "アルバムを捨てる際にエラーが発生しました。もう一度やり直してください。"
+      }
+    }
+  },
+  "Viewer": {
+    "close": "閉じる",
+    "noviewer": {
+      "title": "ビューアーは、この形式のファイルを読み込む方法がわかりません。",
+      "download": "このファイルをダウンロード",
+      "openWith": "...で開く"
+    },
+    "actions": {
+      "download": "ダウンロード"
+    },
+    "loading": {
+      "error": "このファイルを読み込めませんでした。 現在、インターネットに接続していますか?",
+      "retry": "再試行"
+    }
+  },
+  "destroyconfirmation": {
+    "title": "このアルバムを完全に削除しますか?",
+    "cancel": "キャンセル",
+    "delete": "完全に削除",
+    "forbidden": "このアルバムや選択肢にはもうアクセスできません。",
+    "eye": "写真は削除されません。",
+    "link": "それを共有していた場合、人々がアクセスできなくなります。"
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "title": "この要素を削除しますか? |||| これらの要素を削除しますか?",
+      "trash": "ゴミ箱に移動します。 |||| ゴミ箱に移動します。",
+      "restore": "希望した時に元に戻すことができます。 |||| 希望した時に元に戻すことができます。",
+      "shared": "それを共有していた場合、人々がアクセスできなくなります。 |||| それらを共有していた場合、人々がアクセスできなくなります。",
+      "related": "選択範囲内の写真の一部がアルバムに関連しています。 それらをゴミ箱に移動すると、削除されます。",
+      "cancel": "キャンセル",
+      "delete": "削除"
+    }
+  },
+  "UploadQueue": {
+    "path_photos": "Photos",
+    "path_upload": "Cozy フォトからアップロード",
+    "header": "%{smart_count} 枚の写真を Cozy フォトにアップロード中 |||| %{smart_count} 枚の写真を Cozy フォトにアップロード中",
+    "header_mobile": "アップロード中 %{done} / %{total}",
+    "header_done": "%{done} / %{total} 正常にアップロードしました",
+    "close": "閉じる",
+    "item": {
+      "pending": "保留"
+    },
+    "alert": {
+      "success": "%{smart_count} 枚の写真をアップロードしました。 |||| %{smart_count} 枚の写真をアップロードしました。",
+      "success_conflicts": "%{smart_count} 枚の写真のアップロードで %{conflictNumber} の競合がありました。 |||| %{smart_count} 枚の写真のアップロードで %{conflictNumber} の競合がありました。",
+      "errors": "写真のアップロード中にエラーが発生しました。"
+    }
+  },
+  "quotaalert": {
+    "title": "ディスク容量がいっぱいです :(",
+    "desc": "ファイルを再度アップロードする前に、ファイルを削除するか、ゴミ箱を空にするか、ディスク容量を増やしてください。",
+    "confirm": "OK",
+    "increase": "ディスク容量を増やす"
+  }
+}

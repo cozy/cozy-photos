@@ -1,0 +1,233 @@
+{
+  "Nav": {
+    "photos": "Zdjęcia",
+    "albums": "Albumy",
+    "shared": "Udostępniane przeze mnie",
+    "trash": "Kosz",
+    "btn-client-web": "Pobierz Cozy",
+    "btn-client-mobile": "Pobierz Cozy Drive na Twoje urządzenie mobilne!",
+    "link-client": "https://cozy.io/en/download/",
+    "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
+    "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
+    "link-client-ios": "https://itunes.apple.com/us/app/cozy-drive/id1224102389?mt=8",
+    "link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
+  },
+  "empty": {
+    "timeline_photos_title": "Nie masz jeszcze żadnych zdjęć.",
+    "albums_title": "Nie masz jeszcze żadnego albumu.",
+    "shared_album_photos_title": "Nie ma jeszcze zdjęć w tym albumie.",
+    "shared_album_photos_text": "Wróć później"
+  },
+  "Error": {
+    "albums_title": "Wystąpił błąd podczas wczytywania listy albumów. Proszę spróbuj później.",
+    "album_photos_title": "Wystąpił błąd podczas wczytywania listy zdjęć z albumu. Proszę spróbuj później.",
+    "timeline_photos_title": "Wystąpił błąd podczas wczytywania listy zdjęć. Proszę spróbuj później.",
+    "public_album_error_title": "Wystąpił błąd podczas wczytywania listy zdjęć. Proszę spróbuj później.",
+    "public_album_unshared_title": "Niestety ten link nie jest już dostępny.",
+    "public_album_unshared_text": "Zgubione, znalezione... poproś właściciela o pomoc. Być może plik nie jest utracony.",
+    "refresh": "Odśwież teraz",
+    "generic": "Wystąpił błąd, proszę spróbuj za chwilę.",
+    "album_rename_abort": "Nazwa albumu nie może być pusta."
+  },
+  "Toolbar": {
+    "photo_upload": "Wgraj",
+    "album_new": "Nowy album",
+    "album_delete": "Usuń",
+    "album_quit": "Opuść i usuń udostępniony album",
+    "album_download": "Pobierz",
+    "more": "Więcej",
+    "menu": {
+      "select_items": "Wybierz zdjęcia",
+      "photo_upload": "Wgraj zdjęcia",
+      "rename_album": "Zmień nazwę albumu",
+      "album_delete": "Usuń album",
+      "album_quit": "Opuść i usuń udostępniony album",
+      "download_album": "Pobierz album",
+      "add_photos": "Dodaj zdjęcia do albumu"
+    }
+  },
+  "Board": {
+    "load_more": "Załaduj więcej zdjęć",
+    "select_all": "Zaznacz wszystko",
+    "unselect_all": "Odznacz wszystko"
+  },
+  "Alerter": {
+    "photos": {
+      "fetching_error": "Wystąpił błąd podczas pobierania zdjęć.",
+      "already_added_photo": "Ten album już zawiera to zdjęcie."
+    }
+  },
+  "SelectionBar": {
+    "selected_count": "wybrany element |||| wybrane elementy",
+    "delete": "Usuń",
+    "album-add": "Dodaj do albumu",
+    "album-remove": "Usuń z albumu",
+    "download": "Pobierz",
+    "close": "Zamknij"
+  },
+  "Share": {
+    "status": {
+      "pending": "Oczekujące",
+      "accepted": "Zaakceptowane",
+      "refused": "Odrzucone",
+      "error": "Błąd",
+      "unregistered": "Błąd",
+      "mail-not-sent": "Błąd",
+      "revoked": "Błąd"
+    },
+    "type": {
+      "one-way": "Może oglądać (dostępne wkrótce)",
+      "two-way": "Może zmieniać"
+    }
+  },
+  "Albums": {
+    "album_item_description": "%{smart_count} zdjęcie |||| %{smart_count} zdjęcia",
+    "album_item_shared_ro": "Udostępnione (tylko do odczytu)",
+    "album_item_shared_rw": "Udostępnione (do odczytu i zapisu)",
+    "add_photos": {
+      "title": "Dodaj do albumu",
+      "success": "Do albumu %{name} zostało dodane %{smart_count} zdjęcie. |||| Do albumu %{name} zostały dodane %{smart_count} zdjęcia.",
+      "error": {
+        "generic": "Wystąpił błąd podczas aktualizacji albumu, spróbuj raz jeszcze.",
+        "reference": "Niektóre zdjęcia nie zostały dodane do albumu. Sprawdź to i spróbuj ponownie.",
+        "response": {
+          "Forbidden": "Aplikacja nie ma uprawnień do aktualizacji albumów."
+        }
+      }
+    },
+    "share": {
+      "cta": "Udostępnij",
+      "title": "Udostępnij innym",
+      "details": {
+        "title": "Szczegóły udostępnienia",
+        "createdAt": "Dnia %{date}",
+        "ro": "Tylko do odczytu",
+        "rw": "Odczyt / zapis"
+      },
+      "sharedByMe": "Udostępnione",
+      "sharedWithMe": "Udostępnione dla mnie",
+      "shareByLink": {
+        "desc": "Każdy posiadający ten link może zobaczyć i pobrać Twoje zdjęcia."
+      },
+      "shareByEmail": {
+        "title": "E-mailem",
+        "email": "email",
+        "send": "Wyślij",
+        "genericSuccess": "Wysłałeś zaproszenie do %{count} kontaktów.",
+        "success": "Wysłałeś zaproszenie na adres %{email}.",
+        "comingsoon": "Dostępne wkrótce! Będziesz mógł udostępniać dokumenty i zdjęcia jednym kliknięciem swojej rodzinie, przyjaciołom lub współpracownikom. Nie martw się, poinformujemy Cię kiedy ta funkcja będzie dostępna."
+      },
+      "unshare": {
+        "title": "Usuń z albumu",
+        "success": "Usunąłeś ten udostępniony Ci album przez %{email}."
+      },
+      "sharingLink": {
+        "title": "Link do zasobu",
+        "copy": "Kopiuj",
+        "copied": "Skopiowane"
+      },
+      "whoHasAccess": {
+        "title": "Kto ma dostęp"
+      },
+      "protectedShare": {
+        "title": "Dostępne wkrótce!",
+        "desc": "Udostępniaj wszystko mailem rodzinie i przyjaciołom!"
+      },
+      "close": "Zamknij",
+      "gettingLink": "Pobieranie Twojego linku...",
+      "error": {
+        "generic": "Wystąpił błąd podczas tworzenia linku udostępnienia, proszę spróbuj ponownie."
+      }
+    },
+    "create": {
+      "panel_form": {
+        "label": "Podaj nazwę swojego nowego albumu.",
+        "placeholder": "Niezatytułowany album",
+        "cancel": "Anuluj",
+        "submit": "Stwórz nowy album",
+        "update": "Dodaj zdjęcia do albumu"
+      },
+      "inline_form": {
+        "placeholder": "Nazwa nowego albumu",
+        "create_label": "Utwórz nowy album",
+        "create_button": "Utwórz"
+      },
+      "success": "Utworzono album %{name} zawierający %{smart_count} zdjęcie. |||| Utworzono album %{name} zawierający %{smart_count} zdjęcia.",
+      "error": {
+        "generic": "Wystąpił błąd podczas tworzenia albumu, spróbuj ponownie.",
+        "already_exists": "Album %{name} już istnieje, wybierz inną nazwę.",
+        "name_missing": "Musisz nadać nazwę dla Twojego albumu."
+      }
+    },
+    "fetchAlbums": {
+      "error": {
+        "index_missing": "Indeksy albumów muszą być podane aby można było je połączyć."
+      }
+    },
+    "remove_photos": {
+      "success": "Zdjęcie zostało usunięte z albumu %{album_name}",
+      "error": {
+        "generic": "Wystąpił błąd podczas usuwania zdjęcia, spróbuj ponownie."
+      }
+    },
+    "remove_album": {
+      "success": "Album %{album_name} został usunięty.",
+      "error": {
+        "generic": "Wystąpił błąd podczas usuwania albumu, spróbuj ponownie."
+      }
+    },
+    "quit_album": {
+      "success": "Album %{album_name} został usunięty.",
+      "error": {
+        "generic": "Wystąpił błąd podczas opuszczania albumu, spróbuj ponownie."
+      }
+    }
+  },
+  "Viewer": {
+    "close": "Zamknij",
+    "noviewer": {
+      "title": "Przeglądarka nie potrafi jeszcze wyświetlać plików tego typu.",
+      "download": "Pobierz ten plik",
+      "openWith": "Otwórz używając..."
+    },
+    "actions": {
+      "download": "Pobrane"
+    },
+    "loading": {
+      "error": "Plik nie może zostać załadowany. Czy nie występują problemy z Twoim łączem internetowym?",
+      "retry": "Spróbuj ponownie"
+    }
+  },
+  "destroyconfirmation": {
+    "title": "Czy trwale usunąć ten album?",
+    "cancel": "Anuluj",
+    "delete": "Usuń trwale",
+    "forbidden": "Nie będziesz miał już dostępu do tego albumu lub sekcji.",
+    "eye": "Twoje zdjęcia nie zostaną usunięte",
+    "link": "Jeżeli go udostępniałeś, inni także nie będą mieli do niego dostępu."
+  },
+  "timeline": {
+    "DeleteConfirm": {
+      "title": "Usunąć ten element? |||| Usunąć te elementy?",
+      "trash": "Będzie przeniesiony do Kosza. |||| Będą przeniesione do Kosza.",
+      "restore": "W dalszym ciągu możesz go przywrócić kiedy chcesz. |||| W dalszym ciągu możesz je przywrócić kiedy chcesz.",
+      "shared": "Jeżeli go udostępniałeś, inni także nie będą mieli do niego dostępu. |||| Jeżeli go udostępniałeś, inni także nie będą mieli do nich dostępu.",
+      "related": "Niektóre zdjęcia z tej sekcji są powiązane z albumem. Będą usunięte jeżeli zdecydujesz się kontynuować.",
+      "cancel": "Anuluj",
+      "delete": "Usuń"
+    }
+  },
+  "UploadQueue": {
+    "header": "Wgrywanie %{smart_count} zdjęcia na Cozy Photos |||| Wgrywanie %{smart_count} zdjęć na Cozy Photos",
+    "header_done": "Wgrywanie %{done} z %{total} zakończone pomyślnie",
+    "close": "zamknij",
+    "item": {
+      "pending": "Oczekujące"
+    },
+    "alert": {
+      "success": "%{smart_count} zdjęcie wgranie pomyślnie. |||| %{smart_count} zdjęcia wgrane pomyślnie.",
+      "success_conflicts": "%{smart_count} zdjęcie spowodowało %{conflictNumber} konflikt(y). |||| %{smart_count} zdjęcia spowodowały %{conflictNumber} konflikt(y).",
+      "errors": "Wystąpił błąd podczas wgrywania zdjęć."
+    }
+  }
+}

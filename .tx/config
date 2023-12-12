@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[o:cozy:p:cozy-photos-v3:r:global]
+[o:cozy:p:cozy-photos:r:0d0fac82ee54fe2e2802b8924cb83ba3]
 file_filter = src/photos/locales/<lang>.json
 source_file = src/photos/locales/en.json
 source_lang = en

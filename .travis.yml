@@ -16,8 +16,6 @@ env:
     - secure: "U6H8M/733c/b0z9q6wMdX7XdkS4PTrqKg1byN7tkowsmbJ+SNv8MI4K/l8fPzJuy5gl0nBe02X69+y3j6Cm5NajzarDt0E7QtlfdR6YfRowCjt2n3sYLak9F2cPdDw1H29j2U1DG/G275KtRV3ble44LMbHOa8pQB1az+iqcDGlLATjT2AH5vmDC3F1EYJzOwHuNNQGPl+bgIJvfdF1TAv25QdEP2tiEmhBZnNLkonMnv8xdoUxjXkjRjlpYfzrOeTJPISbs9I/PrBx3NnTukrGpkqQKZsMlA05qovVZ451/fpL2X7VIR9WxRfOnjebwiTlArRNkb3kPbCEOLBKAfhWVCyZBFTh3INMIdDPt4ByAitEmC3dPrFDlgzpHb2qj5QqY+6FywbvkZs9F2tq6zRyaC5RzHgqbiGt89pwlPnN0HF0ZARmhk102z76ndBPnkCsIGJVP9OYStu7IgJqeiswDOrObOoBiEEOmBHst/D9sLogzrj219ESPFFVrJ/UZYs3iKmGgiPk72o2XxyqU/O/R7gaeXs/rmjAIfEZPFmLIOjKzrpIQSYYKnFYhwW45wMjSP68wvF/g6Yc/M8AhvyFh4pHltTG289m51kCA+OlKVVJUn2KW2GBrcwty1RFfzIVjljecPkVpWIC1EZnTmuDO5SalVLTPz91TkapVS4A="
     # GITHUB_TOKEN for yarn deploy script
     - secure: "ehPYnxOj7SegMePl8XXxQBxoBSh+UWKQQitwVNEy9dnKAsYgNEcb0XfG1uLy1v596NcyifVjxEDs93aDF4kZT/0AWH67re7XZpqCyy+wJt7oMJ6YKPoCLR9Zs1VG2jD/OTmkT4zT7VzAqUGkhyz6k+tYwFazeWXPqAfbyA7Q2fa7etzzi0A/oruKKD3Gof2AMGiYOKhTmCwdBbcFEsBNkgc+nzEh/lH9iEL/b86EXS5VKHpDAEsJI0+Z2gY8vX8MBRk5sHlsKaf9F1KTUGZHCEXZ9nrMe3+0nGXSzNydK2Tf3He2zLqXSwZjp74u1ZW5EzF5zzQPp5irnip6pk3dZkaAO56mHoY24cmcX+BvxzJSeLapnnuRYWQKyexOp0sFFUsMBvoURH8prxXS17jxu4whCMAUH4XSf2Yvf0P1GhIV9JIZzdxxJkIgIBmcAcjYvDqBHqfBk2p44TRtBnUcE56WUDWeFLVqPbBldma80aJgdQ3/ShkDmkecsxHxMapACFR4jnFAR9kYUtP1sQbdO/MyhBf9bmHiqRiAjjHOiKLBIvHTM/BrR3kO6fv1xTx6INYyfJSwg5uhqdyGPFlNaWG5CiEJx80giP3n7hIjQ3kVpwx5Dh02bmhZ3I6GMUo/OkFM11FBnx84RgRG/tt3VVIpmQsuYjQBZ/Rzs3UBZQo="
-    # TX_TOKEN
-    - secure: MUD/mY/nkwfRcZ6sE3Vp+vXspCgx6wjGMSmpgQCsJr+rfwsJnqukrY/NzlnzQAbh57cuJHDC6aXsQv156GneJkXf7/IQNgla20UnWs07xN2zHosRReTROqYy4vPdcRa2kZ1CZgXXQWWvkrhd//6KKjyHa3Bv0TlkD4EK19gffP8Nw/lmvZpvwrwmBl986QcyCTYE/5HS01dkWr4yvUKAQCPYeEySuDF9ISZ0qV2V1jdaJ2Hc0BZaGdYpYWctQCSwV6r7E+1r2OkeuWk1Zgs1zads89UHywy0dabfMxYDZhvm5EZ8OjZ2Sxb32mSxuy1jB61kqkFgvFNzu0BamCWf73zm1Z9qfjd3mlVd1cR+c2EkXIIMEW3o4ai+vzyBNNDFuICg7nuVeLE1F9a6w9qOGfwKF0zSyjwyIjLfGSClOqMv9IfVSFovPt1Gu4EgeOtATSRQQje3BUrqWe7HfaqeRegtWKReFWFNCgRBJ+ER05M1cGXOLYLjYMLEdOhvqqXv66bme7zTt6bf++Qpt98U8n8iwHiu4jHJ78kwP9MrNloAe6piwtX/2H9dPZ9Vebx9ZU0ytfndadXHDPeX7r4y/U1kbQ0J1ZQYl85iEB91+bkyY2JYFmr/qCuEGOT6Bz2A208RHAZ325kJh4uFkf4rNPZWnmPcht7frSbjLOBfphI=
 stages:
   - prebuild
   - build
@@ -36,19 +34,13 @@ jobs:
       script: yarn test
     - name: 'Build app'
       stage: 'build'
-      script:
-        - echo 'pull langages' && echo -en 'travis_fold:start:txpull\\r'
-        - yarn tx
-        - echo -en 'travis_fold:end:txpull\\r'
-        - echo 'build' && echo -en 'travis_fold:start:build\\r'
-        - yarn build
-        - echo -en 'travis_fold:end:build\\r'
       before_script:
-        - yarn run cozy-ci-transifex
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && openssl aes-256-cbc -K $encrypted_497d1a9dc404_key -iv $encrypted_497d1a9dc404_iv -in id_rsa_downcloud_photos.enc -out id_rsa_downcloud_photos -d'
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && eval "$(ssh-agent -s)"'
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && chmod 600 id_rsa_downcloud_photos'
         - '[ "$TRAVIS_SECURE_ENV_VARS" != "false" ] && ssh-add id_rsa_downcloud_photos'
+      script:
+        - yarn build
       before_deploy:
         - yarn add cozy-app-publish # to be sure to have the last version before deploy
       deploy:
