@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Icon from 'cozy-ui/transpiled/react/Icon'
@@ -11,6 +11,23 @@ import { useBackupActions } from '../hooks/useBackupActions'
 import { useBackupData } from '../hooks/useBackupData'
 import OpenBackupButton from 'photos/ducks/backup/components/OpenBackupButton'
 
+const DisabledLoadingBackupButton = () => {
+  const { t } = useI18n()
+
+  return (
+    <div className="u-mt-1-half u-flex u-flex-column u-flex-justify-center">
+      <Button
+        label={t('Backup.actions.startBackup')}
+        variant="primary"
+        disabled
+        startIcon={
+          <Icon icon={SpinnerIcon} spin aria-hidden focusable="false" />
+        }
+      />
+    </div>
+  )
+}
+
 const BackupActions = () => {
   const { t } = useI18n()
 
@@ -22,6 +39,14 @@ const BackupActions = () => {
     stopBackup,
     requestBackupPermissions
   } = useBackupActions()
+
+  const [statusToIgnore, setStatusToIgnore] = useState('')
+
+  useEffect(() => {
+    if (backupInfo?.currentBackup?.status !== statusToIgnore) {
+      setStatusToIgnore('')
+    }
+  }, [backupInfo?.currentBackup?.status, statusToIgnore])
 
   if (!backupPermissions) return null
 
@@ -82,17 +107,22 @@ const BackupActions = () => {
           <OpenBackupButton />
         </div>
       )
-    } else {
+    } else if (mediasToBackupCount > 0 && status !== statusToIgnore) {
       return (
         <div className="u-mt-1-half u-flex u-flex-justify-center">
           <Button
             label={t('Backup.actions.startBackup')}
             variant="primary"
-            onClick={startBackup}
+            onClick={() => {
+              startBackup()
+              setStatusToIgnore(status)
+            }}
             startIcon={<Icon icon={SyncIcon} />}
           />
         </div>
       )
+    } else {
+      return <DisabledLoadingBackupButton />
     }
   } else {
     return (
