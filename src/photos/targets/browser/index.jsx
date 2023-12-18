@@ -18,7 +18,7 @@ import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import SharingProvider from 'cozy-sharing'
 import { WebviewIntentProvider } from 'cozy-intent'
 
-import { DOCTYPE_ALBUMS } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 
 import PushBannerProvider from 'components/PushBanner/PushBannerProvider'
 import appReducers from 'photos/reducers'

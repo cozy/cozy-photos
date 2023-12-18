@@ -1,5 +1,5 @@
 import log from 'cozy-logger'
-import { DOCTYPE_ALBUMS } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 import uniq from 'lodash/uniq'
 import { Q } from 'cozy-client'
 

@@ -3,7 +3,7 @@ import log from 'cozy-logger'
 import pLimit from 'p-limit'
 
 import { buildPhotosTrashedWithReferencedBy } from 'photos/queries/queries'
-import { DOCTYPE_ALBUMS, DOCTYPE_FILES } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS, DOCTYPE_FILES } from 'lib/doctypes'
 
 const onPhotoTrashed = async client => {
   const photosTrashedQuery = buildPhotosTrashedWithReferencedBy()

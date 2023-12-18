@@ -1,6 +1,6 @@
 import log from 'cozy-logger'
 import { Q } from 'cozy-client'
-import { DOCTYPE_PHOTOS_SETTINGS } from 'drive/lib/doctypes'
+import { DOCTYPE_PHOTOS_SETTINGS } from 'lib/doctypes'
 import {
   SETTING_TYPE,
   DEFAULT_SETTING,

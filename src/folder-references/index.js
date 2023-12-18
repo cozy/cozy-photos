@@ -1,4 +1,4 @@
-import { DOCTYPE_APPS, DOCTYPE_FILES } from 'drive/lib/doctypes'
+import { DOCTYPE_APPS, DOCTYPE_FILES } from 'lib/doctypes'
 
 export const REF_PHOTOS = `${DOCTYPE_APPS}/photos`
 export const REF_UPLOAD = `${DOCTYPE_APPS}/photos/upload`

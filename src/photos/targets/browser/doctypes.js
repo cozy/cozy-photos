@@ -1,4 +1,4 @@
-import { DOCTYPE_ALBUMS, DOCTYPE_FILES } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS, DOCTYPE_FILES } from 'lib/doctypes'
 import { Contact } from 'cozy-doctypes'
 
 import { QueryDefinition, HasMany } from 'cozy-client'

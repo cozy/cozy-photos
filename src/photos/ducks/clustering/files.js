@@ -1,5 +1,5 @@
 import log from 'cozy-logger'
-import { DOCTYPE_FILES, DOCTYPE_ALBUMS } from 'drive/lib/doctypes'
+import { DOCTYPE_FILES, DOCTYPE_ALBUMS } from 'lib/doctypes'
 import { Q } from 'cozy-client'
 
 export const getFilesFromDate = async (client, date, { limit = 0 } = {}) => {
