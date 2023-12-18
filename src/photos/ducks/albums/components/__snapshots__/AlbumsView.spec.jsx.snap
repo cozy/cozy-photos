@@ -15,7 +15,7 @@ exports[`AlbumsView displays an empty Component 1`] = `
         class="pho-content-title"
         data-testid="pho-content-title"
       >
-        Nav.albums
+        Albums
       </h2>
       <div
         class="pho-toolbar"
@@ -42,7 +42,7 @@ exports[`AlbumsView displays an empty Component 1`] = `
               />
             </svg>
             <span>
-              Toolbar.album_new
+              New album
             </span>
           </span>
         </a>
@@ -90,12 +90,12 @@ exports[`AlbumsView displays an empty Component 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-h3 MuiTypography-colorTextPrimary MuiTypography-gutterBottom"
       >
-        empty.albums_title
+        You don't have any album yet.
       </h3>
       <p
         class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
       >
-        empty.albums_text
+        Click on "New album" to create your first album.
       </p>
       <div
         class="styles__c-empty-text___3HnvR"
