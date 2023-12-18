@@ -5,6 +5,7 @@ import { isFlagshipApp } from 'cozy-device-helper'
 import I18n from 'cozy-ui/transpiled/react/providers/I18n'
 import flag from 'cozy-flags'
 import { useInstanceInfo } from 'cozy-client'
+import { useWebviewIntent } from 'cozy-intent'
 
 import QuotaBanner from './QuotaBanner'
 import { usePushBannerContext } from './PushBannerProvider'
@@ -24,6 +25,10 @@ jest.mock('cozy-client', () => ({
     isLoaded: true
   }))
 }))
+jest.mock('cozy-intent', () => ({
+  ...jest.requireActual('cozy-intent'),
+  useWebviewIntent: jest.fn()
+}))
 
 describe('QuotaBanner', () => {
   const dismissSpy = jest.fn()
@@ -37,7 +42,8 @@ describe('QuotaBanner', () => {
     enablePremiumLinks = false,
     hasUuid = false,
     isFlagshipApp: isFlagshipAppReturnValue = false,
-    isIapEnabled = null
+    isIapEnabled = null,
+    isIapAvailable = null
   } = {}) => {
     usePushBannerContext.mockReturnValue({
       dismissPushBanner: dismissSpy
@@ -61,6 +67,10 @@ describe('QuotaBanner', () => {
 
     isFlagshipApp.mockReturnValue(isFlagshipAppReturnValue)
     flag.mockReturnValue(isIapEnabled)
+    const mockCall = jest.fn().mockResolvedValue(isIapAvailable)
+    useWebviewIntent.mockReturnValue({
+      call: mockCall
+    })
 
     render(
       <I18n lang="en" dictRequire={() => en}>
@@ -112,27 +122,44 @@ describe('QuotaBanner', () => {
     expect(premiumButton).toBeNull()
   })
 
-  it('should hide premium link when is on flagship application and flag flagship.iap.enabled is false', () => {
+  it('should hide premium link when the flagship app has not IAP available with the flag flagship.iap.enabled is false', () => {
     setup({
       hasUuid: true,
       enablePremiumLinks: true,
       isFlagshipApp: true,
-      isIapEnabled: false
+      isIapEnabled: false,
+      isIapAvailable: false
     })
 
     const premiumButton = screen.queryByText('Check our plans')
     expect(premiumButton).toBeNull()
   })
 
-  it('should display premium link  when is on flagship application and flag flagship.iap.enabled is true', () => {
+  it('should hide premium link when the flagship app has not IAP available with the flag flagship.iap.enabled is true', () => {
     setup({
       hasUuid: true,
       enablePremiumLinks: true,
       isFlagshipApp: true,
-      isIapEnabled: true
+      isIapEnabled: true,
+      isIapAvailable: false
     })
 
-    fireEvent.click(screen.getByText('Check our plans'))
+    const premiumButton = screen.queryByText('Check our plans')
+    expect(premiumButton).toBeNull()
+  })
+
+  it('should display premium link when the flagship app has IAP available with the flag flagship.iap.enabled is true', async () => {
+    setup({
+      hasUuid: true,
+      enablePremiumLinks: true,
+      isFlagshipApp: true,
+      isIapEnabled: true,
+      isIapAvailable: true
+    })
+
+    const actionButton = await screen.findByText('Check our plans')
+
+    fireEvent.click(actionButton)
     expect(openSpy).toBeCalledWith(
       'http://mycozy.cloud/cozy/instances/123/premium',
       '_self'
