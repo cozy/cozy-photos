@@ -26,7 +26,7 @@ import AppRouter from 'photos/components/AppRouter'
 import StyledApp from 'photos/components/StyledApp'
 import memoize from 'lodash/memoize'
 
-import { configureReporter, setCozyUrl } from 'drive/lib/reporter'
+import { configureReporter, setCozyUrl } from 'lib/reporter'
 import appMetadata from 'photos/appMetadata'
 import doctypes from './doctypes'
 import cozyBar from 'lib/cozyBar'
