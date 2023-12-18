@@ -26,7 +26,7 @@ import App from './App'
 import { AlbumPhotosViewer } from 'photos/components/PhotosViewer'
 import StyledApp from 'photos/components/StyledApp'
 
-import { configureReporter, setCozyUrl } from 'drive/lib/reporter'
+import { configureReporter, setCozyUrl } from 'lib/reporter'
 import { WebviewIntentProvider } from 'cozy-intent'
 import cozyBar from 'lib/cozyBar'
 
