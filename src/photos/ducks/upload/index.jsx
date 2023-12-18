@@ -6,7 +6,7 @@ import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
 
 import UploadQueue from './UploadQueue'
 import { showModal } from 'react-cozy-helpers'
-import QuotaAlert from 'drive/web/modules/upload/QuotaAlert'
+import QuotaAlert from 'components/QuotaAlert'
 
 export { UploadQueue }
 
