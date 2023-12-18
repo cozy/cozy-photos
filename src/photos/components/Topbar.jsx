@@ -7,7 +7,7 @@ import { withClient } from 'cozy-client'
 import PropTypes from 'prop-types'
 import flow from 'lodash/flow'
 import SharingProvider from 'cozy-sharing'
-import { DOCTYPE_ALBUMS } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 import { BarCenter, BarRight, BarLeft } from 'components/Bar'

@@ -1,6 +1,6 @@
 import { Q, fetchPolicies } from 'cozy-client'
 
-import { DOCTYPE_ALBUMS, DOCTYPE_FILES } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS, DOCTYPE_FILES } from 'lib/doctypes'
 
 const older30s = 30 * 1000
 

@@ -1,4 +1,4 @@
-import { DOCTYPE_ALBUMS } from 'drive/lib/doctypes'
+import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 import { DAY_DURATION_IN_MS } from './consts'
 import get from 'lodash/get'
 import log from 'cozy-logger'
