@@ -8,7 +8,7 @@ import { useInstanceInfo } from 'cozy-client'
 
 import QuotaBanner from './QuotaBanner'
 import { usePushBannerContext } from './PushBannerProvider'
-import en from 'drive/locales/en.json'
+import en from 'photos/locales/en.json'
 
 jest.mock('./PushBannerProvider', () => ({
   usePushBannerContext: jest.fn()
