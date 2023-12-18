@@ -3,9 +3,9 @@
   "version": "1.64.0",
   "main": "src/main.jsx",
   "scripts": {
-    "build": "COZY_APP_SLUG=photos cozy-scripts build --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
-    "watch": "COZY_APP_SLUG=photos cozy-scripts watch --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
-    "start": "COZY_APP_SLUG=photos cozy-scripts start --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
+    "build": "cozy-scripts build --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
+    "watch": "cozy-scripts watch --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
+    "start": "cozy-scripts start --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
     "deploy": "cozy-app-publish --token $REGISTRY_TOKEN --build-dir 'build/photos/' --prepublish downcloud --postpublish mattermost",
     "tx": "tx pull --all || true",
     "lint": "npm-run-all --parallel 'lint:*'",

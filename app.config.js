@@ -1,6 +1,5 @@
 const path = require('path')
 const { DefinePlugin } = require('webpack')
-const { target } = require('cozy-scripts/config/webpack.vars')
 const pkg = require(path.resolve(__dirname, './package.json'))
 
 const SRC_DIR = path.resolve(__dirname, './src')
@@ -14,20 +13,7 @@ configurationFiles.push(
   require('cozy-scripts/config/webpack.config.css-modules')
 )
 
-const isDrive = process.env.COZY_APP_SLUG === 'drive'
-const isPhotos = process.env.COZY_APP_SLUG === 'photos'
-
-if (isDrive) configurationFiles.push(require('./webpack/drive.config.js'))
-
-if (isDrive && target === 'browser') {
-  configurationFiles.push(require('./webpack/assets.config.js'))
-}
-
-if (isDrive && target === 'mobile')
-  configurationFiles.push(require('./webpack/mobile.config.js'))
-
-if (target !== 'mobile')
-  configurationFiles.push(require('./webpack/appicon.config.js'))
+configurationFiles.push(require('./webpack/appicon.config.js'))
 
 const extraConfig = {
   module: {
@@ -65,11 +51,7 @@ const extraConfig = {
 }
 configurationFiles.push(extraConfig)
 
-if (
-  isPhotos &&
-  configurationFiles[0].multiple &&
-  configurationFiles[0].multiple.services
-) {
+if (configurationFiles[0].multiple && configurationFiles[0].multiple.services) {
   // FIXME: Will be handled correctly by next major version of cozy-scripts
   configurationFiles[0].multiple.services.__mergeStrategy.strategy[
     'resolve.modules'
