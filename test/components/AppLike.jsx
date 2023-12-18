@@ -7,15 +7,9 @@ import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 import { SharingContext } from 'cozy-sharing'
 
-import { ThumbnailSizeContextProvider } from 'drive/lib/ThumbnailSizeContext'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
-import { ModalContext } from 'drive/lib/ModalContext'
 import { HashRouter } from 'react-router-dom'
-import { AcceptingSharingProvider } from 'drive/lib/AcceptingSharingContext'
-import FabProvider from 'drive/lib/FabProvider'
 import PushBannerProvider from 'components/PushBanner/PushBannerProvider'
-import { SelectionProvider } from 'drive/web/modules/selection/SelectionProvider'
-import driveEnLocale from 'drive/locales/en.json'
 import photoEnLocale from 'photos/locales/en.json'
 
 const mockStore = createStore(() => ({
@@ -39,17 +33,11 @@ const mockSharingContextValue = {
   getSharingLink: jest.fn()
 }
 
-const mockModalContextValue = {
-  pushModal: jest.fn(),
-  modalStack: []
-}
-
 const AppLike = ({
   children,
   store,
   client,
   sharingContextValue,
-  modalContextValue,
   enLocale
 }) => (
   <CozyTheme>
@@ -59,23 +47,11 @@ const AppLike = ({
           <SharingContext.Provider
             value={sharingContextValue || mockSharingContextValue}
           >
-            <AcceptingSharingProvider>
-              <HashRouter>
-                <SelectionProvider>
-                  <ThumbnailSizeContextProvider>
-                    <BreakpointsProvider>
-                      <PushBannerProvider>
-                        <ModalContext.Provider
-                          value={modalContextValue || mockModalContextValue}
-                        >
-                          <FabProvider>{children}</FabProvider>
-                        </ModalContext.Provider>
-                      </PushBannerProvider>
-                    </BreakpointsProvider>
-                  </ThumbnailSizeContextProvider>
-                </SelectionProvider>
-              </HashRouter>
-            </AcceptingSharingProvider>
+            <HashRouter>
+              <BreakpointsProvider>
+                <PushBannerProvider>{children}</PushBannerProvider>
+              </BreakpointsProvider>
+            </HashRouter>
           </SharingContext.Provider>
         </TestI18n>
       </CozyProvider>
@@ -83,13 +59,8 @@ const AppLike = ({
   </CozyTheme>
 )
 
-const DriveAppLike = props => (
-  <AppLike enLocale={() => driveEnLocale} {...props} />
-)
-
 export const PhotosAppLike = props => (
   <AppLike enLocale={() => photoEnLocale} {...props} />
 )
 
-// For legacy reasons, default is Drive
-export default DriveAppLike
+export default PhotosAppLike
