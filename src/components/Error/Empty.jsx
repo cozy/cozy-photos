@@ -3,19 +3,13 @@ import cx from 'classnames'
 
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import Empty from 'cozy-ui/transpiled/react/Empty'
-import DriveIcon from 'cozy-ui/transpiled/react/Icons/FileTypeFolder'
-import TrashIcon from 'cozy-ui/transpiled/react/Icons/Trash'
 import PhotosIcon from 'cozy-ui/transpiled/react/Icons/FileTypeImage'
-import EncryptedFolderIcon from 'drive/web/modules/views/Folder/EncryptedFolderIcon'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import styles from './empty.styl'
 
 const EmptyIcon = {
-  drive: DriveIcon,
-  encrypted: EncryptedFolderIcon,
-  photos: PhotosIcon,
-  trash: TrashIcon
+  photos: PhotosIcon
 }
 
 const EmptyCanvas = ({ type, canUpload, localeKey, hasTextMobileVersion }) => {
@@ -40,15 +34,4 @@ const EmptyCanvas = ({ type, canUpload, localeKey, hasTextMobileVersion }) => {
 
 export default EmptyCanvas
 
-export const EmptyDrive = props => {
-  const { isEncrypted } = props
-  if (isEncrypted) {
-    return <EmptyCanvas type="encrypted" {...props} />
-  }
-  return <EmptyCanvas type="drive" {...props} />
-}
 export const EmptyPhotos = props => <EmptyCanvas type="photos" {...props} />
-
-export const EmptyTrash = props => (
-  <EmptyCanvas type="trash" localeKey="trash" {...props} />
-)
