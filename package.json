@@ -1,6 +1,6 @@
 {
   "name": "cozy-photos",
-  "version": "1.64.0",
+  "version": "1.65.0",
   "main": "src/main.jsx",
   "scripts": {
     "build": "cozy-scripts build --manifest src/photos/targets/manifest.webapp --build-dir build/photos --src-dir src/photos --barV7 false --cozyClientJs",
