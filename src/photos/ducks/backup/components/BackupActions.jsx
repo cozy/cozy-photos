@@ -51,7 +51,9 @@ const BackupActions = () => {
   if (!backupPermissions) return null
 
   if (backupPermissions.granted) {
-    if (!backupInfo) return null
+    if (!backupInfo) {
+      return <DisabledLoadingBackupButton />
+    }
 
     const {
       currentBackup: { status, mediasToBackupCount, totalMediasToBackupCount }
