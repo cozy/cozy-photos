@@ -1,36 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
-import Button from 'cozy-ui/transpiled/react/Buttons'
-import Icon from 'cozy-ui/transpiled/react/Icon'
-import SyncIcon from 'cozy-ui/transpiled/react/Icons/Sync'
-import CheckIcon from 'cozy-ui/transpiled/react/Icons/Check'
-import SpinnerIcon from 'cozy-ui/transpiled/react/Icons/Spinner'
-import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
-
 import { useBackupActions } from '../hooks/useBackupActions'
 import { useBackupData } from '../hooks/useBackupData'
-import OpenBackupButton from 'photos/ducks/backup/components/OpenBackupButton'
 
-const DisabledLoadingBackupButton = () => {
-  const { t } = useI18n()
-
-  return (
-    <div className="u-mt-1-half u-flex u-flex-column u-flex-justify-center">
-      <Button
-        label={t('Backup.actions.startBackup')}
-        variant="primary"
-        disabled
-        startIcon={
-          <Icon icon={SpinnerIcon} spin aria-hidden focusable="false" />
-        }
-      />
-    </div>
-  )
-}
+import DisabledLoadingBackupActions from 'photos/ducks/backup/components/BackupActions/DisabledLoadingBackupActions'
+import DisabledBackupActions from 'photos/ducks/backup/components/BackupActions/DisabledBackupActions'
+import DoneBackupActions from 'photos/ducks/backup/components/BackupActions/DoneBackupActions'
+import RunningBackupActions from 'photos/ducks/backup/components/BackupActions/RunningBackupActions'
+import StartBackupActions from 'photos/ducks/backup/components/BackupActions/StartBackupActions'
 
 const BackupActions = () => {
-  const { t } = useI18n()
-
   const { backupInfo } = useBackupData()
   const {
     backupPermissions,
@@ -52,7 +31,7 @@ const BackupActions = () => {
 
   if (backupPermissions.granted) {
     if (!backupInfo) {
-      return <DisabledLoadingBackupButton />
+      return <DisabledLoadingBackupActions />
     }
 
     const {
@@ -61,82 +40,32 @@ const BackupActions = () => {
 
     if (status === 'running') {
       return (
-        <div className="u-mt-1 u-flex u-flex-column u-flex-justify-center">
-          <Button
-            label={t('Backup.actions.backupInProgress', {
-              alreadyBackupedCount:
-                totalMediasToBackupCount - mediasToBackupCount,
-              totalCount: totalMediasToBackupCount
-            })}
-            variant="primary"
-            disabled
-            onClick={startBackup}
-            startIcon={
-              <Icon icon={SpinnerIcon} spin aria-hidden focusable="false" />
-            }
-          />
-          <Button
-            className="u-mt-half"
-            label={t('Backup.actions.cancel')}
-            variant="secondary"
-            onClick={stopBackup}
-          />
-        </div>
+        <RunningBackupActions
+          mediasToBackupCount={mediasToBackupCount}
+          totalMediasToBackupCount={totalMediasToBackupCount}
+          stopBackup={stopBackup}
+        />
       )
     } else if (status === 'initializing') {
-      return (
-        <div className="u-mt-1-half u-flex u-flex-column u-flex-justify-center">
-          <Button
-            label={t('Backup.actions.startBackup')}
-            variant="primary"
-            disabled
-            startIcon={<Icon icon={SyncIcon} />}
-          />
-        </div>
-      )
+      return <DisabledBackupActions />
     }
 
     if (mediasToBackupCount === 0) {
-      return (
-        <div className="u-mt-1-half u-flex u-flex-column u-flex-justify-center">
-          <Button
-            label={t('Backup.actions.saved')}
-            variant="primary"
-            color="success"
-            onClick={prepareBackup}
-            startIcon={<Icon icon={CheckIcon} />}
-          />
-          <OpenBackupButton />
-        </div>
-      )
+      return <DoneBackupActions prepareBackup={prepareBackup} />
     } else if (mediasToBackupCount > 0 && status !== statusToIgnore) {
       return (
-        <div className="u-mt-1-half u-flex u-flex-justify-center">
-          <Button
-            label={t('Backup.actions.startBackup')}
-            variant="primary"
-            onClick={() => {
-              startBackup()
-              setStatusToIgnore(status)
-            }}
-            startIcon={<Icon icon={SyncIcon} />}
-          />
-        </div>
+        <StartBackupActions
+          onClick={() => {
+            startBackup()
+            setStatusToIgnore(status)
+          }}
+        />
       )
     } else {
-      return <DisabledLoadingBackupButton />
+      return <DisabledLoadingBackupActions />
     }
   } else {
-    return (
-      <div className="u-mt-1-half u-flex u-flex-justify-center">
-        <Button
-          label={t('Backup.actions.startBackup')}
-          variant="primary"
-          onClick={requestBackupPermissions}
-          startIcon={<Icon icon={SyncIcon} />}
-        />
-      </div>
-    )
+    return <StartBackupActions onClick={requestBackupPermissions} />
   }
 }
 
