@@ -54,7 +54,7 @@
     "cozy-tsconfig": "1.2.0",
     "css-mediaquery": "^0.1.2",
     "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.6",
+    "enzyme-adapter-react-16": "1.15.7",
     "enzyme-to-json": "3.6.2",
     "eslint-config-cozy-app": "4.0.0",
     "husky": "0.14.3",
