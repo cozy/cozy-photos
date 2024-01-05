@@ -16,12 +16,19 @@ const formatLastBackupMessage = message => {
 const BackupDone = ({ lastBackup }) => {
   const { t } = useI18n()
 
+  const deduplicationMessage = lastBackup.deduplicatedMediaCount
+    ? ` ${t('Backup.info.deduplicatedMediaCount', {
+        smart_count: lastBackup.deduplicatedMediaCount
+      })}`
+    : null
+
   if (lastBackup.status === 'success') {
     return (
       <div className={cx('u-mt-1-half', styles['pho-backup-info-wrapper'])}>
         <Alert severity="success">
           <AlertTitle>{t('Backup.info.successTitle')}</AlertTitle>
           {t('Backup.info.successDescription')}
+          {deduplicationMessage}
         </Alert>
       </div>
     )
@@ -35,6 +42,7 @@ const BackupDone = ({ lastBackup }) => {
             smart_count: lastBackup.totalMediasToBackupCount,
             backedUpMediaCount: lastBackup.backedUpMediaCount
           })}
+          {deduplicationMessage}
         </Alert>
       </div>
     )
