@@ -106,7 +106,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-hot-loader": "^4.13.1",
-    "react-inspector": "^5.1.1",
+    "react-inspector": "^6.0.2",
     "react-measure": "2.5.2",
     "react-redux": "7.2.0",
     "react-router-dom": "6.14.2",
