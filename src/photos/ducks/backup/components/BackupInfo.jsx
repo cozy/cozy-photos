@@ -6,6 +6,7 @@ import AlertTitle from 'cozy-ui/transpiled/react/AlertTitle'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import AnalysisInProgress from 'photos/ducks/backup/components/BackupInfo/AnalysisInProgress'
+import BackupReady from 'photos/ducks/backup/components/BackupInfo/BackupReady'
 
 import styles from '../../../styles/backup.styl'
 import { useBackupData } from '../hooks/useBackupData'
@@ -30,19 +31,8 @@ const BackupInfo = () => {
 
   if (status === 'initializing') {
     return <AnalysisInProgress mediasLoadedCount={mediasLoadedCount} />
-  } else if (status === 'ready' && mediasToBackupCount > 0) {
-    return (
-      <div className={cx('u-mt-1-half', styles['pho-backup-info-wrapper'])}>
-        <Alert severity="primary">
-          <AlertTitle>
-            {t('Backup.info.notBackedUpElements', {
-              smart_count: backupInfo.currentBackup.mediasToBackupCount
-            })}
-          </AlertTitle>
-          {t('Backup.info.pressStartBackup')}
-        </Alert>
-      </div>
-    )
+  } else if (status === 'ready') {
+    return <BackupReady mediasToBackupCount={mediasToBackupCount} />
   } else if (status === 'done') {
     if (lastBackup.status === 'success') {
       return (
