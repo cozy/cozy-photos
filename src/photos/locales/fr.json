@@ -306,7 +306,8 @@
       "successTitle": "Sauvegarde réussie",
       "successDescription": "Les photos et vidéos de votre mobile ont été sauvegardées avec succès.",
       "errorTitle": "Sauvegarde interrompue",
-      "errorDescription": "%{backedUpMediaCount}/%{smart_count} élément sauvegardé. |||| %{backedUpMediaCount}/%{smart_count} éléments sauvegardés."
+      "errorDescription": "%{backedUpMediaCount}/%{smart_count} élément sauvegardé. |||| %{backedUpMediaCount}/%{smart_count} éléments sauvegardés.",
+      "deduplicatedMediaCount": "%{smart_count} élément non sauvegardé car déjà présent dans votre Cozy. |||| %{smart_count} éléments non sauvegardés car déjà présents dans votre Cozy."
     },
     "InstallAppAlert": {
       "description": "Sauvegardez automatiquement toutes vos photos et vidéos depuis vos appareils mobiles",
