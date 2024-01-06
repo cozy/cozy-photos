@@ -92,7 +92,7 @@
     "cozy-scanner": "^7.0.0",
     "cozy-scripts": "^8.2.0",
     "cozy-sharing": "10.0.0",
-    "cozy-stack-client": "^45.0.1",
+    "cozy-stack-client": "^45.2.0",
     "cozy-ui": "100.0.0",
     "date-fns": "1.30.1",
     "justified-layout": "2.1.2",
