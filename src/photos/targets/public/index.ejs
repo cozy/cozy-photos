@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="robots" content="noindex, nofollow, noimageindex">
   <title>Public Cozy Photos</title>
-  {{.ThemeCSS}}
   <% _.forEach(htmlWebpackPlugin.files.css, function(file) { %>
     <link rel="stylesheet" href="<%- file %>">
   <% }); %>
@@ -14,6 +13,7 @@
     {{.CozyClientJS}}
     {{.CozyFonts}}
   <% } %>
+  {{.ThemeCSS}}
 </head>
 <body>
   <div
