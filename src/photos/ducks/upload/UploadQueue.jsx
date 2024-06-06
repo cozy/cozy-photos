@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 import { Icon, Spinner } from 'cozy-ui/transpiled/react'
-import palette from 'cozy-ui/stylus/settings/palette.json'
 import CrossIcon from 'cozy-ui/transpiled/react/Icons/Cross'
 import WarningIcon from 'cozy-ui/transpiled/react/Icons/Warning'
 import CheckIcon from 'cozy-ui/transpiled/react/Icons/Check'
@@ -30,9 +29,7 @@ const Item = translate()(({ file, status }) => {
   let statusIcon
   switch (status) {
     case 'loading':
-      statusIcon = (
-        <Spinner className="u-ml-half" color={palette['dodgerBlue']} />
-      )
+      statusIcon = <Spinner className="u-ml-half" color="var(--primaryColor)" />
       break
     case 'cancel':
       statusIcon = <Icon className="u-ml-half u-warning" icon={CrossIcon} />

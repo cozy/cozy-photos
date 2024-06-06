@@ -15,7 +15,7 @@ const deleteAlbum = onDelete => () => ({
     return (
       <ActionMenuItem {...props} ref={ref} className="u-pomegranate">
         <ListItemIcon>
-          <Icon icon={TrashIcon} color="var(--pomegranate)" />
+          <Icon icon={TrashIcon} color="var(--errorColor)" />
         </ListItemIcon>
         <ListItemText primary={t('Toolbar.menu.album_delete')} />
       </ActionMenuItem>
