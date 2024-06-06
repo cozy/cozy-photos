@@ -6,6 +6,7 @@ import { createStore } from 'redux'
 import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 import { SharingContext } from 'cozy-sharing'
+import { BarProvider } from 'cozy-bar'
 
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import { HashRouter } from 'react-router-dom'
@@ -43,17 +44,19 @@ const AppLike = ({
   <CozyTheme>
     <Provider store={(client && client.store) || store || mockStore}>
       <CozyProvider client={client}>
-        <TestI18n enLocale={enLocale}>
-          <SharingContext.Provider
-            value={sharingContextValue || mockSharingContextValue}
-          >
-            <HashRouter>
-              <BreakpointsProvider>
-                <PushBannerProvider>{children}</PushBannerProvider>
-              </BreakpointsProvider>
-            </HashRouter>
-          </SharingContext.Provider>
-        </TestI18n>
+        <BarProvider>
+          <TestI18n enLocale={enLocale}>
+            <SharingContext.Provider
+              value={sharingContextValue || mockSharingContextValue}
+            >
+              <HashRouter>
+                <BreakpointsProvider>
+                  <PushBannerProvider>{children}</PushBannerProvider>
+                </BreakpointsProvider>
+              </HashRouter>
+            </SharingContext.Provider>
+          </TestI18n>
+        </BarProvider>
       </CozyProvider>
     </Provider>
   </CozyTheme>

@@ -30,14 +30,9 @@ describe('Topbar', () => {
     )
     return { component }
   }
+
   it('should render the topbar for desktop', () => {
     const { component } = setup({ isMobile: false })
     expect(component.render()).toMatchSnapshot()
-  })
-
-  it('renders the topbar for mobile and the child have the expected router', () => {
-    const { component } = setup({ isMobile: true })
-    expect(component.render()).toMatchSnapshot()
-    expect(component.find('Child').prop('router')).toBe(mockedRouter)
   })
 })

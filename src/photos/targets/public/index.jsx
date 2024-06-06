@@ -1,5 +1,6 @@
 import 'cozy-ui/dist/cozy-ui.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
+import 'cozy-bar/dist/stylesheet.css'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -12,6 +13,7 @@ import CozyClient, { CozyProvider } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
 import flag from 'cozy-flags'
 
+import { BarProvider } from 'cozy-bar'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import { getQueryParameter } from 'react-cozy-helpers'
@@ -28,7 +30,6 @@ import StyledApp from 'photos/components/StyledApp'
 
 import { configureReporter, setCozyUrl } from 'lib/reporter'
 import { WebviewIntentProvider } from 'cozy-intent'
-import cozyBar from 'lib/cozyBar'
 
 document.addEventListener('DOMContentLoaded', init)
 
@@ -61,43 +62,33 @@ async function init() {
 
   let app = null
   client.setStore(store)
-  if (data.app.name && data.app.editor && data.app.icon && data.locale) {
-    cozyBar.init({
-      appName: data.app.name,
-      appEditor: data.app.editor,
-      cozyClient: client,
-      iconPath: data.app.icon,
-      lang: data.locale,
-      replaceTitleOnMobile: true,
-      isPublic: true,
-      appSlug: data.app.slug,
-      appNamePrefix: data.app.prefix
-    })
-  }
+
   try {
     const { id } = await getSharedDocument(client)
     app = (
-      <WebviewIntentProvider setBarContext={cozyBar.setWebviewContext}>
+      <WebviewIntentProvider>
         <Provider store={store}>
           <CozyProvider client={client}>
-            <BreakpointsProvider>
-              <StyledApp>
-                <HashRouter>
-                  <Routes>
-                    <Route path="shared/:albumId" element={<App />}>
+            <BarProvider>
+              <BreakpointsProvider>
+                <StyledApp>
+                  <HashRouter>
+                    <Routes>
+                      <Route path="shared/:albumId" element={<App />}>
+                        <Route
+                          path=":photoId"
+                          element={<AlbumPhotosViewer isPublic={true} />}
+                        />
+                      </Route>
                       <Route
-                        path=":photoId"
-                        element={<AlbumPhotosViewer isPublic={true} />}
+                        path="*"
+                        element={<Navigate to={`shared/${id}`} />}
                       />
-                    </Route>
-                    <Route
-                      path="*"
-                      element={<Navigate to={`shared/${id}`} />}
-                    />
-                  </Routes>
-                </HashRouter>
-              </StyledApp>
-            </BreakpointsProvider>
+                    </Routes>
+                  </HashRouter>
+                </StyledApp>
+              </BreakpointsProvider>
+            </BarProvider>
           </CozyProvider>
         </Provider>
       </WebviewIntentProvider>

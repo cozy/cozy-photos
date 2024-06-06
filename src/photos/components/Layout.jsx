@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet, NavLink as RouterLink } from 'react-router-dom'
 
+import { BarComponent } from 'cozy-bar'
 import { useI18n, translate } from 'cozy-ui/transpiled/react/providers/I18n'
 import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite'
 import { Layout as LayoutUI, Main } from 'cozy-ui/transpiled/react/Layout'
@@ -114,6 +115,7 @@ const getNavLinks = () => {
 
 export const Layout = ({ t }) => (
   <LayoutUI>
+    <BarComponent />
     <Sidebar className={styles['pho-sidebar']}>
       <Nav>{getNavLinks()}</Nav>
       {!isFlagshipApp() && <ButtonClient />}
