@@ -6,7 +6,7 @@ import ListItemIcon from 'cozy-ui/transpiled/react/ListItemIcon'
 import ListItemText from 'cozy-ui/transpiled/react/ListItemText'
 import ActionMenuItem from 'cozy-ui/transpiled/react/ActionsMenu/ActionsMenuItem'
 import { SharedDocument } from 'cozy-sharing'
-import RecipientsAvatars from 'cozy-sharing/dist/components/Recipient/RecipientsAvatars'
+import { AvatarList as RecipientsAvatars } from 'cozy-sharing/dist/components/Avatar/AvatarList'
 import ShareIcon from 'cozy-ui/transpiled/react/Icons/Share'
 
 const shareAlbum = (onShare, album) => () => ({
