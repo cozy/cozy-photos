@@ -55,14 +55,14 @@ Using a watcher - with Hot Module Replacement:
 ```sh
 $ cd cozy-photos
 $ yarn watch:photos:browser
-$ cozy-stack serve --appdir photos:/<project_absolute_path>/cozy-photos/build/photos --disable-csp
+$ cozy-stack serve --appdir photos:/<project_absolute_path>/cozy-photos/build --disable-csp
 ```
 
 Or directly build the app (static file generated):
 ```sh
 $ cd cozy-photos
 $ yarn build:photos
-$ cozy-stack serve --appdir photos:/<project_absolute_path>/cozy-photos/build/photos
+$ cozy-stack serve --appdir photos:/<project_absolute_path>/cozy-photos/build
 ```
 
 Your app is available at http://photos.cozy.localhost:8080/#/folder
@@ -81,7 +81,7 @@ $ yarn watch:photos:browser
 
 ```sh
 # in another terminal, run the docker container
-$ docker run --rm -it -p 8080:8080 -v "$(pwd)/build/photos":/data/cozy-app/photos cozy/cozy-app-dev
+$ docker run --rm -it -p 8080:8080 -v "$(pwd)/build":/data/cozy-app/photos cozy/cozy-app-dev
 ```
 
 Your app is available at http://photos.cozy.tools:8080.
