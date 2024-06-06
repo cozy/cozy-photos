@@ -10,7 +10,6 @@ import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 import Banner from 'cozy-ui/transpiled/react/Banner'
 import Button, { ButtonLink } from 'cozy-ui/transpiled/react/deprecated/Button'
 import Icon from 'cozy-ui/transpiled/react/Icon'
-import palette from 'cozy-ui/transpiled/react/palette'
 import DeviceLaptopIcon from 'cozy-ui/transpiled/react/Icons/DeviceLaptop'
 import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
 
@@ -75,7 +74,7 @@ class BannerClient extends Component {
           inline
           icon={<Icon icon={DeviceLaptopIcon} size="100%" />}
           text={t(text)}
-          bgcolor={palette['paleGrey']}
+          bgcolor="var(--contrastBackgroundColor)"
           buttonOne={
             <ButtonLink
               href={t(link)}

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 import { Query } from 'cozy-client'
 import { Button, Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
-import palette from 'cozy-ui/transpiled/react/palette'
 import { Main } from 'cozy-ui/transpiled/react/Layout'
 import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
 
@@ -161,7 +160,7 @@ const ConnectedApp = props => {
               size={'xxlarge'}
               loadingType={'photos_fetching'}
               middle={true}
-              color={palette.dodgerBlue}
+              color="var(--primaryColor)"
             />
           )
         }
