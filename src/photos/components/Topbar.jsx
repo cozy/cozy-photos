@@ -1,16 +1,15 @@
 import styles from '../styles/topbar.styl'
 
 import React, { Component } from 'react'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
-import { withBreakpoints, BarContextProvider } from 'cozy-ui/transpiled/react'
-import { withClient } from 'cozy-client'
 import PropTypes from 'prop-types'
-import flow from 'lodash/flow'
-import SharingProvider from 'cozy-sharing'
-import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 import { useNavigate, useLocation } from 'react-router-dom'
 
-import { BarCenter, BarRight, BarLeft } from 'components/Bar'
+import { BarCenter, BarRight, BarLeft } from 'cozy-bar'
+import SharingProvider from 'cozy-sharing'
+import { useBreakpoints } from 'cozy-ui/transpiled/react/providers/Breakpoints'
+import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
+
+import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 import EditableAlbumName from 'photos/components/EditableAlbumName'
 
 const TopbarTitle = ({ children }) => (
@@ -56,20 +55,16 @@ export class Topbar extends Component {
       children,
       viewName,
       breakpoints: { isMobile },
-      navigate,
-      client,
-      t
+      navigate
     } = this.props
     const isAlbumContent = viewName === 'albumContent'
     const title = <TopbarTitle>{this.renderTitle()}</TopbarTitle>
     const responsiveTitle = isMobile ? <BarCenter>{title}</BarCenter> : title
     const responsiveMenu = isMobile ? (
       <BarRight>
-        <BarContextProvider client={client} store={this.context.store} t={t}>
-          <SharingProvider doctype={DOCTYPE_ALBUMS} documentType="Albums">
-            {children}
-          </SharingProvider>
-        </BarContextProvider>
+        <SharingProvider doctype={DOCTYPE_ALBUMS} documentType="Albums">
+          {children}
+        </SharingProvider>
       </BarRight>
     ) : (
       children
@@ -111,8 +106,19 @@ Topbar.defaultProps = {
 
 const TopbarWrapper = props => {
   const navigate = useNavigate()
+  const breakpoints = useBreakpoints()
   const { pathname } = useLocation()
-  return <Topbar {...props} navigate={navigate} pathname={pathname} />
+  const { t } = useI18n()
+
+  return (
+    <Topbar
+      {...props}
+      t={t}
+      breakpoints={breakpoints}
+      navigate={navigate}
+      pathname={pathname}
+    />
+  )
 }
 
-export default flow(withClient, withBreakpoints(), translate())(TopbarWrapper)
+export default TopbarWrapper

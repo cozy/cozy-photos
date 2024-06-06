@@ -2,6 +2,7 @@
 
 import 'cozy-ui/dist/cozy-ui.utils.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
+import 'cozy-bar/dist/stylesheet.css'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -10,6 +11,7 @@ import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
+import { BarProvider } from 'cozy-bar'
 import CozyClient, { CozyProvider } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
 import flag from 'cozy-flags'
@@ -29,7 +31,6 @@ import memoize from 'lodash/memoize'
 import { configureReporter, setCozyUrl } from 'lib/reporter'
 import appMetadata from 'photos/appMetadata'
 import doctypes from './doctypes'
-import cozyBar from 'lib/cozyBar'
 
 import {
   BackupDataProvider,
@@ -42,7 +43,6 @@ const loggerMiddleware = createLogger()
 const setupAppContext = memoize(() => {
   const root = document.querySelector('[role=application]')
   const data = JSON.parse(root.dataset.cozy)
-  const lang = document.documentElement.getAttribute('lang') || 'en'
   const protocol = window.location ? window.location.protocol : 'https:'
   const cozyUrl = `${protocol}//${data.domain}`
   const client = new CozyClient({
@@ -74,16 +74,7 @@ const setupAppContext = memoize(() => {
   )
   client.setStore(store)
   const locale = data.locale
-  cozyBar.init({
-    appName: data.app.name,
-    appEditor: data.app.editor,
-    cozyClient: client,
-    iconPath: data.app.icon,
-    lang: lang,
-    replaceTitleOnMobile: true,
-    appSlug: data.app.slug,
-    appNamePrefix: data.app.prefix
-  })
+
   return { store, locale, client, root }
 })
 
@@ -92,7 +83,6 @@ const App = props => {
 
   return (
     <WebviewIntentProvider
-      setBarContext={cozyBar.setWebviewContext}
       methods={{
         updateBackupInfo: backupInfo => {
           setBackupInfo(backupInfo)
@@ -105,18 +95,20 @@ const App = props => {
           dictRequire={lang => require(`photos/locales/${lang}`)}
         >
           <CozyProvider client={props.client}>
-            <WaitFlags>
-              <BreakpointsProvider>
-                <StyledApp>
-                  <SharingProvider
-                    doctype={DOCTYPE_ALBUMS}
-                    documentType="Albums"
-                  >
-                    <PushBannerProvider>{props.children}</PushBannerProvider>
-                  </SharingProvider>
-                </StyledApp>
-              </BreakpointsProvider>
-            </WaitFlags>
+            <BarProvider>
+              <WaitFlags>
+                <BreakpointsProvider>
+                  <StyledApp>
+                    <SharingProvider
+                      doctype={DOCTYPE_ALBUMS}
+                      documentType="Albums"
+                    >
+                      <PushBannerProvider>{props.children}</PushBannerProvider>
+                    </SharingProvider>
+                  </StyledApp>
+                </BreakpointsProvider>
+              </WaitFlags>
+            </BarProvider>
           </CozyProvider>
         </I18n>
       </Provider>
