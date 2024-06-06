@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import React from 'react'
 
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Button from 'cozy-ui/transpiled/react/deprecated/Button'
+import Button from 'cozy-ui/transpiled/react/Buttons'
 
 const DeleteConfirm = ({ t, count, confirm, onClose, related }) => {
   let types = ['trash', 'restore', 'shared']
@@ -28,12 +28,12 @@ const DeleteConfirm = ({ t, count, confirm, onClose, related }) => {
       actions={
         <>
           <Button
-            theme="secondary"
+            variant="secondary"
             onClick={onClose}
             label={t('timeline.DeleteConfirm.cancel')}
           />
           <Button
-            theme="danger"
+            color="error"
             label={t('timeline.DeleteConfirm.delete')}
             onClick={confirm}
           />

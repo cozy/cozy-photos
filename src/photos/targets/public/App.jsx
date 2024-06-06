@@ -4,7 +4,9 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
 import { Query } from 'cozy-client'
-import { Button, Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
+import { Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
+import Button from 'cozy-ui/transpiled/react/Buttons'
+import Icon from 'cozy-ui/transpiled/react/Icon'
 import { Main } from 'cozy-ui/transpiled/react/Layout'
 import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
 
@@ -82,12 +84,11 @@ export class App extends Component {
                   >
                     <CozyHomeLink className={styles['pho-public-mycozy']} />
                     <Button
-                      theme="secondary"
+                      variant="secondary"
                       data-testid="album-public-download"
                       className={styles['pho-public-download']}
                       onClick={() => this.onDownload(selected)}
-                      icon={DownloadIcon}
-                      size="normal"
+                      startIcon={<Icon icon={DownloadIcon} />}
                       label={t('Toolbar.album_download')}
                     />
                     {isMobile && (

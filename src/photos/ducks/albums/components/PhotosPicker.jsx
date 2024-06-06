@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'cozy-ui/transpiled/react'
+import Button from 'cozy-ui/transpiled/react/Buttons'
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { TimelineBoard } from '../../timeline'
@@ -99,7 +99,8 @@ class PhotosPicker extends Component {
                 <div className={styles['pho-panel-wrap']}>
                   <div className={styles['pho-panel-controls']}>
                     <Button
-                      theme="secondary"
+                      className="u-mr-half"
+                      variant="secondary"
                       onClick={this.onCancel}
                       label={t('Albums.create.panel_form.cancel')}
                     />
