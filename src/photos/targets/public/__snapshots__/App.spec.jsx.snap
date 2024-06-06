@@ -21,17 +21,18 @@ exports[`Public view should render children when they are present 1`] = `
             className="pho-public-mycozy"
             from=""
           />
-          <Button
-            align="center"
+          <Buttons
             className="pho-public-download"
             data-testid="album-public-download"
-            icon={[Function]}
             label="Toolbar.album_download"
             onClick={[Function]}
-            size="normal"
-            tag="button"
-            theme="secondary"
-            type="submit"
+            startIcon={
+              <Icon
+                icon={[Function]}
+                spin={false}
+              />
+            }
+            variant="secondary"
           />
         </div>
       </div>
@@ -83,17 +84,18 @@ exports[`Public view should render the album 1`] = `
             className="pho-public-mycozy"
             from=""
           />
-          <Button
-            align="center"
+          <Buttons
             className="pho-public-download"
             data-testid="album-public-download"
-            icon={[Function]}
             label="Toolbar.album_download"
             onClick={[Function]}
-            size="normal"
-            tag="button"
-            theme="secondary"
-            type="submit"
+            startIcon={
+              <Icon
+                icon={[Function]}
+                spin={false}
+              />
+            }
+            variant="secondary"
           />
         </div>
       </div>

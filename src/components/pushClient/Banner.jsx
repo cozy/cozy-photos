@@ -8,7 +8,7 @@ import flow from 'lodash/flow'
 import { withClient } from 'cozy-client'
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 import Banner from 'cozy-ui/transpiled/react/Banner'
-import Button, { ButtonLink } from 'cozy-ui/transpiled/react/deprecated/Button'
+import Button from 'cozy-ui/transpiled/react/Buttons'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import DeviceLaptopIcon from 'cozy-ui/transpiled/react/Icons/DeviceLaptop'
 import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
@@ -76,17 +76,18 @@ class BannerClient extends Component {
           text={t(text)}
           bgcolor="var(--contrastBackgroundColor)"
           buttonOne={
-            <ButtonLink
+            <Button
+              component="a"
               href={t(link)}
-              theme="text"
-              icon={DownloadIcon}
+              variant="text"
+              startIcon={<Icon icon={DownloadIcon} />}
               label={t('Nav.banner-btn-client')}
               onClick={() => this.markAsSeen('banner')}
             />
           }
           buttonTwo={
             <Button
-              theme="text"
+              variant="text"
               label={t('SelectionBar.close')}
               onClick={() => {
                 this.markAsSeen('close')

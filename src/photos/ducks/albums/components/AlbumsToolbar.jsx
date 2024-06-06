@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { ButtonLink } from 'cozy-ui/transpiled/react'
+import Button from 'cozy-ui/transpiled/react/Buttons'
+import Icon from 'cozy-ui/transpiled/react/Icon'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import AlbumAddIcon from 'cozy-ui/transpiled/react/Icons/AlbumAdd'
@@ -24,11 +25,12 @@ const AlbumsToolbar = ({ navigate }) => {
       {isMobile ? (
         <MoreMenu actions={actions} />
       ) : (
-        <ButtonLink
+        <Button
+          component="a"
           data-testid="album-add"
-          theme="secondary"
+          variant="secondary"
           href="#/albums/new"
-          icon={AlbumAddIcon}
+          startIcon={<Icon icon={AlbumAddIcon} />}
           label={t('Toolbar.album_new')}
         />
       )}

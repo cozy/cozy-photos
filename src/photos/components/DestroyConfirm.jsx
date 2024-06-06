@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import React from 'react'
 import { ConfirmDialog } from 'cozy-ui/transpiled/react/CozyDialogs'
-import Button from 'cozy-ui/transpiled/react/deprecated/Button'
+import Button from 'cozy-ui/transpiled/react/Buttons'
 
 const DestroyConfirm = ({ t, confirm, onClose }) => {
   const confirmationTexts = ['forbidden', 'eye', 'link'].map(type => (
@@ -23,12 +23,12 @@ const DestroyConfirm = ({ t, confirm, onClose }) => {
       actions={
         <>
           <Button
-            theme="secondary"
+            variant="secondary"
             onClick={onClose}
             label={t('destroyconfirmation.cancel')}
           />
           <Button
-            theme="danger"
+            color="error"
             label={t('destroyconfirmation.delete')}
             onClick={confirm}
           />
