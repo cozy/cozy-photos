@@ -2,7 +2,7 @@
 
 exports[`AlbumsView displays an empty Component 1`] = `
 <div
-  class="CozyTheme--normal u-dc"
+  class="CozyTheme--light-normal u-dc"
 >
   <div
     class="pho-content-wrapper"
