@@ -41,10 +41,10 @@ const AppLike = ({
   sharingContextValue,
   enLocale
 }) => (
-  <CozyTheme>
-    <Provider store={(client && client.store) || store || mockStore}>
-      <CozyProvider client={client}>
-        <BarProvider>
+  <Provider store={(client && client.store) || store || mockStore}>
+    <CozyProvider client={client}>
+      <BarProvider>
+        <CozyTheme>
           <TestI18n enLocale={enLocale}>
             <SharingContext.Provider
               value={sharingContextValue || mockSharingContextValue}
@@ -56,10 +56,10 @@ const AppLike = ({
               </HashRouter>
             </SharingContext.Provider>
           </TestI18n>
-        </BarProvider>
-      </CozyProvider>
-    </Provider>
-  </CozyTheme>
+        </CozyTheme>
+      </BarProvider>
+    </CozyProvider>
+  </Provider>
 )
 
 export const PhotosAppLike = props => (

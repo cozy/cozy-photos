@@ -9,7 +9,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
-import CozyClient, { CozyProvider } from 'cozy-client'
+import CozyClient, { CozyProvider, RealTimeQueries } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
 import flag from 'cozy-flags'
 
@@ -72,6 +72,7 @@ async function init() {
             <BarProvider>
               <BreakpointsProvider>
                 <StyledApp>
+                  <RealTimeQueries doctype="io.cozy.settings" />
                   <HashRouter>
                     <Routes>
                       <Route path="shared/:albumId" element={<App />}>
