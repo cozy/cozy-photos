@@ -12,7 +12,7 @@ import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
 import { BarProvider } from 'cozy-bar'
-import CozyClient, { CozyProvider } from 'cozy-client'
+import CozyClient, { CozyProvider, RealTimeQueries } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
 import flag from 'cozy-flags'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
@@ -99,6 +99,7 @@ const App = props => {
               <WaitFlags>
                 <BreakpointsProvider>
                   <StyledApp>
+                    <RealTimeQueries doctype="io.cozy.settings" />
                     <SharingProvider
                       doctype={DOCTYPE_ALBUMS}
                       documentType="Albums"
