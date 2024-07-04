@@ -25,6 +25,7 @@ const Toolbar = ({ disabled = false, uploadPhotos, selectItems }) => {
     <div className={styles['pho-toolbar']} role="toolbar">
       {!isMobile && (
         <UploadButton
+          className="u-mr-half"
           onUpload={uploadPhotos}
           disabled={disabled}
           label={t('Toolbar.photo_upload')}

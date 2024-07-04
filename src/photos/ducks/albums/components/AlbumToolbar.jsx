@@ -52,7 +52,7 @@ const AlbumToolbar = ({
       role="toolbar"
     >
       {!isMobile && (
-        <>
+        <div className="u-flex u-flex-items-start u-mr-half">
           <SharedRecipients
             docId={album.id}
             onClick={() => shareAlbum(album)}
@@ -63,7 +63,7 @@ const AlbumToolbar = ({
             onClick={() => shareAlbum(album)}
             docId={album.id}
           />
-        </>
+        </div>
       )}
       <MoreMenu actions={actions} />
     </div>
