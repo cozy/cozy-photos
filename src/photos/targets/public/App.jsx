@@ -1,25 +1,18 @@
 import React, { Component } from 'react'
 import flatten from 'lodash/flatten'
-import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { Outlet, useParams } from 'react-router-dom'
 
 import { Query } from 'cozy-client'
 import { Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
-import Button from 'cozy-ui/transpiled/react/Buttons'
-import Icon from 'cozy-ui/transpiled/react/Icon'
 import { Main } from 'cozy-ui/transpiled/react/Layout'
-import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
 import { BarComponent } from 'cozy-bar'
 
 import Selection from 'photos/ducks/selection'
-import { CozyHomeLink } from 'components/Button'
 import PhotoBoard from 'photos/components/PhotoBoard'
 import ErrorUnsharedComponent from 'photos/components/ErrorUnshared'
 import { buildAlbumsQuery } from '../../queries/queries'
-import styles from './index.styl'
-import MoreMenu from '../../components/MoreMenu'
-import { createCozy, download } from '../../components/actions'
+import { TopbarPublic } from '../../components/TopbarPublic'
 
 export class App extends Component {
   static contextTypes = {
@@ -58,71 +51,37 @@ export class App extends Component {
   }
 
   render() {
-    const { album, hasMore, photos, fetchMore, isMobile } = this.props
-    const { t } = this.context
+    const { album, hasMore, photos, fetchMore } = this.props
+
     return (
-      <div
-        data-testid="pho-public-layout"
-        className={styles['pho-public-layout']}
-      >
-        <Main className="u-pt-1-half">
-          <BarComponent isPublic />
-          <Selection>
-            {(selected, active, selection) => (
-              <div>
-                <div
-                  className={classNames(
-                    styles['pho-content-header'],
-                    styles['--no-icon'],
-                    styles['--hide-bar']
-                  )}
-                >
-                  <h2 className={styles['pho-content-title']}>{album.name}</h2>
-                  <div
-                    data-testid="pho-toolbar-album-public"
-                    className={styles['pho-toolbar']}
-                    role="toolbar"
-                  >
-                    <CozyHomeLink className={styles['pho-public-mycozy']} />
-                    <Button
-                      variant="secondary"
-                      data-testid="album-public-download"
-                      className={styles['pho-public-download']}
-                      onClick={() => this.onDownload(selected)}
-                      startIcon={<Icon icon={DownloadIcon} />}
-                      label={t('Toolbar.album_download')}
-                    />
-                    {isMobile && (
-                      <MoreMenu
-                        actions={[
-                          createCozy,
-                          download(
-                            () => this.onDownload(selected),
-                            t('Toolbar.album_download')
-                          )
-                        ]}
-                      />
-                    )}
-                  </div>
-                </div>
-                <PhotoBoard
-                  lists={[{ photos }]}
-                  selected={selected}
-                  photosContext="shared_album"
-                  showSelection={active}
-                  onPhotoToggle={selection.toggle}
-                  onPhotosSelect={selection.select}
-                  onPhotosUnselect={selection.unselect}
-                  fetchStatus={photos.fetchStatus}
-                  hasMore={hasMore}
-                  fetchMore={fetchMore}
-                />
-                <Outlet />
-              </div>
-            )}
-          </Selection>
-        </Main>
-      </div>
+      <Main className="u-pt-1-half">
+        <BarComponent isPublic />
+        <Selection>
+          {(selected, active, selection) => (
+            <div>
+              <TopbarPublic
+                title={album.name}
+                onDownload={docs =>
+                  docs ? this.onDownload(docs) : this.onDownload(selected)
+                }
+              />
+              <PhotoBoard
+                lists={[{ photos }]}
+                selected={selected}
+                photosContext="shared_album"
+                showSelection={active}
+                onPhotoToggle={selection.toggle}
+                onPhotosSelect={selection.select}
+                onPhotosUnselect={selection.unselect}
+                fetchStatus={photos.fetchStatus}
+                hasMore={hasMore}
+                fetchMore={fetchMore}
+              />
+              <Outlet />
+            </div>
+          )}
+        </Selection>
+      </Main>
     )
   }
 }
