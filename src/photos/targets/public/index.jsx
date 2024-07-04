@@ -1,6 +1,8 @@
 import 'cozy-ui/dist/cozy-ui.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
 import 'cozy-bar/dist/stylesheet.css'
+import 'cozy-sharing/dist/stylesheet.css'
+import 'photos/styles/main.styl'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -20,13 +22,14 @@ import { getQueryParameter } from 'react-cozy-helpers'
 import getSharedDocument from 'cozy-sharing/dist/getSharedDocument'
 import ErrorUnsharedComponent from 'photos/components/ErrorUnshared'
 import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite'
+import { DumbCozyTheme } from 'cozy-ui/transpiled/react/providers/CozyTheme'
+import { Layout as LayoutUI } from 'cozy-ui/transpiled/react/Layout'
 
 import appMetadata from 'photos/appMetadata'
 import doctypes from '../browser/doctypes'
 
 import App from './App'
 import { AlbumPhotosViewer } from 'photos/components/PhotosViewer'
-import StyledApp from 'photos/components/StyledApp'
 
 import { configureReporter, setCozyUrl } from 'lib/reporter'
 import { WebviewIntentProvider } from 'cozy-intent'
@@ -71,23 +74,21 @@ async function init() {
           <CozyProvider client={client}>
             <BarProvider>
               <BreakpointsProvider>
-                <StyledApp>
-                  <RealTimeQueries doctype="io.cozy.settings" />
-                  <HashRouter>
-                    <Routes>
-                      <Route path="shared/:albumId" element={<App />}>
-                        <Route
-                          path=":photoId"
-                          element={<AlbumPhotosViewer isPublic={true} />}
-                        />
-                      </Route>
+                <RealTimeQueries doctype="io.cozy.settings" />
+                <HashRouter>
+                  <Routes>
+                    <Route path="shared/:albumId" element={<App />}>
                       <Route
-                        path="*"
-                        element={<Navigate to={`shared/${id}`} />}
+                        path=":photoId"
+                        element={<AlbumPhotosViewer isPublic={true} />}
                       />
-                    </Routes>
-                  </HashRouter>
-                </StyledApp>
+                    </Route>
+                    <Route
+                      path="*"
+                      element={<Navigate to={`shared/${id}`} />}
+                    />
+                  </Routes>
+                </HashRouter>
               </BreakpointsProvider>
             </BarProvider>
           </CozyProvider>
@@ -99,12 +100,10 @@ async function init() {
   } finally {
     render(
       <I18n lang={lang} dictRequire={lang => require(`photos/locales/${lang}`)}>
-        <>
-          <StyledApp>
-            {app}
-            <Sprite />
-          </StyledApp>
-        </>
+        <DumbCozyTheme variant="normal" className="u-w-100">
+          <LayoutUI monoColumn>{app}</LayoutUI>
+          <Sprite />
+        </DumbCozyTheme>
       </I18n>,
       root
     )
