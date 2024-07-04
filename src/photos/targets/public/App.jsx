@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import flatten from 'lodash/flatten'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
+import { Outlet, useParams } from 'react-router-dom'
 
 import { Query } from 'cozy-client'
 import { Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
@@ -9,14 +10,13 @@ import Button from 'cozy-ui/transpiled/react/Buttons'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import { Main } from 'cozy-ui/transpiled/react/Layout'
 import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
+import { BarComponent } from 'cozy-bar'
 
 import Selection from 'photos/ducks/selection'
 import { CozyHomeLink } from 'components/Button'
 import PhotoBoard from 'photos/components/PhotoBoard'
 import ErrorUnsharedComponent from 'photos/components/ErrorUnshared'
 import { buildAlbumsQuery } from '../../queries/queries'
-import { Outlet, useParams } from 'react-router-dom'
-
 import styles from './index.styl'
 import MoreMenu from '../../components/MoreMenu'
 import { createCozy, download } from '../../components/actions'
@@ -66,6 +66,7 @@ export class App extends Component {
         className={styles['pho-public-layout']}
       >
         <Main className="u-pt-1-half">
+          <BarComponent isPublic />
           <Selection>
             {(selected, active, selection) => (
               <div>
