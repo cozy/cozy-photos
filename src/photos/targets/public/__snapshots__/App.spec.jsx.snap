@@ -6,36 +6,9 @@ exports[`Public view should render children when they are present 1`] = `
 >
   <div>
     <div>
-      <div
-        className="pho-content-header --no-icon --hide-bar"
-      >
-        <h2
-          className="pho-content-title"
-        />
-        <div
-          className="pho-toolbar"
-          data-testid="pho-toolbar-album-public"
-          role="toolbar"
-        >
-          <CozyHomeLink
-            className="pho-public-mycozy"
-            from=""
-          />
-          <Buttons
-            className="pho-public-download"
-            data-testid="album-public-download"
-            label="Toolbar.album_download"
-            onClick={[Function]}
-            startIcon={
-              <Icon
-                icon={[Function]}
-                spin={false}
-              />
-            }
-            variant="secondary"
-          />
-        </div>
-      </div>
+      <TopbarPublic
+        onDownload={[Function]}
+      />
       <WithContentRect
         fetchMore={[MockFunction]}
         hasMore={false}
@@ -69,36 +42,9 @@ exports[`Public view should render the album 1`] = `
 >
   <div>
     <div>
-      <div
-        className="pho-content-header --no-icon --hide-bar"
-      >
-        <h2
-          className="pho-content-title"
-        />
-        <div
-          className="pho-toolbar"
-          data-testid="pho-toolbar-album-public"
-          role="toolbar"
-        >
-          <CozyHomeLink
-            className="pho-public-mycozy"
-            from=""
-          />
-          <Buttons
-            className="pho-public-download"
-            data-testid="album-public-download"
-            label="Toolbar.album_download"
-            onClick={[Function]}
-            startIcon={
-              <Icon
-                icon={[Function]}
-                spin={false}
-              />
-            }
-            variant="secondary"
-          />
-        </div>
-      </div>
+      <TopbarPublic
+        onDownload={[Function]}
+      />
       <WithContentRect
         fetchMore={[MockFunction]}
         hasMore={false}
