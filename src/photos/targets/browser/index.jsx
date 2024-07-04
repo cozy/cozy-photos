@@ -3,6 +3,8 @@
 import 'cozy-ui/dist/cozy-ui.utils.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
 import 'cozy-bar/dist/stylesheet.css'
+import 'cozy-sharing/dist/stylesheet.css'
+import 'photos/styles/main.styl'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -19,13 +21,13 @@ import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoi
 import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import SharingProvider from 'cozy-sharing'
 import { WebviewIntentProvider } from 'cozy-intent'
+import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 
 import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 
 import PushBannerProvider from 'components/PushBanner/PushBannerProvider'
 import appReducers from 'photos/reducers'
 import AppRouter from 'photos/components/AppRouter'
-import StyledApp from 'photos/components/StyledApp'
 import memoize from 'lodash/memoize'
 
 import { configureReporter, setCozyUrl } from 'lib/reporter'
@@ -98,7 +100,7 @@ const App = props => {
             <BarProvider>
               <WaitFlags>
                 <BreakpointsProvider>
-                  <StyledApp>
+                  <CozyTheme className="u-w-100">
                     <RealTimeQueries doctype="io.cozy.settings" />
                     <SharingProvider
                       doctype={DOCTYPE_ALBUMS}
@@ -106,7 +108,7 @@ const App = props => {
                     >
                       <PushBannerProvider>{props.children}</PushBannerProvider>
                     </SharingProvider>
-                  </StyledApp>
+                  </CozyTheme>
                 </BreakpointsProvider>
               </WaitFlags>
             </BarProvider>
