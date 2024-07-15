@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet, NavLink as RouterLink } from 'react-router-dom'
 
 import { BarComponent } from 'cozy-bar'
-import { useI18n, translate } from 'cozy-ui/transpiled/react/providers/I18n'
+import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite'
 import { Layout as LayoutUI, Main } from 'cozy-ui/transpiled/react/Layout'
 import Sidebar from 'cozy-ui/transpiled/react/Sidebar'
@@ -18,7 +18,6 @@ import { isFlagshipApp } from 'cozy-device-helper'
 import flag from 'cozy-flags'
 
 import ButtonClient from 'components/pushClient/Button'
-import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
 import { UploadQueue } from '../ducks/upload'
 import PushBanner from 'components/PushBanner'
 
@@ -113,7 +112,7 @@ const getNavLinks = () => {
   return <NoBackupNavLinks />
 }
 
-export const Layout = ({ t }) => (
+export const Layout = () => (
   <LayoutUI>
     <BarComponent />
     <Sidebar className={styles['pho-sidebar']}>
@@ -121,7 +120,6 @@ export const Layout = ({ t }) => (
       {!isFlagshipApp() && <ButtonClient />}
     </Sidebar>
 
-    <Alerter t={t} />
     <UploadQueue />
     <Main className={styles['pho-content']}>
       <PushBanner />
@@ -133,4 +131,4 @@ export const Layout = ({ t }) => (
   </LayoutUI>
 )
 
-export default translate()(Layout)
+export default Layout

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
+import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
+import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
 import PropTypes from 'prop-types'
 import styles from '../../../styles/layout.styl'
 
@@ -19,7 +20,7 @@ import {
   REF_PHOTOS,
   REF_UPLOAD
 } from 'folder-references'
-import { withClient } from 'cozy-client'
+import { useClient } from 'cozy-client'
 import { Outlet } from 'react-router-dom'
 
 const getUploadDir = async (client, t) => {
@@ -59,12 +60,16 @@ class Timeline extends Component {
   }
 
   uploadPhotos = async photos => {
-    const { uploadPhoto } = this.props
-    const { client, t } = this.props
+    const { uploadPhoto, client, t, showAlert } = this.props
     const uploadDirId = await getUploadDir(client, t)
 
     this.dispatch(
-      addToUploadQueue(photos, photo => uploadPhoto(photo, uploadDirId))
+      addToUploadQueue({
+        files: photos,
+        callback: photo => uploadPhoto(photo, uploadDirId),
+        showAlert,
+        t
+      })
     )
   }
 
@@ -165,4 +170,12 @@ class Timeline extends Component {
   }
 }
 
-export default translate()(withClient(Timeline))
+const TimelineWrapper = props => {
+  const client = useClient()
+  const { t } = useI18n()
+  const { showAlert } = useAlert()
+
+  return <Timeline {...props} client={client} t={t} showAlert={showAlert} />
+}
+
+export default TimelineWrapper

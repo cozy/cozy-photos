@@ -14,6 +14,7 @@ import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import CozyClient, { CozyProvider, RealTimeQueries } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
 import flag from 'cozy-flags'
+import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 
 import { BarProvider } from 'cozy-bar'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
@@ -74,21 +75,23 @@ async function init() {
           <CozyProvider client={client}>
             <BarProvider>
               <BreakpointsProvider>
-                <RealTimeQueries doctype="io.cozy.settings" />
-                <HashRouter>
-                  <Routes>
-                    <Route path="shared/:albumId" element={<App />}>
+                <AlertProvider>
+                  <RealTimeQueries doctype="io.cozy.settings" />
+                  <HashRouter>
+                    <Routes>
+                      <Route path="shared/:albumId" element={<App />}>
+                        <Route
+                          path=":photoId"
+                          element={<AlbumPhotosViewer isPublic={true} />}
+                        />
+                      </Route>
                       <Route
-                        path=":photoId"
-                        element={<AlbumPhotosViewer isPublic={true} />}
+                        path="*"
+                        element={<Navigate to={`shared/${id}`} />}
                       />
-                    </Route>
-                    <Route
-                      path="*"
-                      element={<Navigate to={`shared/${id}`} />}
-                    />
-                  </Routes>
-                </HashRouter>
+                    </Routes>
+                  </HashRouter>
+                </AlertProvider>
               </BreakpointsProvider>
             </BarProvider>
           </CozyProvider>

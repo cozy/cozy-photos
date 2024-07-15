@@ -22,6 +22,7 @@ import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import SharingProvider from 'cozy-sharing'
 import { WebviewIntentProvider } from 'cozy-intent'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
+import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 
 import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 
@@ -101,13 +102,17 @@ const App = props => {
               <WaitFlags>
                 <BreakpointsProvider>
                   <CozyTheme className="u-w-100">
-                    <RealTimeQueries doctype="io.cozy.settings" />
-                    <SharingProvider
-                      doctype={DOCTYPE_ALBUMS}
-                      documentType="Albums"
-                    >
-                      <PushBannerProvider>{props.children}</PushBannerProvider>
-                    </SharingProvider>
+                    <AlertProvider>
+                      <RealTimeQueries doctype="io.cozy.settings" />
+                      <SharingProvider
+                        doctype={DOCTYPE_ALBUMS}
+                        documentType="Albums"
+                      >
+                        <PushBannerProvider>
+                          {props.children}
+                        </PushBannerProvider>
+                      </SharingProvider>
+                    </AlertProvider>
                   </CozyTheme>
                 </BreakpointsProvider>
               </WaitFlags>
