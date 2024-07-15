@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { Query, withMutations, useQuery, useClient } from 'cozy-client'
-import { Alerter } from 'cozy-ui/transpiled/react/'
+import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
+import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import AlbumsView from './components/AlbumsView'
 import AlbumPhotos from './components/AlbumPhotos'
@@ -24,56 +25,78 @@ const ALBUMS_QUERY = client =>
     .include(['photos'])
     .sortBy([{ created_at: 'desc' }])
 
-const addPhotos = async (album, photos) => {
+const addPhotos = async (album, photos, showAlert, t) => {
   try {
     const photoCountBefore = album.photos.data.length
     await album.photos.addById(photos.map(({ _id }) => _id))
     const photoCountAfter = album.photos.data.length
     if (photoCountBefore + photos.length !== photoCountAfter) {
-      Alerter.info('Alerter.photos.already_added_photo')
+      showAlert({
+        message: t('Alerter.photos.already_added_photo'),
+        severity: 'secondary'
+      })
     } else {
-      Alerter.success('Albums.add_photos.success', {
-        name: album.name,
-        smart_count: photos.length
+      showAlert({
+        message: t('Albums.add_photos.success', {
+          name: album.name,
+          smart_count: photos.length
+        }),
+        severity: 'success'
       })
     }
   } catch (error) {
-    Alerter.error('Albums.add_photos.error.reference')
+    showAlert({
+      message: t('Albums.add_photos.error.reference'),
+      severity: 'error'
+    })
   }
 }
 
-const ALBUM_MUTATIONS = client => ({
+const ALBUM_MUTATIONS = (client, showAlert, t) => ({
   updateAlbum: async album => {
     const unique = await client
       .collection(DOCTYPE_ALBUMS)
       .checkUniquenessOf('name', album.name)
     if (unique !== true) {
-      Alerter.error('Albums.create.error.already_exists', { name })
+      showAlert({
+        message: t('Albums.create.error.already_exists', { name }),
+        severity: 'error'
+      })
       return
     } else {
       return client.save(album)
     }
   },
   deleteAlbum: album => client.destroy(album),
-  addPhotos,
+  addPhotos: async (album, photos) => addPhotos(album, photos, showAlert, t),
   removePhotos: async (album, photos, clearSelection) => {
     try {
       await album.photos.removeById(photos.map(({ _id }) => _id))
-      Alerter.success('Albums.remove_photos.success', {
-        album_name: album.name
+      showAlert({
+        message: t('Albums.remove_photos.success', {
+          album_name: album.name
+        }),
+        severity: 'success'
       })
       clearSelection()
     } catch (e) {
-      Alerter.error('Albums.remove_photos.error.generic')
+      showAlert({
+        message: t('Albums.remove_photos.error.generic'),
+        severiy: 'error'
+      })
     }
   }
 })
-const ALBUMS_MUTATIONS = client => ({
-  addPhotos,
+
+const ALBUMS_MUTATIONS = (showAlert, t) => client => ({
+  addPhotos: async (album, photos) => addPhotos(album, photos, showAlert, t),
   createAlbum: async (name, photos, created_at = new Date()) => {
     try {
       if (!name) {
-        Alerter.error('Albums.create.error.name_missing')
+        showAlert({
+          message: t('Albums.create.error.name_missing'),
+          severity: 'error'
+        })
         return
       }
       const album = { _type: DOCTYPE_ALBUMS, name, created_at }
@@ -82,7 +105,10 @@ const ALBUMS_MUTATIONS = client => ({
         .collection(DOCTYPE_ALBUMS)
         .checkUniquenessOf('name', album.name)
       if (unique !== true) {
-        Alerter.error('Albums.create.error.already_exists', { name })
+        showAlert({
+          message: t('Albums.create.error.already_exists', { name }),
+          severity: 'error'
+        })
         return
       }
       const resp = await client.create(
@@ -95,13 +121,19 @@ const ALBUMS_MUTATIONS = client => ({
           }
         }
       )
-      Alerter.success('Albums.create.success', {
-        name: album.name,
-        smart_count: photos.length
+      showAlert({
+        message: t('Albums.create.success', {
+          name: album.name,
+          smart_count: photos.length
+        }),
+        severity: 'success'
       })
       return resp.data
     } catch (error) {
-      Alerter.error('Albums.create.error.generic')
+      showAlert({
+        message: t('Albums.create.error.generic'),
+        severity: 'error'
+      })
     }
   }
 })
@@ -114,22 +146,37 @@ const ConnectedAlbumsView = props => (
   </Query>
 )
 
-const ConnectedAddToAlbumModal = props => (
-  <Query query={ALBUMS_QUERY} as="albums" mutations={ALBUMS_MUTATIONS}>
-    {(result, { createAlbum, addPhotos }) => (
-      <AddToAlbumModal
-        {...result}
-        createAlbum={createAlbum}
-        addPhotos={addPhotos}
-        {...props}
-      />
-    )}
-  </Query>
-)
+const ConnectedAddToAlbumModal = props => {
+  const { t } = useI18n()
+  const { showAlert } = useAlert()
+
+  return (
+    <Query
+      query={ALBUMS_QUERY}
+      as="albums"
+      mutations={ALBUMS_MUTATIONS(showAlert, t)}
+    >
+      {(result, { createAlbum, addPhotos }) => (
+        <AddToAlbumModal
+          {...result}
+          createAlbum={createAlbum}
+          addPhotos={addPhotos}
+          {...props}
+        />
+      )}
+    </Query>
+  )
+}
 
 export const AlbumPhotosWithLoader = () => {
   const client = useClient()
-  const { updateAlbum, deleteAlbum, removePhotos } = ALBUM_MUTATIONS(client)
+  const { t } = useI18n()
+  const { showAlert } = useAlert()
+  const { updateAlbum, deleteAlbum, removePhotos } = ALBUM_MUTATIONS(
+    client,
+    showAlert,
+    t
+  )
 
   const { albumId } = useParams()
 
@@ -160,10 +207,13 @@ export const AlbumPhotosWithLoader = () => {
   }
 }
 
-const CreateAlbumPicker = withMutations(ALBUMS_MUTATIONS)(PhotosPicker)
+const CreateAlbumPicker = ({ showAlert, t }) =>
+  withMutations(ALBUMS_MUTATIONS(showAlert, t))(PhotosPicker)
 
 const ConnectedPhotosPicker = ({ ...props }) => {
   const { albumId } = useParams()
+  const { t } = useI18n()
+  const { showAlert } = useAlert()
 
   if (albumId) {
     const albumsQuery = buildAlbumsQuery(albumId)
@@ -171,7 +221,7 @@ const ConnectedPhotosPicker = ({ ...props }) => {
       <Query
         query={albumsQuery.definition}
         as={albumsQuery.as}
-        mutations={ALBUMS_MUTATIONS}
+        mutations={ALBUMS_MUTATIONS(showAlert, t)}
         {...props}
       >
         {({ data }, { addPhotos }) => (
@@ -181,7 +231,7 @@ const ConnectedPhotosPicker = ({ ...props }) => {
     )
   }
 
-  return <CreateAlbumPicker />
+  return <CreateAlbumPicker showAlert={showAlert} t={t} />
 }
 
 export {

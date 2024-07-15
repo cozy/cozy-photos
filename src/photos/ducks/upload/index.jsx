@@ -2,8 +2,6 @@ import React from 'react'
 import { combineReducers } from 'redux'
 import logger from 'lib/logger'
 
-import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
-
 import UploadQueue from './UploadQueue'
 import { showModal } from 'react-cozy-helpers'
 import QuotaAlert from 'components/QuotaAlert'
@@ -63,62 +61,73 @@ const queue = (state = [], action) => {
 }
 export default combineReducers({ queue })
 
-const processNextFile = callback => async (dispatch, getState) => {
-  const item = getUploadQueue(getState()).find(i => i.status === PENDING)
-  if (!item) {
-    return dispatch(onQueueEmpty())
-  }
-  const file = item.file
-  try {
-    dispatch({ type: UPLOAD_FILE, file })
-    await callback(file)
-    dispatch({ type: RECEIVE_UPLOAD_SUCCESS, file })
-  } catch (error) {
-    logger.log(error)
-    const statusError = {
-      409: CONFLICT,
-      413: QUOTA
+const processNextFile =
+  (callback, showAlert, t) => async (dispatch, getState) => {
+    const item = getUploadQueue(getState()).find(i => i.status === PENDING)
+    if (!item) {
+      return dispatch(onQueueEmpty(showAlert, t))
     }
-    // Photo doesn't have a status QUOTA. So
-    // we just use FAILED as it seems to do the job
-    const status =
-      statusError[error.status] ||
-      /Failed to fetch$/.exec(error.toString()) ||
-      FAILED
-    dispatch({
-      type: RECEIVE_UPLOAD_ERROR,
-      file,
-      status: status === CONFLICT ? CONFLICT : FAILED
-    })
-    if (status === QUOTA) {
-      dispatch(showModal(<QuotaAlert t={() => {}} />))
+    const file = item.file
+    try {
+      dispatch({ type: UPLOAD_FILE, file })
+      await callback(file)
+      dispatch({ type: RECEIVE_UPLOAD_SUCCESS, file })
+    } catch (error) {
+      logger.log(error)
+      const statusError = {
+        409: CONFLICT,
+        413: QUOTA
+      }
+      // Photo doesn't have a status QUOTA. So
+      // we just use FAILED as it seems to do the job
+      const status =
+        statusError[error.status] ||
+        /Failed to fetch$/.exec(error.toString()) ||
+        FAILED
+      dispatch({
+        type: RECEIVE_UPLOAD_ERROR,
+        file,
+        status: status === CONFLICT ? CONFLICT : FAILED
+      })
+      if (status === QUOTA) {
+        dispatch(showModal(<QuotaAlert t={() => {}} />))
+      }
     }
+    dispatch(processNextFile(callback, showAlert, t))
   }
-  dispatch(processNextFile(callback))
-}
 
-export const addToUploadQueue = (files, callback) => async dispatch => {
-  dispatch({ type: ADD_TO_UPLOAD_QUEUE, files })
-  dispatch(processNextFile(callback))
-}
+export const addToUploadQueue =
+  ({ files, callback, showAlert, t }) =>
+  async dispatch => {
+    dispatch({ type: ADD_TO_UPLOAD_QUEUE, files })
+    dispatch(processNextFile(callback, showAlert, t))
+  }
 
 export const purgeUploadQueue = () => ({ type: PURGE_UPLOAD_QUEUE })
 
-export const onQueueEmpty = () => (dispatch, getState) => {
+export const onQueueEmpty = (showAlert, t) => (dispatch, getState) => {
   const queue = getUploadQueue(getState())
   const conflicts = getConflicts(queue)
   const errors = getErrors(queue)
   const loaded = getLoaded(queue)
 
   if (!conflicts.length && !errors.length) {
-    Alerter.success('UploadQueue.alert.success', { smart_count: loaded.length })
+    showAlert({
+      message: t('UploadQueue.alert.success', {
+        smart_count: loaded.length
+      }),
+      severity: 'success'
+    })
   } else if (conflicts.length && !errors.length) {
-    Alerter.info('UploadQueue.alert.success_conflicts', {
-      smart_count: loaded.length,
-      conflictNumber: conflicts.length
+    showAlert({
+      message: t('UploadQueue.alert.success_conflicts', {
+        smart_count: loaded.length,
+        conflictNumber: conflicts.length
+      }),
+      severity: 'secondary'
     })
   } else {
-    Alerter.error('UploadQueue.alert.errors')
+    showAlert({ message: t('UploadQueue.alert.errors'), severity: 'error' })
   }
 }
 

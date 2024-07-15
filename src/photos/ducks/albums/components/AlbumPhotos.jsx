@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import flow from 'lodash/flow'
 
 import { withClient } from 'cozy-client'
 import { showModal } from 'react-cozy-helpers'
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
-import Alerter from 'cozy-ui/transpiled/react/deprecated/Alerter'
+import { useAlert } from 'cozy-ui/transpiled/react/providers/Alert'
 import { ShareModal } from 'cozy-sharing'
-import flow from 'lodash/flow'
 
 import styles from '../../../styles/layout.styl'
 
@@ -38,7 +38,10 @@ class AlbumPhotos extends Component {
 
   renameAlbum = name => {
     if (name.trim() === '') {
-      Alerter.error('Error.album_rename_abort')
+      this.props.showAlert({
+        message: this.props.t('Error.album_rename_abort'),
+        severity: 'error'
+      })
       return
     } else if (name === this.props.album.name) {
       this.setState({ editing: false })
@@ -54,7 +57,10 @@ class AlbumPhotos extends Component {
         this.setState({ editing: false })
       })
       .catch(() => {
-        Alerter.error('Error.generic')
+        this.props.showAlert({
+          message: this.props.t('Error.generic'),
+          severity: 'error'
+        })
       })
   }
   // !TODO Hack. We should not use 99999 as limit.
@@ -88,7 +94,7 @@ class AlbumPhotos extends Component {
     })
   }
   renderDestroyConfirm = () => {
-    const { t, navigate, album, deleteAlbum } = this.props
+    const { t, navigate, album, deleteAlbum, showAlert } = this.props
 
     return (
       <DestroyConfirm
@@ -101,11 +107,19 @@ class AlbumPhotos extends Component {
             // eslint-disable-next-line promise/always-return
             .then(() => {
               navigate('/albums')
-              Alerter.success('Albums.remove_album.success', {
-                name: album.name
+              showAlert({
+                message: t('Albums.remove_album.success', {
+                  name: album.name
+                }),
+                severity: 'success'
               })
             })
-            .catch(() => Alerter.error('Albums.remove_album.error.generic'))
+            .catch(() =>
+              showAlert({
+                message: t('Albums.remove_album.error.generic'),
+                severity: 'error'
+              })
+            )
         }
       />
     )
@@ -230,7 +244,16 @@ AlbumPhotos.propTypes = {
 const AlbumPhotosWrapper = props => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  return <AlbumPhotos {...props} navigate={navigate} pathname={pathname} />
+  const { showAlert } = useAlert()
+
+  return (
+    <AlbumPhotos
+      {...props}
+      navigate={navigate}
+      pathname={pathname}
+      showAlert={showAlert}
+    />
+  )
 }
 
 export default flow(

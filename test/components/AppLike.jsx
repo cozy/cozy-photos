@@ -3,6 +3,7 @@ import { CozyProvider } from 'cozy-client'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
+import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 import { SharingContext } from 'cozy-sharing'
@@ -51,7 +52,9 @@ const AppLike = ({
             >
               <HashRouter>
                 <BreakpointsProvider>
-                  <PushBannerProvider>{children}</PushBannerProvider>
+                  <AlertProvider>
+                    <PushBannerProvider>{children}</PushBannerProvider>
+                  </AlertProvider>
                 </BreakpointsProvider>
               </HashRouter>
             </SharingContext.Provider>
