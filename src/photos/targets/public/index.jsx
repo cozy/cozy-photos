@@ -32,7 +32,6 @@ import doctypes from '../browser/doctypes'
 import App from './App'
 import { AlbumPhotosViewer } from 'photos/components/PhotosViewer'
 
-import { configureReporter, setCozyUrl } from 'lib/reporter'
 import { WebviewIntentProvider } from 'cozy-intent'
 
 document.addEventListener('DOMContentLoaded', init)
@@ -55,8 +54,6 @@ async function init() {
   client.registerPlugin(RealtimePlugin)
   client.registerPlugin(flag.plugin)
 
-  configureReporter()
-  setCozyUrl(cozyUrl)
   const store = createStore(
     combineReducers({
       cozy: client.reducer()
