@@ -10,11 +10,12 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Route, Navigate } from 'react-router-dom'
 import CozyClient, { CozyProvider, RealTimeQueries } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
 import flag from 'cozy-flags'
 import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
+import { SentryRoutes } from 'lib/sentry'
 
 import { BarProvider } from 'cozy-bar'
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
@@ -75,7 +76,7 @@ async function init() {
                 <AlertProvider>
                   <RealTimeQueries doctype="io.cozy.settings" />
                   <HashRouter>
-                    <Routes>
+                    <SentryRoutes>
                       <Route path="shared/:albumId" element={<App />}>
                         <Route
                           path=":photoId"
@@ -86,7 +87,7 @@ async function init() {
                         path="*"
                         element={<Navigate to={`shared/${id}`} />}
                       />
-                    </Routes>
+                    </SentryRoutes>
                   </HashRouter>
                 </AlertProvider>
               </BreakpointsProvider>
