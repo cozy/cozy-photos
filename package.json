@@ -40,7 +40,6 @@
   },
   "homepage": "https://github.com/cozy/cozy-photos#readme",
   "devDependencies": {
-    "@sentry/cli": "1.72.1",
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "11.2.7",
     "@testing-library/react-hooks": "8.0.1",
@@ -74,6 +73,7 @@
   },
   "dependencies": {
     "@cozy/minilog": "1.0.0",
+    "@sentry/react": "7.118.0",
     "classnames": "2.3.1",
     "cozy-authentication": "2.10.10",
     "cozy-bar": "^12.2.4",
@@ -102,7 +102,6 @@
     "log-prefix": "0.1.1",
     "node-fetch": "2.6.7",
     "prop-types": "15.8.1",
-    "raven-js": "3.27.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-hot-loader": "^4.13.1",

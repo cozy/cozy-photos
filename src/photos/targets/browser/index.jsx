@@ -31,7 +31,6 @@ import appReducers from 'photos/reducers'
 import AppRouter from 'photos/components/AppRouter'
 import memoize from 'lodash/memoize'
 
-import { configureReporter, setCozyUrl } from 'lib/reporter'
 import appMetadata from 'photos/appMetadata'
 import doctypes from './doctypes'
 
@@ -63,8 +62,6 @@ const setupAppContext = memoize(() => {
     token: data.token
   })
 
-  configureReporter()
-  setCozyUrl(cozyUrl)
   let middlewares = [thunkMiddleware, loggerMiddleware]
 
   // Enable Redux dev tools
