@@ -24,7 +24,7 @@ import { getQueryParameter } from 'react-cozy-helpers'
 import getSharedDocument from 'cozy-sharing/dist/getSharedDocument'
 import ErrorUnsharedComponent from 'photos/components/ErrorUnshared'
 import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite'
-import { DumbCozyTheme } from 'cozy-ui/transpiled/react/providers/CozyTheme'
+import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 import { Layout as LayoutUI } from 'cozy-ui/transpiled/react/Layout'
 
 import appMetadata from 'photos/appMetadata'
@@ -101,10 +101,10 @@ async function init() {
   } finally {
     render(
       <I18n lang={lang} dictRequire={lang => require(`photos/locales/${lang}`)}>
-        <DumbCozyTheme variant="normal" className="u-w-100">
+        <CozyTheme ignoreCozySettings className="u-w-100">
           <LayoutUI monoColumn>{app}</LayoutUI>
           <Sprite />
-        </DumbCozyTheme>
+        </CozyTheme>
       </I18n>,
       root
     )
