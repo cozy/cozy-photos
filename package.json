@@ -76,7 +76,7 @@
     "@cozy/minilog": "1.0.0",
     "classnames": "2.3.1",
     "cozy-authentication": "2.10.10",
-    "cozy-bar": "^12.2.4",
+    "cozy-bar": "14.0.0",
     "cozy-ci": "0.5.2",
     "cozy-client": "^48.8.0",
     "cozy-client-js": "0.20.0",
