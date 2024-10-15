@@ -6,7 +6,7 @@
     "build": "cozy-scripts build --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
     "watch": "cozy-scripts watch --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
     "start": "cozy-scripts start --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
-    "deploy": "cozy-app-publish --token $REGISTRY_TOKEN --build-dir 'build/' --prepublish downcloud --postpublish mattermost",
+    "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --build-dir 'build/' --prepublish downcloud --postpublish mattermost",
     "tx": "tx pull --all || true",
     "lint": "npm-run-all --parallel 'lint:*'",
     "lint:styles": "stylint src --config ./node_modules/cozy-scripts/config/.stylintrc",
