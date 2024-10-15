@@ -1,0 +1,44 @@
+{
+  "baseDir": "./build",
+  "files": [
+    {
+      "path": "app/photos.<hash>.js"
+    },
+    {
+      "path": "public/cozy-client-js.js"
+    },
+    {
+      "path": "public/photos.<hash>.js"
+    },
+    {
+      "path": "public/photos.<hash>.min.css"
+    },
+    {
+      "path": "services/onPhotoTrashed/photos.js"
+    },
+    {
+      "path": "services/onPhotoUpload/photos.js"
+    },
+    {
+      "path": "vendors/photos.<hash>.js"
+    },
+    {
+      "path": "app-photos.<hash>.min.css"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "manifest.json"
+    },
+    {
+      "path": "manifest.webapp"
+    },
+    {
+      "path": "vendors-photos.<hash>.min.css"
+    }
+  ],
+  "reportOutput": [
+    "github"
+  ]
+}
