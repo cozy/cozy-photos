@@ -27,7 +27,6 @@ module.exports = {
     '^cozy-ui/react(.*)$': '<rootDir>/node_modules/cozy-ui/transpiled/react$1'
   },
   clearMocks: true,
-  snapshotSerializers: ['enzyme-to-json/serializer'],
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
     '^.+\\.webapp$': '<rootDir>/test/jestLib/json-transformer.js'
