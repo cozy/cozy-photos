@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react'
-
-import Viewer from 'cozy-ui/transpiled/react/Viewer'
-import FooterActionButtons from 'cozy-ui/transpiled/react/Viewer/Footer/FooterActionButtons'
-import ForwardOrDownloadButton from 'cozy-ui/transpiled/react/Viewer/Footer/ForwardOrDownloadButton'
-import SharingButton from 'cozy-ui/transpiled/react/Viewer/Footer/Sharing'
 import { useNavigate, useParams } from 'react-router-dom'
+
+import Viewer, {
+  FooterActionButtons,
+  ForwardOrDownloadButton,
+  SharingButton
+} from 'cozy-viewer'
 import { useQuery } from 'cozy-client'
+
 import { buildTimelineQuery, buildAlbumsQuery } from '../queries/queries'
 
 export const TimelinePhotosViewer = () => {

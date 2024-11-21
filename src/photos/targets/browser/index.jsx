@@ -4,6 +4,7 @@ import 'cozy-ui/dist/cozy-ui.utils.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
 import 'cozy-bar/dist/stylesheet.css'
 import 'cozy-sharing/dist/stylesheet.css'
+import 'cozy-viewer/dist/stylesheet.css'
 import 'photos/styles/main.styl'
 
 import React from 'react'
