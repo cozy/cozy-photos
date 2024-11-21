@@ -12,7 +12,7 @@ import Nav, {
   NavText,
   genNavLinkForV6
 } from 'cozy-ui/transpiled/react/Nav'
-import CozyDevtools from 'cozy-client/dist/devtools'
+import CozyDevtools from 'cozy-devtools'
 import { ModalManager } from 'react-cozy-helpers'
 import { isFlagshipApp } from 'cozy-device-helper'
 import flag from 'cozy-flags'
