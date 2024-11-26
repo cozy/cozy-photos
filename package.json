@@ -3,9 +3,9 @@
   "version": "1.68.0",
   "main": "src/main.jsx",
   "scripts": {
-    "build": "cozy-scripts build --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
-    "watch": "cozy-scripts watch --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
-    "start": "cozy-scripts start --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
+    "build": "rsbuild build",
+    "watch": "rsbuild build --watch",
+    "analyze": "RSDOCTOR=true yarn build",
     "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --build-dir 'build/' --prepublish downcloud --postpublish mattermost",
     "tx": "tx pull --all || true",
     "lint": "npm-run-all --parallel 'lint:*'",
