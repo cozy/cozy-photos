@@ -7,7 +7,16 @@
     "noEmit": true,
     "jsx": "react",
     "paths": {
-      "lib/*": ["./src/lib/*"]
+      "components/*": ["./src/components/*"],
+      "test/*": ["./test/*"],
+      "lib/*": ["./src/lib/*"],
+      "photos/*": ["./src/photos/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "folder-references": ["./src/folder-references/index.js"],
+      "config/*": ["./src/config/*"],
+      "react-cozy-helpers": ["./src/lib/react-cozy-helpers"],
+      "models": ["./src/models/index.js"],
+      "models/*": ["./src/models/*"],
     }
   }
 }
