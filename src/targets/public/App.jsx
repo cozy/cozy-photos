@@ -11,8 +11,8 @@ import { BarComponent } from 'cozy-bar'
 import Selection from 'photos/ducks/selection'
 import PhotoBoard from 'photos/components/PhotoBoard'
 import ErrorUnsharedComponent from 'photos/components/ErrorUnshared'
-import { buildAlbumsQuery } from '../../queries/queries'
-import { TopbarPublic } from '../../components/TopbarPublic'
+import { buildAlbumsQuery } from '../../photos/queries/queries'
+import { TopbarPublic } from '../../photos/components/TopbarPublic'
 
 export class App extends Component {
   static contextTypes = {
