@@ -207,8 +207,13 @@ export const AlbumPhotosWithLoader = () => {
   }
 }
 
-const CreateAlbumPicker = ({ showAlert, t }) =>
-  withMutations(ALBUMS_MUTATIONS(showAlert, t))(PhotosPicker)
+const CreateAlbumPicker = ({ showAlert, t }) => {
+  const PhotosPickerWithMutation = withMutations(
+    ALBUMS_MUTATIONS(showAlert, t)
+  )(PhotosPicker)
+
+  return <PhotosPickerWithMutation />
+}
 
 const ConnectedPhotosPicker = ({ ...props }) => {
   const { albumId } = useParams()
