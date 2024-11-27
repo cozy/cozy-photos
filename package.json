@@ -13,8 +13,8 @@
     "lint:js": "eslint '{src,test}/**/*.{js,jsx}'",
     "test": "env NODE_ENV='test' jest",
     "version": "yarn version:photos",
-    "version:photos": "replace '\\d+\\.\\d+\\.\\d+' $npm_package_version ./src/photos/targets/manifest.webapp",
-    "service": "yarn cozy-konnector-dev -m src/photos/targets/manifest.webapp"
+    "version:photos": "replace '\\d+\\.\\d+\\.\\d+' $npm_package_version manifest.webapp",
+    "service": "yarn cozy-konnector-dev -m manifest.webapp"
   },
   "repository": {
     "type": "git",
