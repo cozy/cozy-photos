@@ -3,7 +3,7 @@ import { Navigate, RouterProvider } from 'react-router-dom'
 import { isFlagshipApp } from 'cozy-device-helper'
 import flag from 'cozy-flags'
 
-import { Spinner } from 'cozy-ui/transpiled/react'
+import Spinner from 'cozy-ui/transpiled/react/Spinner'
 
 import Layout from './Layout'
 import Timeline from '../ducks/timeline'
