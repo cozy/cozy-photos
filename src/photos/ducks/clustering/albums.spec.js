@@ -1,6 +1,6 @@
 import CozyClient from 'cozy-client'
 import { saveClustering } from './albums'
-import doctypes from 'photos/targets/browser/doctypes'
+import doctypes from '@/targets/browser/doctypes'
 import log from 'cozy-logger'
 
 jest.mock('cozy-logger')
