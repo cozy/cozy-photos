@@ -21,7 +21,7 @@ import ButtonClient from 'components/pushClient/Button'
 import { UploadQueue } from '../ducks/upload'
 import PushBanner from 'components/PushBanner'
 
-import styles from '../styles/layout'
+import styles from '../styles/layout.styl'
 
 const NavLink = genNavLinkForV6(RouterLink)
 
