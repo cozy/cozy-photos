@@ -65,7 +65,6 @@
     "rsbuild-config-cozy-app": "^0.1.1",
     "stylint": "1.5.9",
     "tar": "6.1.12",
-    "terser-webpack-plugin": "1.4.5",
     "unzipper": "0.10.11",
     "visualreview-client": "git+https://github.com/cozy/VisualReview-node-client.git#v0.0.4",
     "worker-loader": "2.0.0"
@@ -89,7 +88,6 @@
     "cozy-pouch-link": "^44.0.0",
     "cozy-realtime": "4.6.0",
     "cozy-scanner": "^7.0.0",
-    "cozy-scripts": "^8.2.0",
     "cozy-sharing": "^16.0.0",
     "cozy-stack-client": "51.0.0",
     "cozy-ui": "113.3.0",
