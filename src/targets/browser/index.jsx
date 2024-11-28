@@ -61,11 +61,6 @@ const setupAppContext = memoize(() => {
   })
   client.registerPlugin(RealtimePlugin)
   client.registerPlugin(flag.plugin)
-  // We still need to init cozy-client-js for the Uploader
-  cozy.client.init({
-    cozyURL: cozyUrl,
-    token: data.token
-  })
 
   let middlewares = [thunkMiddleware, loggerMiddleware]
 
