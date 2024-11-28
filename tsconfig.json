@@ -1,6 +1,5 @@
 {
   "extends": "cozy-tsconfig",
-  "include": ["./src/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "emitDeclarationOnly": false,
@@ -17,6 +16,7 @@
       "react-cozy-helpers": ["./src/lib/react-cozy-helpers"],
       "models": ["./src/models/index.js"],
       "models/*": ["./src/models/*"],
+      "@/*": ["./src/*"]
     }
   }
 }
