@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { Outlet, useParams } from 'react-router-dom'
 
 import { Query } from 'cozy-client'
-import { Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
+import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
+import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import { Main } from 'cozy-ui/transpiled/react/Layout'
 import { BarComponent } from 'cozy-bar'
 
