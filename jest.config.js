@@ -41,7 +41,6 @@ module.exports = {
   },
   testMatch: ['**/(*.)(spec|test).[jt]s?(x)'],
   globals: {
-    __APP_SLUG__: 'photos',
     __TARGET__: 'browser',
     __DEVELOPMENT__: true
   },
