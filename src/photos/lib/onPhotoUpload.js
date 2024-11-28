@@ -1,4 +1,4 @@
-import doctypes from 'photos/targets/browser/doctypes'
+import doctypes from '@/targets/browser/doctypes'
 import log from 'cozy-logger'
 import CozyClient from 'cozy-client'
 import fetch from 'node-fetch'
