@@ -60,7 +60,6 @@
     "replace": "1.2.1",
     "rsbuild-config-cozy-app": "^0.1.1",
     "stylint": "1.5.9",
-    "terser-webpack-plugin": "1.4.5",
     "worker-loader": "2.0.0"
   },
   "dependencies": {
@@ -77,7 +76,6 @@
     "cozy-intent": "2.29.1",
     "cozy-logger": "1.9.1",
     "cozy-realtime": "4.6.0",
-    "cozy-scripts": "^8.2.0",
     "cozy-sharing": "^16.0.0",
     "cozy-ui": "113.3.0",
     "cozy-viewer": "2.9.0",
