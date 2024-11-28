@@ -2,7 +2,8 @@ import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Icon, FileInput } from 'cozy-ui/transpiled/react'
+import FileInput from 'cozy-ui/transpiled/react/FileInput'
+import Icon from 'cozy-ui/transpiled/react/Icon'
 import UploadIcon from 'cozy-ui/transpiled/react/Icons/Upload'
 
 import button from '../styles/toolbar.styl'
