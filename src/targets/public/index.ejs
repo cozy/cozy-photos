@@ -2,18 +2,15 @@
 <html lang="{{.Locale}}">
 <head>
   <meta charset="UTF-8">
+  <title>Public Cozy Photos</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" sizes="16x16" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="robots" content="noindex, nofollow, noimageindex">
   <meta name="color-scheme" content="light dark" />
-  <title>Public Cozy Photos</title>
-  <% _.forEach(htmlWebpackPlugin.files.css, function(file) { %>
-    <link rel="stylesheet" href="<%- file %>">
-  <% }); %>
-  <% if (__STACK_ASSETS__) { %>
-    {{.CozyClientJS}}
-    {{.CozyFonts}}
-  <% } %>
+  <link rel="stylesheet" type="text/css" href="//{{.Domain}}/assets/fonts/fonts.css">
   {{.ThemeCSS}}
 </head>
 <body>
@@ -21,8 +18,5 @@
     role="application"
     data-cozy="{{.CozyData}}"
   >
-  <% _.forEach(htmlWebpackPlugin.files.js, function(file) { %>
-    <script src="<%- file %>"></script>
-  <% }); %>
 </body>
 </html>

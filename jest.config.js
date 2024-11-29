@@ -24,7 +24,8 @@ module.exports = {
       '<rootDir>/jestHelpers/mocks/pdfjsWorkerMock.js',
     '^cozy-client$': 'cozy-client/dist/index.js',
     '^react-redux': '<rootDir>/node_modules/react-redux',
-    '^cozy-ui/react(.*)$': '<rootDir>/node_modules/cozy-ui/transpiled/react$1'
+    '^cozy-ui/react(.*)$': '<rootDir>/node_modules/cozy-ui/transpiled/react$1',
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   clearMocks: true,
   transform: {
@@ -40,10 +41,5 @@ module.exports = {
     url: 'http://cozy.localhost:8080/'
   },
   testMatch: ['**/(*.)(spec|test).[jt]s?(x)'],
-  globals: {
-    __APP_SLUG__: 'photos',
-    __TARGET__: 'browser',
-    __DEVELOPMENT__: true
-  },
   reporters: ['default', '<rootDir>/jestHelpers/ConsoleUsageReporter.js']
 }

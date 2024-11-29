@@ -4,15 +4,16 @@ import PropTypes from 'prop-types'
 import { Outlet, useParams } from 'react-router-dom'
 
 import { Query } from 'cozy-client'
-import { Spinner, useBreakpoints } from 'cozy-ui/transpiled/react'
+import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
+import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import { Main } from 'cozy-ui/transpiled/react/Layout'
 import { BarComponent } from 'cozy-bar'
 
 import Selection from 'photos/ducks/selection'
 import PhotoBoard from 'photos/components/PhotoBoard'
 import ErrorUnsharedComponent from 'photos/components/ErrorUnshared'
-import { buildAlbumsQuery } from '../../queries/queries'
-import { TopbarPublic } from '../../components/TopbarPublic'
+import { buildAlbumsQuery } from '../../photos/queries/queries'
+import { TopbarPublic } from '../../photos/components/TopbarPublic'
 
 export class App extends Component {
   static contextTypes = {

@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
-import { Spinner } from 'cozy-ui/transpiled/react'
+import Spinner from 'cozy-ui/transpiled/react/Spinner'
 
 import styles from '../styles/loading.styl'
 

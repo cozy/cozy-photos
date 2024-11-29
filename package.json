@@ -3,18 +3,17 @@
   "version": "1.68.0",
   "main": "src/main.jsx",
   "scripts": {
-    "build": "cozy-scripts build --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
-    "watch": "cozy-scripts watch --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
-    "start": "cozy-scripts start --manifest src/photos/targets/manifest.webapp --build-dir build --src-dir src/photos --barV7 false --cozyClientJs",
+    "build": "rsbuild build",
+    "watch": "rsbuild build --watch",
+    "analyze": "RSDOCTOR=true yarn build",
     "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --build-dir 'build/' --prepublish downcloud --postpublish mattermost",
     "tx": "tx pull --all || true",
     "lint": "npm-run-all --parallel 'lint:*'",
-    "lint:styles": "stylint src --config ./node_modules/cozy-scripts/config/.stylintrc",
     "lint:js": "eslint '{src,test}/**/*.{js,jsx}'",
     "test": "env NODE_ENV='test' jest",
     "version": "yarn version:photos",
-    "version:photos": "replace '\\d+\\.\\d+\\.\\d+' $npm_package_version ./src/photos/targets/manifest.webapp",
-    "service": "yarn cozy-konnector-dev -m src/photos/targets/manifest.webapp"
+    "version:photos": "replace '\\d+\\.\\d+\\.\\d+' $npm_package_version manifest.webapp",
+    "service": "yarn cozy-konnector-dev -m manifest.webapp"
   },
   "repository": {
     "type": "git",
@@ -40,6 +39,7 @@
   },
   "homepage": "https://github.com/cozy/cozy-photos#readme",
   "devDependencies": {
+    "@rsbuild/core": "^1.1.6",
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "11.2.7",
     "@testing-library/react-hooks": "8.0.1",
@@ -61,9 +61,9 @@
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.14.0",
     "replace": "1.2.1",
+    "rsbuild-config-cozy-app": "^0.1.1",
     "stylint": "1.5.9",
     "tar": "6.1.12",
-    "terser-webpack-plugin": "1.4.5",
     "unzipper": "0.10.11",
     "visualreview-client": "git+https://github.com/cozy/VisualReview-node-client.git#v0.0.4",
     "worker-loader": "2.0.0"
@@ -76,7 +76,6 @@
     "cozy-bar": "16.0.1",
     "cozy-ci": "0.5.2",
     "cozy-client": "51.3.0",
-    "cozy-client-js": "0.20.0",
     "cozy-device-helper": "^2.5.0",
     "cozy-devtools": "^1.2.1",
     "cozy-doctypes": "1.85.4",
@@ -88,7 +87,6 @@
     "cozy-pouch-link": "^44.0.0",
     "cozy-realtime": "4.6.0",
     "cozy-scanner": "^7.0.0",
-    "cozy-scripts": "^8.2.0",
     "cozy-sharing": "^16.0.0",
     "cozy-stack-client": "51.0.0",
     "cozy-ui": "113.3.0",

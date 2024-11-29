@@ -1,6 +1,6 @@
 import React from 'react'
 import Topbar from '../../components/Topbar'
-import { useBreakpoints } from 'cozy-ui/transpiled/react'
+import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
 import styles from '../../styles/layout.styl'
 import backupStyles from '../../styles/backup.styl'

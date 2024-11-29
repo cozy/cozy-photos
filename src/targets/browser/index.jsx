@@ -1,5 +1,3 @@
-/* global cozy __DEVELOPMENT__ */
-
 import 'cozy-ui/dist/cozy-ui.utils.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
 import 'cozy-bar/dist/stylesheet.css'
@@ -57,17 +55,12 @@ const setupAppContext = memoize(() => {
   })
   client.registerPlugin(RealtimePlugin)
   client.registerPlugin(flag.plugin)
-  // We still need to init cozy-client-js for the Uploader
-  cozy.client.init({
-    cozyURL: cozyUrl,
-    token: data.token
-  })
 
   let middlewares = [thunkMiddleware, loggerMiddleware]
 
   // Enable Redux dev tools
   const composeEnhancers =
-    (__DEVELOPMENT__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+    (flag('debug') && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
 
   const store = createStore(
     combineReducers({ ...appReducers, cozy: client.reducer() }),

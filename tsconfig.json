@@ -1,13 +1,22 @@
 {
   "extends": "cozy-tsconfig",
-  "include": ["./src/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "emitDeclarationOnly": false,
     "noEmit": true,
     "jsx": "react",
     "paths": {
-      "lib/*": ["./src/lib/*"]
+      "components/*": ["./src/components/*"],
+      "test/*": ["./test/*"],
+      "lib/*": ["./src/lib/*"],
+      "photos/*": ["./src/photos/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "folder-references": ["./src/folder-references/index.js"],
+      "config/*": ["./src/config/*"],
+      "react-cozy-helpers": ["./src/lib/react-cozy-helpers"],
+      "models": ["./src/models/index.js"],
+      "models/*": ["./src/models/*"],
+      "@/*": ["./src/*"]
     }
   }
 }
