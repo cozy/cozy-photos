@@ -7,6 +7,10 @@ import 'cozy-sharing/dist/stylesheet.css'
 import 'cozy-viewer/dist/stylesheet.css'
 import 'photos/styles/main.styl'
 
+// Uncomment to activate why-did-you-render
+// https://github.com/welldone-software/why-did-you-render
+// import './wdyr'
+
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
