@@ -1,39 +1,77 @@
 {
   "baseDir": "./build",
+  "pathLabels": {
+    "chunkId": "[\\d-]+"
+  },
   "files": [
     {
-      "path": "app/photos.<hash>.js"
+      "path": "static/js/<chunkId>.<hash>.js"
     },
     {
-      "path": "public/photos.<hash>.js"
+      "path": "static/js/cozy.<hash>.js"
     },
     {
-      "path": "public/photos.<hash>.min.css"
+      "path": "static/js/main.<hash>.js"
     },
     {
-      "path": "services/onPhotoTrashed/photos.js"
+      "path": "static/js/lib-react.<hash>.js"
     },
     {
-      "path": "services/onPhotoUpload/photos.js"
+      "path": "static/js/lib-router.<hash>.js"
     },
     {
-      "path": "vendors/photos.<hash>.js"
+      "path": "static/css/cozy.<hash>.css"
     },
     {
-      "path": "app-photos.<hash>.min.css"
+      "path": "static/css/main.<hash>.css"
+    },
+    {
+      "path": "public/static/js/<chunkId>.<hash>.js"
+    },
+    {
+      "path": "public/static/js/public.<hash>.js"
+    },
+    {
+      "path": "public/static/js/cozy.<hash>.js"
+    },
+    {
+      "path": "public/static/js/lib-react.<hash>.js"
+    },
+    {
+      "path": "public/static/js/lib-router.<hash>.js"
+    },
+    {
+      "path": "public/static/css/cozy.<hash>.css"
+    },
+    {
+      "path": "public/static/css/public.<hash>.css"
+    },
+    {
+      "path": "services/onPhotoTrashed.js"
+    },
+    {
+      "path": "services/onPhotoUpload.js"
     },
     {
       "path": "index.html"
     },
     {
-      "path": "manifest.json"
+      "path": "assets/manifest.json"
     },
     {
       "path": "manifest.webapp"
-    },
-    {
-      "path": "vendors-photos.<hash>.min.css"
     }
+  ],
+  "groups": [
+      {
+          "path": "**/*.js"
+      },
+      {
+          "path": "**/*.css"
+      },
+      {
+          "path": "**/*.{png,svg,ico}"
+      }
   ],
   "reportOutput": [
     "github"
