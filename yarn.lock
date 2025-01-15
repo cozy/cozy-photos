@@ -11612,10 +11612,10 @@ route-recognizer@^0.3.4:
   resolved "https://registry.yarnpkg.com/route-recognizer/-/route-recognizer-0.3.4.tgz#39ab1ffbce1c59e6d2bdca416f0932611e4f3ca3"
   integrity sha512-2+MhsfPhvauN1O8KaXpXAOfR/fwe8dnUXVM+xw7yt40lJRfPVQxV6yryZm0cgRvAj5fMF/mdRZbL2ptwbs5i2g==
 
-rsbuild-config-cozy-app@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/rsbuild-config-cozy-app/-/rsbuild-config-cozy-app-0.1.1.tgz#73096d102ce0b1089e503104373262f70293b194"
-  integrity sha512-P4akufEQTUp0rRHb1QItVKJ6Y0qhwnY+ZoHPtFIa0CkyM6UgNBnH+m5pWvm9xNNzSM5Vsw/KJ4CcQ5PWaNt5WQ==
+rsbuild-config-cozy-app@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/rsbuild-config-cozy-app/-/rsbuild-config-cozy-app-0.2.0.tgz#bfe6b851ee207fd55711ffff9e0f3ab8a551c5fd"
+  integrity sha512-LEv//GwTDG66YZEj9ECA4CY9Vu/mI4y7Of/Lt+cGj/BtR8g6c82STW2wkCRd6o2CZirvRsGPxcWVc2ajZjtYhg==
   dependencies:
     "@rsbuild/plugin-node-polyfill" "1.2.0"
     "@rsbuild/plugin-react" "1.0.7"
