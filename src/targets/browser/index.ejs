@@ -14,10 +14,14 @@
       content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover"
     />
     <link rel="stylesheet" type="text/css" href="//{{.Domain}}/assets/fonts/fonts.css">
+    {{.CozyFonts}}
+    <% htmlPlugin.files.css.forEach(function(file) { %>
+      <link rel="stylesheet" href="<%- file %>" />
+    <% }); %>
     {{.ThemeCSS}}
   </head>
-  <div
-    role="application"
-    data-cozy="{{.CozyData}}"
-  ></div>
+  <div role="application" data-cozy="{{.CozyData}}"></div>
+  <% htmlPlugin.files.js.forEach(function(file) { %>
+    <script defer src="<%- file %>"></script>
+  <% }); %>
 </html>
