@@ -5,10 +5,10 @@
     "shared": "Shared by me",
     "trash": "Trash",
     "backup": "Backup",
-    "btn-client": "Get Cozy Drive for desktop",
-    "btn-client-web": "Get Cozy",
-    "btn-client-mobile": "Get Cozy Drive on your mobile!",
-    "banner-txt-client": "Get Cozy Drive for Desktop and synchronise your files safely to make them accessible at all times.",
+    "btn-client": "Get Twake Drive for desktop",
+    "btn-client-web": "Get Twake",
+    "btn-client-mobile": "Get Twake Drive on your mobile!",
+    "banner-txt-client": "Get Twake Drive for Desktop and synchronise your files safely to make them accessible at all times.",
     "banner-btn-client": "Download",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
@@ -251,8 +251,8 @@
   },
   "UploadQueue": {
     "path_photos": "Photos",
-    "path_upload": "Uploaded from Cozy Photos",
-    "header": "Uploading %{smart_count} photo to Cozy Photos |||| Uploading %{smart_count} photos to Cozy Photos",
+    "path_upload": "Uploaded from Twake Photos",
+    "header": "Uploading %{smart_count} photo to Twake Photos |||| Uploading %{smart_count} photos to Twake Photos",
     "header_mobile": "Uploading %{done} of %{total}",
     "header_done": "Uploaded %{done} out of %{total} successfully",
     "close": "close",
@@ -296,18 +296,18 @@
       "cancel": "Stop"
     },
     "description": {
-      "first": "Back up all your photos and videos directly in your Cozy, and keep them in safe place in case you lose of break your smartphone!",
+      "first": "Back up all your photos and videos directly in your Twake, and keep them in safe place in case you lose of break your smartphone!",
       "second": "Note: To speed up the process, make sure to connect to an unlimited internet access, have enough battery and keep your app open"
     },
     "info": {
       "analysisInProgress": "Analysis in progress",
       "notBackedUpElements": "%{smart_count} element not backed up |||| %{smart_count} elements not backed up",
-      "pressStartBackup": "Press \"Backup\" to keep them safe in your Cozy.",
+      "pressStartBackup": "Press \"Backup\" to keep them safe in your Twake.",
       "successTitle": "Backup successful",
       "successDescription": "The photos and videos on your mobile have been successfully backed up.",
       "errorTitle": "Backup interrupted",
       "errorDescription": "%{backedUpMediaCount}/%{smart_count} element backed up. |||| %{backedUpMediaCount}/%{smart_count} elements backed up.",
-      "deduplicatedMediaCount": "%{smart_count} element not backed up because already present in your Cozy. |||| %{smart_count} elements not backed up because already present in your Cozy."
+      "deduplicatedMediaCount": "%{smart_count} element not backed up because already present in your Twake. |||| %{smart_count} elements not backed up because already present in your Twake."
     },
     "InstallAppAlert": {
       "description": "Backup automatically all your photos and videos from your mobile devices",
@@ -318,7 +318,7 @@
     },
     "AllowPermissionsModal": {
       "title": "Allow access to your photos and videos",
-      "description": "Cozy needs access to the photos and videos stored on your device in order to synchronize them.",
+      "description": "Twake needs access to the photos and videos stored on your device in order to synchronize them.",
       "cancel": "Cancel",
       "allow": "Allow"
     }

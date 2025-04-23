@@ -4,8 +4,8 @@
     "albums": "Albumy",
     "shared": "Udostępniane przeze mnie",
     "trash": "Kosz",
-    "btn-client-web": "Pobierz Cozy",
-    "btn-client-mobile": "Pobierz Cozy Drive na Twoje urządzenie mobilne!",
+    "btn-client-web": "Pobierz Twake",
+    "btn-client-mobile": "Pobierz Twake Drive na Twoje urządzenie mobilne!",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
     "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
@@ -218,7 +218,7 @@
     }
   },
   "UploadQueue": {
-    "header": "Wgrywanie %{smart_count} zdjęcia na Cozy Photos |||| Wgrywanie %{smart_count} zdjęć na Cozy Photos",
+    "header": "Wgrywanie %{smart_count} zdjęcia na Twake Photos |||| Wgrywanie %{smart_count} zdjęć na Twake Photos",
     "header_done": "Wgrywanie %{done} z %{total} zakończone pomyślnie",
     "close": "zamknij",
     "item": {

@@ -4,8 +4,8 @@
     "albums": "Альбомы",
     "shared": "Отправлено мной",
     "trash": "Мусор",
-    "btn-client-web": "Получить Cozy",
-    "btn-client-mobile": "Получить Cozy Drive на мобильный!",
+    "btn-client-web": "Получить Twake",
+    "btn-client-mobile": "Получить Twake Drive на мобильный!",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
     "link-client-android": "https://play.google.com/store/apps/details?id=io.cozy.drive.mobile",
@@ -226,7 +226,7 @@
     }
   },
   "UploadQueue": {
-    "header": "Загрузка %{smart_count} фото в Cozy Фото |||| Загрузка %{smart_count} фото в  Cozy Фото",
+    "header": "Загрузка %{smart_count} фото в Twake Фото |||| Загрузка %{smart_count} фото в  Twake Фото",
     "header_done": "%{done} из %{total} успешно загружено",
     "close": "отмена",
     "item": {

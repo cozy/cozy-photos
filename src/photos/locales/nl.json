@@ -4,7 +4,7 @@
     "albums": "Albums",
     "shared": "Gedeeld door mij",
     "trash": "Prullenbak",
-    "btn-client-mobile": "Haal Cozy mobiel op jouw telefoon!"
+    "btn-client-mobile": "Haal Twake mobiel op jouw telefoon!"
   },
   "Error": {
     "albums_title": "Er is een fout opgetreden tijdens het laden van de album lijst. Probeer het later nog eens.",
@@ -112,7 +112,7 @@
     "link": "Als je het hebt gedeeld, kunnen mensen het niet meer benaderen."
   },
   "UploadQueue": {
-    "header": "Uploaden van %{smart_count} foto naar Cozy Foto's |||| Uploaden van %{smart_count} foto's naar Cozy Foto's",
+    "header": "Uploaden van %{smart_count} foto naar Twake Foto's |||| Uploaden van %{smart_count} foto's naar Twake Foto's",
     "item": {
       "pending": "In behandeling"
     },
