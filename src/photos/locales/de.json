@@ -4,10 +4,10 @@
     "albums": "Alben",
     "shared": "Von mir geteilt",
     "trash": "Papierkorb",
-    "btn-client": "Hol' dir Cozy Drive auf den Desktop!",
-    "btn-client-web": "Hol' dir Cozy",
-    "btn-client-mobile": "Hol' dir Cozy Drive auf dein Handy!",
-    "banner-txt-client": "Hol' dir Cozy Drive für den Desktop und synchronisiere deine Dateien sicher, um sie jederzeit zugänglich zu machen.",
+    "btn-client": "Hol' dir Twake Drive auf den Desktop!",
+    "btn-client-web": "Hol' dir Twake",
+    "btn-client-mobile": "Hol' dir Twake Drive auf dein Handy!",
+    "banner-txt-client": "Hol' dir Twake Drive für den Desktop und synchronisiere deine Dateien sicher, um sie jederzeit zugänglich zu machen.",
     "banner-btn-client": "Herunterladen",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
@@ -90,7 +90,7 @@
       "one-way": "Kann sehen (demnächst)",
       "two-way": "Kann ändern"
     },
-    "create-cozy": "Erstelle meinen Cozy"
+    "create-cozy": "Erstelle meinen Twake"
   },
   "Albums": {
     "album_item_description": "%{smart_count} Foto |||| %{smart_count} Fotos",
@@ -241,8 +241,8 @@
   },
   "UploadQueue": {
     "path_photos": "Fotos",
-    "path_upload": "Hochgeladen von Cozy Photos",
-    "header": "%{smart_count} Foto zu Cozy Fotos hochgeladen. |||| %{smart_count} Fotos zu Cozy Fotos hochgeladen.",
+    "path_upload": "Hochgeladen von Twake Photos",
+    "header": "%{smart_count} Foto zu Twake Fotos hochgeladen. |||| %{smart_count} Fotos zu Twake Fotos hochgeladen.",
     "header_mobile": "Hochladen %{done} von %{total}",
     "header_done": "%{done} von %{total} erfolgreich hochgeladen",
     "close": "Schließen",

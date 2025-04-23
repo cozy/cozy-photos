@@ -5,10 +5,10 @@
     "shared": "Mes photos partagées",
     "trash": "Corbeille",
     "backup": "Sauvegarde",
-    "btn-client": "Téléchargez Cozy Drive ",
-    "btn-client-web": "Créer un Cozy",
-    "btn-client-mobile": "Téléchargez Cozy Drive sur votre mobile !",
-    "banner-txt-client": "Installez Cozy Drive pour ordinateur et synchronisez vos fichiers pour les rendre accessibles à tout moment.",
+    "btn-client": "Téléchargez Twake Drive ",
+    "btn-client-web": "Créer un Twake",
+    "btn-client-mobile": "Téléchargez Twake Drive sur votre mobile !",
+    "banner-txt-client": "Installez Twake Drive pour ordinateur et synchronisez vos fichiers pour les rendre accessibles à tout moment.",
     "banner-btn-client": "Télécharger",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
@@ -100,7 +100,7 @@
       "one-way": "Peut afficher (bientôt disponible)",
       "two-way": "Peut modifier"
     },
-    "create-cozy": "Créer mon Cozy"
+    "create-cozy": "Créer mon Twake"
   },
   "Albums": {
     "album_item_description": "%{smart_count} photo |||| %{smart_count} photos",
@@ -251,8 +251,8 @@
   },
   "UploadQueue": {
     "path_photos": "Photos",
-    "path_upload": "Importées depuis Cozy Photos",
-    "header": "Import de %{smart_count} photo dans votre Cozy |||| Import de %{smart_count} photos dans votre Cozy",
+    "path_upload": "Importées depuis Twake Photos",
+    "header": "Import de %{smart_count} photo dans votre Twake |||| Import de %{smart_count} photos dans votre Twake",
     "header_mobile": "Import %{done} sur %{total}",
     "header_done": "Importé avec succès %{done} sur un total de %{total}",
     "close": "fermer",
@@ -296,29 +296,29 @@
       "cancel": "Arrêter"
     },
     "description": {
-      "first": "Mettez vos photos & videos en sécurité en les sauvegardant directement dans votre Cozy, et retrouvez-les en cas de perte ou casse de votre smartphone !",
+      "first": "Mettez vos photos & videos en sécurité en les sauvegardant directement dans votre Twake, et retrouvez-les en cas de perte ou casse de votre smartphone !",
       "second": "Remarque : Pour faciliter la sauvegarde, assurez-vous d'avoir une connexion internet illimitée, suffisamment de batterie, et de garder l'application ouverte."
     },
     "info": {
       "analysisInProgress": "Analyse en cours",
       "notBackedUpElements": "%{smart_count} élément à sauvegarder |||| %{smart_count} éléments à sauvegarder",
-      "pressStartBackup": "Démarrer la sauvegarde pour les mettre en sécurité dans votre Cozy.",
+      "pressStartBackup": "Démarrer la sauvegarde pour les mettre en sécurité dans votre Twake.",
       "successTitle": "Sauvegarde réussie",
       "successDescription": "Les photos et vidéos de votre mobile ont été sauvegardées avec succès.",
       "errorTitle": "Sauvegarde interrompue",
       "errorDescription": "%{backedUpMediaCount}/%{smart_count} élément sauvegardé. |||| %{backedUpMediaCount}/%{smart_count} éléments sauvegardés.",
-      "deduplicatedMediaCount": "%{smart_count} élément non sauvegardé car déjà présent dans votre Cozy. |||| %{smart_count} éléments non sauvegardés car déjà présents dans votre Cozy."
+      "deduplicatedMediaCount": "%{smart_count} élément non sauvegardé car déjà présent dans votre Twake. |||| %{smart_count} éléments non sauvegardés car déjà présents dans votre Twake."
     },
     "InstallAppAlert": {
       "description": "Sauvegardez automatiquement toutes vos photos et vidéos depuis vos appareils mobiles",
-      "install": "Installez l'app Cozy"
+      "install": "Installez l'app Twake"
     },
     "UpdateAppAlert": {
       "description": "Mettez à jour votre app pour sauvegarder automatiquement toutes vos photos et vidéos"
     },
     "AllowPermissionsModal": {
       "title": "Autoriser l'accès aux photos et videos",
-      "description": "Cozy a besoin de votre autorisation pour accéder aux photos et videos stockées sur votre appareil.",
+      "description": "Twake a besoin de votre autorisation pour accéder aux photos et videos stockées sur votre appareil.",
       "cancel": "Annuler",
       "allow": "Autoriser"
     }

@@ -5,10 +5,10 @@
     "shared": "Door mij gedeeld",
     "trash": "Prullenbak",
     "backup": "Reservekopieën",
-    "btn-client": "Download Cozy Drive voor je computer",
-    "btn-client-web": "Download Cozy",
-    "btn-client-mobile": "Download Cozy Drive voor je telefoon!",
-    "banner-txt-client": "Download Cozy Drive voor je computer en synchroniseer je bestanden op een veilige manier om ze overal beschikbaar te maken.",
+    "btn-client": "Download Twake Drive voor je computer",
+    "btn-client-web": "Download Twake",
+    "btn-client-mobile": "Download Twake Drive voor je telefoon!",
+    "banner-txt-client": "Download Twake Drive voor je computer en synchroniseer je bestanden op een veilige manier om ze overal beschikbaar te maken.",
     "banner-btn-client": "Downloaden",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
@@ -251,8 +251,8 @@
   },
   "UploadQueue": {
     "path_photos": "Foto's",
-    "path_upload": "Geüpload via Cozy Photos",
-    "header": "Bezig met uploaden van %{smart_count} foto naar Cozy Photos |||| Bezig met uploaden van %{smart_count} foto's naar Cozy Photos",
+    "path_upload": "Geüpload via Twake Photos",
+    "header": "Bezig met uploaden van %{smart_count} foto naar Twake Photos |||| Bezig met uploaden van %{smart_count} foto's naar Twake Photos",
     "header_mobile": "Bezig met uploaden van %{done} van %{total}",
     "header_done": "%{done} van %{total} geüpload",
     "close": "sluiten",
@@ -295,7 +295,7 @@
       "cancel": "Afbreken"
     },
     "description": {
-      "first": "Bewaar al je foto's en video's op je Cozy, zodat je ze nog hebt als je bĳvoorbeeld je telefoon kwĳtraakt.",
+      "first": "Bewaar al je foto's en video's op je Twake, zodat je ze nog hebt als je bĳvoorbeeld je telefoon kwĳtraakt.",
       "second": "Let op: het maken van een reservekopie kan enige tĳd en veel mb's kosten. Zorg daarom dat je verbonden bent met een wifinetwerk of onbeperkt mobiel internet."
     },
     "info": {
@@ -310,7 +310,7 @@
     },
     "AllowPermissionsModal": {
       "title": "Toegang tot foto's en video's toestaan",
-      "description": "Cozy heeft toegang nodig tot de foto's en video's op je apparaat om ze te kunnen synchroniseren.",
+      "description": "Twake heeft toegang nodig tot de foto's en video's op je apparaat om ze te kunnen synchroniseren.",
       "cancel": "Annuleren",
       "allow": "Toestaan"
     }

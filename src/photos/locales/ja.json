@@ -4,10 +4,10 @@
     "albums": "アルバム",
     "shared": "自分で共有",
     "trash": "ゴミ箱",
-    "btn-client": "デスクトップ用 Cozy ドライブを入手",
-    "btn-client-web": "Cozy を入手",
-    "btn-client-mobile": "お使いのモバイルで Cozy ドライブを入手しましょう!",
-    "banner-txt-client": "デスクトップ用 Cozy ドライブを入手して、ファイルを安全に同期し、いつでもアクセスできるようにしましょう。",
+    "btn-client": "デスクトップ用 Twake ドライブを入手",
+    "btn-client-web": "Twake を入手",
+    "btn-client-mobile": "お使いのモバイルで Twake ドライブを入手しましょう!",
+    "banner-txt-client": "デスクトップ用 Twake ドライブを入手して、ファイルを安全に同期し、いつでもアクセスできるようにしましょう。",
     "banner-btn-client": "ダウンロード",
     "link-client": "https://cozy.io/en/download/",
     "link-client-desktop": "https://nuts.cozycloud.cc/download/channel/stable/",
@@ -90,7 +90,7 @@
       "one-way": "表示可能 (まもなく登場)",
       "two-way": "変更可能"
     },
-    "create-cozy": "自分の Cozy を作成する"
+    "create-cozy": "自分の Twake を作成する"
   },
   "Albums": {
     "album_item_description": "%{smart_count} 枚の写真 |||| %{smart_count} 枚の写真",
@@ -241,8 +241,8 @@
   },
   "UploadQueue": {
     "path_photos": "Photos",
-    "path_upload": "Cozy フォトからアップロード",
-    "header": "%{smart_count} 枚の写真を Cozy フォトにアップロード中 |||| %{smart_count} 枚の写真を Cozy フォトにアップロード中",
+    "path_upload": "Twake フォトからアップロード",
+    "header": "%{smart_count} 枚の写真を Twake フォトにアップロード中 |||| %{smart_count} 枚の写真を Twake フォトにアップロード中",
     "header_mobile": "アップロード中 %{done} / %{total}",
     "header_done": "%{done} / %{total} 正常にアップロードしました",
     "close": "閉じる",
