@@ -1,6 +1,6 @@
 {
   "name": "Photos",
-  "name_prefix": "Cozy",
+  "name_prefix": "Twake",
   "slug": "photos",
   "version": "1.68.0",
   "type": "webapp",
@@ -10,19 +10,19 @@
   "source": "https://github.com/cozy/cozy-photos",
   "editor": "Cozy",
   "developer": {
-    "name": "Cozy Cloud",
-    "url": "https://cozy.io"
+    "name": "Twake Workplace",
+    "url": "https://twake.app"
   },
   "langs": ["en", "fr"],
   "locales": {
     "fr": {
-      "short_description": "Cozy Photos est l’application de visualisation et gestion de vos photos sur Cozy.",
-      "long_description": "Avec Cozy Photos vous pourrez :\n- Visualiser toutes les photos présentes dans votre Cozy, classées par date;\n- Organisez vos photos en albums;\n- Partager vos albums avec qui vous le souhaitez.",
+      "short_description": "Twake Photos est l’application de visualisation et gestion de vos photos sur Twake.",
+      "long_description": "Avec Twake Photos vous pourrez :\n- Visualiser toutes les photos présentes dans votre Twake, classées par date;\n- Organisez vos photos en albums;\n- Partager vos albums avec qui vous le souhaitez.",
       "screenshots": ["assets/screenshots/fr/screenshot01.jpg", "assets/screenshots/fr/screenshot02.jpg", "assets/screenshots/fr/screenshot03.jpg"]
     },
     "en": {
-      "short_description": "Cozy Photos allows you to view and manage your photos on your Cozy",
-      "long_description": "With Cozy Photos, you can:\n- Get a timeline of all your memories\n- Organize your photos through albums\n- Share albums with just a link",
+      "short_description": "Twake Photos allows you to view and manage your photos on your Twake",
+      "long_description": "With Twake Photos, you can:\n- Get a timeline of all your memories\n- Organize your photos through albums\n- Share albums with just a link",
       "screenshots": ["assets/screenshots/en/screenshot01.jpg", "assets/screenshots/en/screenshot02.jpg", "assets/screenshots/en/screenshot03.jpg"]
     }
   },
