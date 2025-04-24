@@ -32,7 +32,7 @@ const mockSharingContextValue = {
   refresh: jest.fn(),
   hasWriteAccess: jest.fn(),
   getRecipients: jest.fn(),
-  getSharingLink: jest.fn()
+  makeSharingLink: jest.fn()
 }
 
 const AppLike = ({

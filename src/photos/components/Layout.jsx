@@ -114,8 +114,8 @@ const getNavLinks = () => {
 
 export const Layout = () => (
   <LayoutUI>
-    <BarComponent />
-    <Sidebar className={styles['pho-sidebar']}>
+    <BarComponent searchOptions={{ enabled: false }} />
+    <Sidebar className="u-flex-justify-between">
       <Nav>{getNavLinks()}</Nav>
       {!isFlagshipApp() && <ButtonClient />}
     </Sidebar>
