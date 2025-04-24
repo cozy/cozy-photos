@@ -30,19 +30,19 @@ export const formatH = (f, date) => {
 }
 
 export const formatD = (f, date) => {
-  return formatDate(f, date, 'DD')
+  return formatDate(f, date, 'dd')
 }
 
 export const formatDMY = (f, date) => {
-  return formatDate(f, date, 'DD MMMM') + addYear(f, date)
+  return formatDate(f, date, 'dd LLLL') + addYear(f, date)
 }
 
 export const formatYMD = (f, date) => {
-  return formatDate(f, date, 'YYYY-MM-DD')
+  return formatDate(f, date, 'yyyy-LL-dd')
 }
 
 const addYear = (f, date) => {
-  return isThisYear(date) ? '' : formatDate(f, date, ' YYYY')
+  return isThisYear(date) ? '' : formatDate(f, date, ' yyyy')
 }
 
 export const isSameMonth = (f, newerDate, olderDate) => {

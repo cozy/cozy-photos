@@ -16,6 +16,7 @@ import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
+import { DataProxyProvider } from 'cozy-dataproxy-lib'
 import { BarProvider } from 'cozy-bar'
 import CozyClient, { CozyProvider, RealTimeQueries } from 'cozy-client'
 import { RealtimePlugin } from 'cozy-realtime'
@@ -93,25 +94,27 @@ const App = props => {
           dictRequire={lang => require(`photos/locales/${lang}`)}
         >
           <CozyProvider client={props.client}>
-            <BarProvider>
-              <WaitFlags>
-                <BreakpointsProvider>
-                  <CozyTheme className="u-w-100">
-                    <AlertProvider>
-                      <RealTimeQueries doctype="io.cozy.settings" />
-                      <SharingProvider
-                        doctype={DOCTYPE_ALBUMS}
-                        documentType="Albums"
-                      >
-                        <PushBannerProvider>
-                          {props.children}
-                        </PushBannerProvider>
-                      </SharingProvider>
-                    </AlertProvider>
-                  </CozyTheme>
-                </BreakpointsProvider>
-              </WaitFlags>
-            </BarProvider>
+            <DataProxyProvider>
+              <BarProvider>
+                <WaitFlags>
+                  <BreakpointsProvider>
+                    <CozyTheme className="u-w-100">
+                      <AlertProvider>
+                        <RealTimeQueries doctype="io.cozy.settings" />
+                        <SharingProvider
+                          doctype={DOCTYPE_ALBUMS}
+                          documentType="Albums"
+                        >
+                          <PushBannerProvider>
+                            {props.children}
+                          </PushBannerProvider>
+                        </SharingProvider>
+                      </AlertProvider>
+                    </CozyTheme>
+                  </BreakpointsProvider>
+                </WaitFlags>
+              </BarProvider>
+            </DataProxyProvider>
           </CozyProvider>
         </I18n>
       </Provider>

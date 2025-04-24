@@ -124,6 +124,11 @@
       "description": "Required to display the information of the konnector that retrieved the photos",
       "type": "io.cozy.konnectors",
       "verbs": ["GET"]
+    },
+    "contacts": {
+      "description": "Required bye cozy-bar to show avatars",
+      "type": "io.cozy.contacts",
+      "verbs": ["GET"]
     }
   }
 }
