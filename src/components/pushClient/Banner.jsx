@@ -1,27 +1,28 @@
 // eslint-disable-next-line no-redeclare,no-unused-vars
 /* global localStorage */
 
-import React, { Component } from 'react'
 import localforage from 'localforage'
 import flow from 'lodash/flow'
+import React, { Component } from 'react'
 
 import { withClient } from 'cozy-client'
-import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 import Banner from 'cozy-ui/transpiled/react/Banner'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import Icon from 'cozy-ui/transpiled/react/Icon'
-import DeviceLaptopIcon from 'cozy-ui/transpiled/react/Icons/DeviceLaptop'
+import DesktopDownloadIcon from 'cozy-ui/transpiled/react/Icons/DesktopDownload'
 import DownloadIcon from 'cozy-ui/transpiled/react/Icons/Download'
+import PhoneDownloadIcon from 'cozy-ui/transpiled/react/Icons/PhoneDownload'
+import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import {
-  isLinux,
+  getMobileAppDownloadLink,
+  getDesktopAppDownloadLink,
+  isClientAlreadyInstalled,
   isAndroid,
   isIOS,
-  isClientAlreadyInstalled,
   DESKTOP_BANNER
-} from '.'
-import Config from 'config/config.json'
-import styles from './pushClient.styl'
+} from '@/components/pushClient'
+import Config from '@/config/config.json'
 
 class BannerClient extends Component {
   state = {
@@ -57,43 +58,48 @@ class BannerClient extends Component {
 
     const { t } = this.props
 
-    const link = isIOS()
-      ? 'Nav.link-client-ios'
-      : isAndroid()
-      ? 'Nav.link-client-android'
-      : isLinux()
-      ? 'Nav.link-client'
-      : 'Nav.link-client-desktop'
-
-    const text =
-      isIOS() || isAndroid() ? 'Nav.btn-client-mobile' : 'Nav.banner-txt-client'
+    const isMobile = isIOS() || isAndroid()
+    const text = isMobile ? 'Nav.btn-client-mobile' : 'Nav.banner-txt-client'
+    const link = isMobile
+      ? getMobileAppDownloadLink({ t })
+      : getDesktopAppDownloadLink({ t })
 
     return (
-      <div className={styles['coz-banner-client']}>
+      <div className="u-pos-relative">
         <Banner
           inline
-          icon={<Icon icon={DeviceLaptopIcon} size="100%" />}
-          text={t(text)}
-          bgcolor="var(--contrastBackgroundColor)"
+          disableIconStyles
+          icon={
+            <Icon
+              className="u-mt-1 u-ml-1"
+              icon={isMobile ? PhoneDownloadIcon : DesktopDownloadIcon}
+              color="var(--primaryTextColor)"
+              size={isMobile ? 24 : 20}
+            />
+          }
+          text={t(text, {
+            name: 'Twake Drive'
+          })}
+          bgcolor="var(--defaultBackgroundColor)"
           buttonOne={
             <Button
               component="a"
-              href={t(link)}
               variant="text"
-              startIcon={<Icon icon={DownloadIcon} />}
               label={t('Nav.banner-btn-client')}
               onClick={() => this.markAsSeen('banner')}
+              startIcon={<Icon icon={DownloadIcon} />}
+              target="_blank"
+              href={link}
             />
           }
           buttonTwo={
             <Button
               variant="text"
               label={t('SelectionBar.close')}
-              onClick={() => {
-                this.markAsSeen('close')
-              }}
+              onClick={() => this.markAsSeen('close')}
             />
           }
+          noDivider
         />
       </div>
     )
