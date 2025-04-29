@@ -3,26 +3,18 @@ import {
   differenceInCalendarMonths,
   differenceInCalendarDays,
   differenceInHours,
-  compareAsc
+  compareAsc,
+  parseISO
 } from 'date-fns'
 
 /**
- *  Format the date as specified by the formatter parameter.
- *  The extraction of year, day, etc is needed because the Date(string) constructor use the local timezone.
- *  Yet, the photos' dates are saved with the stack's locale (GMT+0 in production environment),
- *  because the timezone is mostly not specified in the EXIF metadata.
- *  So, to avoid a date offset in case the user timezone is not the stack's one, we use the Date(numbers) constructor instead.
- *  See https://github.com/date-fns/date-fns/issues/489 for more insights.
  * @param {function} f - date-fns format function
  * @param {string} date - date passed as string
- * @param {string} formatter - The wanted format. See https://date-fns.org/v1.30.1/docs/format
+ * @param {string} formatter - The wanted format. See https://date-fns.org/v2.0.0/docs/format
  * @returns {string} The formatted date
  */
 const formatDate = (f, date, formatter) => {
-  const [year, month, day] = date.substr(0, 10).split('-')
-  const [hours, minutes, seconds] =
-    date.length > 10 ? date.substr(11, 8).split(':') : [0, 0, 0]
-  return f(new Date(year, month - 1, day, hours, minutes, seconds), formatter)
+  return f(parseISO(date), formatter)
 }
 
 export const formatH = (f, date) => {
@@ -46,27 +38,25 @@ const addYear = (f, date) => {
 }
 
 export const isSameMonth = (f, newerDate, olderDate) => {
-  const newer = formatDate(f, newerDate)
-  const older = formatDate(f, olderDate)
-  return differenceInCalendarMonths(newer, older) === 0
+  return (
+    differenceInCalendarMonths(parseISO(newerDate), parseISO(olderDate)) === 0
+  )
 }
 
 export const isSameDay = (f, newerDate, olderDate) => {
-  const newer = formatDate(f, newerDate)
-  const older = formatDate(f, olderDate)
-  return differenceInCalendarDays(newer, older) === 0
+  return (
+    differenceInCalendarDays(parseISO(newerDate), parseISO(olderDate)) === 0
+  )
 }
 
 export const isSameHour = (f, newerDate, olderDate) => {
-  const newer = formatDate(f, newerDate)
-  const older = formatDate(f, olderDate)
-  return differenceInHours(newer, older) === 0
+  return differenceInHours(parseISO(newerDate), parseISO(olderDate)) === 0
 }
 
 export const isEqualOrNewer = (newerDate, olderDate) => {
-  return compareAsc(newerDate, olderDate) >= 0
+  return compareAsc(parseISO(newerDate), parseISO(olderDate)) >= 0
 }
 
 export const isEqualOrOlder = (newerDate, olderDate) => {
-  return compareAsc(newerDate, olderDate) <= 0
+  return compareAsc(parseISO(newerDate), parseISO(olderDate)) <= 0
 }
