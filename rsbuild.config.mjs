@@ -2,7 +2,7 @@ import { defineConfig } from '@rsbuild/core'
 import { getRsbuildConfig } from 'rsbuild-config-cozy-app'
 
 const config = getRsbuildConfig({
-  title: 'Cozy Photos',
+  title: 'Twake Photos',
   hasServices: true,
   hasPublic: true
 })
