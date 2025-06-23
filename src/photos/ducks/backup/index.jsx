@@ -51,12 +51,12 @@ const BackupPageContent = () => {
 
 const BackupPage = () => {
   return (
-    <div
-      data-testid="backup-pho-content-wrapper"
-      className={styles['pho-content-wrapper']}
-    >
-      <Topbar viewName="backup"></Topbar>
-      <Content>
+    <Content className="u-pt-0-s u-pt-1">
+      <div
+        data-testid="backup-pho-content-wrapper"
+        className={styles['pho-content-wrapper']}
+      >
+        <Topbar viewName="backup"></Topbar>
         <BackupActionsProvider>
           <div className={backupStyles['pho-backup-container']}>
             <div className={backupStyles['pho-backup-wrapper']}>
@@ -66,8 +66,8 @@ const BackupPage = () => {
           <AllowPermissionsModal />
           <BackupError />
         </BackupActionsProvider>
-      </Content>
-    </div>
+      </div>
+    </Content>
   )
 }
 

@@ -8,6 +8,7 @@ import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
 import { SharingContext } from 'cozy-sharing'
 import { BarProvider } from 'cozy-bar'
+import { Layout } from 'cozy-ui/transpiled/react/Layout'
 
 import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoints'
 import { HashRouter } from 'react-router-dom'
@@ -53,7 +54,9 @@ const AppLike = ({
               <HashRouter>
                 <BreakpointsProvider>
                   <AlertProvider>
-                    <PushBannerProvider>{children}</PushBannerProvider>
+                    <PushBannerProvider>
+                      <Layout>{children}</Layout>
+                    </PushBannerProvider>
                   </AlertProvider>
                 </BreakpointsProvider>
               </HashRouter>

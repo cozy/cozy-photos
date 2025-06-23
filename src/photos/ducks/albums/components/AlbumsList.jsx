@@ -1,7 +1,6 @@
 import styles from 'photos/styles/albumsList.styl'
 
 import React from 'react'
-import { Content } from 'cozy-ui/transpiled/react/Layout'
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import { EmptyPhotos } from 'components/Error/Empty'
@@ -21,16 +20,14 @@ const AlbumsList = ({ data, hasMore, fetchMore, t }) =>
   data.length === 0 ? (
     <EmptyPhotos localeKey="albums" hasTextMobileVersion />
   ) : (
-    <Content>
-      <div className={styles['pho-album-list']}>
-        {data.sort(sortByCreationDate).map(a => (
-          <AlbumItem album={a} key={a.id} />
-        ))}
-        {hasMore && (
-          <LoadMore label={t('Albums.load_more')} fetchMore={fetchMore} />
-        )}
-      </div>
-    </Content>
+    <div className={styles['pho-album-list']}>
+      {data.sort(sortByCreationDate).map(a => (
+        <AlbumItem album={a} key={a.id} />
+      ))}
+      {hasMore && (
+        <LoadMore label={t('Albums.load_more')} fetchMore={fetchMore} />
+      )}
+    </div>
   )
 
 export default translate()(AlbumsList)

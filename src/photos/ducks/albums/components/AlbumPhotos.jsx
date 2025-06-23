@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import flow from 'lodash/flow'
+import { Content } from 'cozy-ui/transpiled/react/Layout'
 
 import { withClient } from 'cozy-client'
 import { showModal } from 'react-cozy-helpers'
@@ -159,58 +160,60 @@ class AlbumPhotos extends Component {
         })}
       >
         {(selected, active, selection) => (
-          <div
-            data-testid="album-pho-content-wrapper"
-            className={styles['pho-content-wrapper']}
-          >
-            {album.name && album.photos.data && (
-              <Topbar
-                viewName="albumContent"
-                albumName={album.name}
-                editing={editing}
-                onEdit={this.renameAlbum}
-              >
-                <AlbumToolbar
-                  navigate={navigate}
-                  pathname={pathname}
-                  t={t}
-                  album={album}
-                  sharedWithMe={shared.withMe}
-                  sharedByMe={shared.byMe}
-                  readOnly={shared.readOnly}
-                  onRename={this.editAlbumName}
-                  downloadAlbum={this.downloadAlbum}
-                  deleteAlbum={this.deleteAlbum}
-                  shareAlbum={shareAlbum}
+          <Content className="u-pt-0-s u-pt-1">
+            <div
+              data-testid="album-pho-content-wrapper"
+              className={styles['pho-content-wrapper']}
+            >
+              {album.name && album.photos.data && (
+                <Topbar
+                  viewName="albumContent"
+                  albumName={album.name}
+                  editing={editing}
+                  onEdit={this.renameAlbum}
+                >
+                  <AlbumToolbar
+                    navigate={navigate}
+                    pathname={pathname}
+                    t={t}
+                    album={album}
+                    sharedWithMe={shared.withMe}
+                    sharedByMe={shared.byMe}
+                    readOnly={shared.readOnly}
+                    onRename={this.editAlbumName}
+                    downloadAlbum={this.downloadAlbum}
+                    deleteAlbum={this.deleteAlbum}
+                    shareAlbum={shareAlbum}
+                  />
+                </Topbar>
+              )}
+              {this.state.displayDestroyConfirmModal &&
+                this.renderDestroyConfirm()}
+              {this.state.showAddAlbumModal && (
+                <AddToAlbumModal
+                  onDismiss={this.hideAddAlbumModal}
+                  onSuccess={selection.clear}
+                  photos={selected}
                 />
-              </Topbar>
-            )}
-            {this.state.displayDestroyConfirmModal &&
-              this.renderDestroyConfirm()}
-            {this.state.showAddAlbumModal && (
-              <AddToAlbumModal
-                onDismiss={this.hideAddAlbumModal}
-                onSuccess={selection.clear}
-                photos={selected}
-              />
-            )}
-            {photos && (
-              <PhotoBoard
-                lists={[{ photos }]}
-                selected={selected}
-                photosContext="album_with"
-                showSelection={active}
-                onPhotoToggle={selection.toggle}
-                onPhotosSelect={selection.select}
-                onPhotosUnselect={selection.unselect}
-                fetchStatus={photos.fetchStatus}
-                hasMore={hasMore}
-                fetchMore={fetchMore}
-                lastFetch={lastFetch}
-              />
-            )}
-            <Outlet />
-          </div>
+              )}
+              {photos && (
+                <PhotoBoard
+                  lists={[{ photos }]}
+                  selected={selected}
+                  photosContext="album_with"
+                  showSelection={active}
+                  onPhotoToggle={selection.toggle}
+                  onPhotosSelect={selection.select}
+                  onPhotosUnselect={selection.unselect}
+                  fetchStatus={photos.fetchStatus}
+                  hasMore={hasMore}
+                  fetchMore={fetchMore}
+                  lastFetch={lastFetch}
+                />
+              )}
+              <Outlet />
+            </div>
+          </Content>
         )}
       </Selection>
     )

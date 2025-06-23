@@ -21,8 +21,6 @@ import ButtonClient from 'components/pushClient/Button'
 import { UploadQueue } from '../ducks/upload'
 import PushBanner from 'components/PushBanner'
 
-import styles from '../styles/layout.styl'
-
 const NavLink = genNavLinkForV6(RouterLink)
 
 const FlagshipNavLinks = () => {
@@ -121,7 +119,7 @@ export const Layout = () => (
     </Sidebar>
 
     <UploadQueue />
-    <Main className={styles['pho-content']}>
+    <Main>
       <PushBanner />
       <Outlet />
     </Main>
