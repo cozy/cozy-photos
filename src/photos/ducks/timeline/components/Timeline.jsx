@@ -127,19 +127,20 @@ class Timeline extends Component {
         })}
       >
         {(selected, active, selection) => (
-          <div
-            data-testid="timeline-pho-content-wrapper"
-            className={styles['pho-content-wrapper']}
-          >
-            <Topbar viewName="photos">
-              <Toolbar
-                disabled={active}
-                uploadPhotos={this.uploadPhotos}
-                selectItems={selection.show}
-                t={t}
-              />
-            </Topbar>
-            <Content>
+          <Content className="u-pt-0-s u-pt-1">
+            <div
+              data-testid="timeline-pho-content-wrapper"
+              className={styles['pho-content-wrapper']}
+            >
+              <Topbar viewName="photos">
+                <Toolbar
+                  disabled={active}
+                  uploadPhotos={this.uploadPhotos}
+                  selectItems={selection.show}
+                  t={t}
+                />
+              </Topbar>
+
               {this.state.displayModal && this.showDeleteConfirm()}
               {this.state.showAddAlbumModal && (
                 <AddToAlbumModal
@@ -161,9 +162,9 @@ class Timeline extends Component {
                 fetchMore={fetchMore}
                 lastFetch={lastFetch}
               />
-            </Content>
-            <Outlet />
-          </div>
+              <Outlet />
+            </div>
+          </Content>
         )}
       </Selection>
     )
