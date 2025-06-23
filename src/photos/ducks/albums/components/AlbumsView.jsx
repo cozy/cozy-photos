@@ -2,6 +2,7 @@ import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 import { translate } from 'cozy-ui/transpiled/react/providers/I18n'
+import { Content as ContentUi } from 'cozy-ui/transpiled/react/Layout'
 
 import AlbumsToolbar from './AlbumsToolbar'
 import AlbumsList from './AlbumsList'
@@ -29,16 +30,18 @@ const AlbumsView = ({ albums }) => {
     return null
   }
   return (
-    <div
-      data-testid="album-pho-content-wrapper"
-      className={styles['pho-content-wrapper']}
-    >
-      <Topbar viewName="albums">
-        <AlbumsToolbar navigate={navigate} />
-      </Topbar>
-      <Content list={albums} />
-      <Outlet />
-    </div>
+    <ContentUi className="u-pt-0-s u-pt-1">
+      <div
+        data-testid="album-pho-content-wrapper"
+        className={styles['pho-content-wrapper']}
+      >
+        <Topbar viewName="albums">
+          <AlbumsToolbar navigate={navigate} />
+        </Topbar>
+        <Content list={albums} />
+        <Outlet />
+      </div>
+    </ContentUi>
   )
 }
 
