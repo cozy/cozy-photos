@@ -8,6 +8,7 @@ import 'photos/styles/main.styl'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { DataProxyProvider } from 'cozy-dataproxy-lib'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
@@ -72,27 +73,29 @@ async function init() {
       <WebviewIntentProvider>
         <Provider store={store}>
           <CozyProvider client={client}>
-            <BarProvider>
-              <BreakpointsProvider>
-                <AlertProvider>
-                  <RealTimeQueries doctype="io.cozy.settings" />
-                  <HashRouter>
-                    <SentryRoutes>
-                      <Route path="shared/:albumId" element={<App />}>
+            <DataProxyProvider>
+              <BarProvider>
+                <BreakpointsProvider>
+                  <AlertProvider>
+                    <RealTimeQueries doctype="io.cozy.settings" />
+                    <HashRouter>
+                      <SentryRoutes>
+                        <Route path="shared/:albumId" element={<App />}>
+                          <Route
+                            path=":photoId"
+                            element={<AlbumPhotosViewer isPublic={true} />}
+                          />
+                        </Route>
                         <Route
-                          path=":photoId"
-                          element={<AlbumPhotosViewer isPublic={true} />}
+                          path="*"
+                          element={<Navigate to={`shared/${id}`} />}
                         />
-                      </Route>
-                      <Route
-                        path="*"
-                        element={<Navigate to={`shared/${id}`} />}
-                      />
-                    </SentryRoutes>
-                  </HashRouter>
-                </AlertProvider>
-              </BreakpointsProvider>
-            </BarProvider>
+                      </SentryRoutes>
+                    </HashRouter>
+                  </AlertProvider>
+                </BreakpointsProvider>
+              </BarProvider>
+            </DataProxyProvider>
           </CozyProvider>
         </Provider>
       </WebviewIntentProvider>
