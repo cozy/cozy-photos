@@ -5493,10 +5493,10 @@ cozy-search@^0.6.0:
     react-type-animation "3.2.0"
     rooks "7.14.1"
 
-cozy-sharing@^25.4.0:
-  version "25.4.0"
-  resolved "https://registry.yarnpkg.com/cozy-sharing/-/cozy-sharing-25.4.0.tgz#08646a9891fa88860f850feec55fbb52885ed9ab"
-  integrity sha512-VLA/rpc1FMV0hxLbm673JNYQ7ivy6BkSiz+QHvZBcNfMJ3w3UMMs7ww1VHF6edETytgrntGWj762+n9kPuWL0A==
+cozy-sharing@^25.7.1:
+  version "25.7.1"
+  resolved "https://registry.yarnpkg.com/cozy-sharing/-/cozy-sharing-25.7.1.tgz#9fc42ec55bb2109abb6aea8feb94cf92984f5cae"
+  integrity sha512-uF3Twjp2BNs2nAPnTLigTD4ZhoD+D+KyLaq7sKbqu18zSiV01QuuVgvZ3v8tkxhITHLeCnm/sbYsbwi3OZ5isA==
   dependencies:
     "@cozy/minilog" "^1.0.0"
     classnames "^2.2.6"
@@ -10211,9 +10211,9 @@ ms@2.1.3, ms@^2.1.3:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-"mui-bottom-sheet@git+https://github.com/cozy/mui-bottom-sheet.git#v1.0.9":
+"mui-bottom-sheet@https://github.com/cozy/mui-bottom-sheet.git#v1.0.9":
   version "1.0.8"
-  resolved "git+https://github.com/cozy/mui-bottom-sheet.git#3dc4c2a245ab39079bc2f73546bccf80847be14c"
+  resolved "https://github.com/cozy/mui-bottom-sheet.git#3dc4c2a245ab39079bc2f73546bccf80847be14c"
   dependencies:
     "@juggle/resize-observer" "^3.1.3"
     jest-environment-jsdom-sixteen "^1.0.3"
