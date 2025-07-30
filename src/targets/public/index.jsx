@@ -9,6 +9,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { DataProxyProvider } from 'cozy-dataproxy-lib'
+import SharingProvider from 'cozy-sharing'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
@@ -36,6 +37,7 @@ import App from './App'
 import { AlbumPhotosViewer } from 'photos/components/PhotosViewer'
 
 import { WebviewIntentProvider } from 'cozy-intent'
+import { DOCTYPE_ALBUMS } from 'lib/doctypes'
 
 document.addEventListener('DOMContentLoaded', init)
 
@@ -78,20 +80,25 @@ async function init() {
                 <BreakpointsProvider>
                   <AlertProvider>
                     <RealTimeQueries doctype="io.cozy.settings" />
-                    <HashRouter>
-                      <SentryRoutes>
-                        <Route path="shared/:albumId" element={<App />}>
+                    <SharingProvider
+                      doctype={DOCTYPE_ALBUMS}
+                      documentType="Albums"
+                    >
+                      <HashRouter>
+                        <SentryRoutes>
+                          <Route path="shared/:albumId" element={<App />}>
+                            <Route
+                              path=":photoId"
+                              element={<AlbumPhotosViewer isPublic={true} />}
+                            />
+                          </Route>
                           <Route
-                            path=":photoId"
-                            element={<AlbumPhotosViewer isPublic={true} />}
+                            path="*"
+                            element={<Navigate to={`shared/${id}`} />}
                           />
-                        </Route>
-                        <Route
-                          path="*"
-                          element={<Navigate to={`shared/${id}`} />}
-                        />
-                      </SentryRoutes>
-                    </HashRouter>
+                        </SentryRoutes>
+                      </HashRouter>
+                    </SharingProvider>
                   </AlertProvider>
                 </BreakpointsProvider>
               </BarProvider>

@@ -43,6 +43,7 @@ const PhotosViewer = ({ photos, isPublic = false }) => {
   return (
     <Viewer
       files={photos}
+      isPublic={isPublic}
       currentIndex={currentIndex}
       onChangeRequest={nextPhoto => navigate(`../${nextPhoto.id}`)}
       onCloseRequest={() => navigate('..')}
