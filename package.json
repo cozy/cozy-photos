@@ -1,6 +1,6 @@
 {
   "name": "cozy-photos",
-  "version": "1.71.0",
+  "version": "1.72.0",
   "main": "src/main.jsx",
   "scripts": {
     "build": "rsbuild build",
