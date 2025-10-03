@@ -8,7 +8,6 @@ import 'photos/styles/main.styl'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { DataProxyProvider } from 'cozy-dataproxy-lib'
 import SharingProvider from 'cozy-sharing'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
@@ -75,34 +74,32 @@ async function init() {
       <WebviewIntentProvider>
         <Provider store={store}>
           <CozyProvider client={client}>
-            <DataProxyProvider>
-              <BarProvider>
-                <BreakpointsProvider>
-                  <AlertProvider>
-                    <RealTimeQueries doctype="io.cozy.settings" />
-                    <SharingProvider
-                      doctype={DOCTYPE_ALBUMS}
-                      documentType="Albums"
-                    >
-                      <HashRouter>
-                        <SentryRoutes>
-                          <Route path="shared/:albumId" element={<App />}>
-                            <Route
-                              path=":photoId"
-                              element={<AlbumPhotosViewer isPublic={true} />}
-                            />
-                          </Route>
+            <BarProvider>
+              <BreakpointsProvider>
+                <AlertProvider>
+                  <RealTimeQueries doctype="io.cozy.settings" />
+                  <SharingProvider
+                    doctype={DOCTYPE_ALBUMS}
+                    documentType="Albums"
+                  >
+                    <HashRouter>
+                      <SentryRoutes>
+                        <Route path="shared/:albumId" element={<App />}>
                           <Route
-                            path="*"
-                            element={<Navigate to={`shared/${id}`} />}
+                            path=":photoId"
+                            element={<AlbumPhotosViewer isPublic={true} />}
                           />
-                        </SentryRoutes>
-                      </HashRouter>
-                    </SharingProvider>
-                  </AlertProvider>
-                </BreakpointsProvider>
-              </BarProvider>
-            </DataProxyProvider>
+                        </Route>
+                        <Route
+                          path="*"
+                          element={<Navigate to={`shared/${id}`} />}
+                        />
+                      </SentryRoutes>
+                    </HashRouter>
+                  </SharingProvider>
+                </AlertProvider>
+              </BreakpointsProvider>
+            </BarProvider>
           </CozyProvider>
         </Provider>
       </WebviewIntentProvider>

@@ -56,7 +56,7 @@ export class App extends Component {
 
     return (
       <Main className="u-pt-1-half">
-        <BarComponent isPublic />
+        <BarComponent isPublic={true} searchOptions={{ enabled: false }} />
         <Selection>
           {(selected, active, selection) => (
             <div>
