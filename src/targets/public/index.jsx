@@ -52,7 +52,8 @@ async function init() {
     token: sharecode,
     appMetadata,
     schema: doctypes,
-    store: false
+    useCustomStore: true,
+    autoHydrate: true
   })
 
   client.registerPlugin(RealtimePlugin)

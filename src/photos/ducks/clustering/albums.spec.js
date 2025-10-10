@@ -4,7 +4,7 @@ import doctypes from '@/targets/browser/doctypes'
 import log from 'cozy-logger'
 
 jest.mock('cozy-logger')
-const client = new CozyClient({ schema: doctypes })
+const client = new CozyClient({ schema: doctypes, autoHydrate: true })
 client.save = jest.fn().mockImplementation((doctype, album) => {
   return { data: { _id: '1', _type: doctype, ...album } }
 })
