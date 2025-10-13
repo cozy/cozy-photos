@@ -1,6 +1,6 @@
 {
   "name": "cozy-photos",
-  "version": "1.72.0",
+  "version": "1.73.0",
   "main": "src/main.jsx",
   "scripts": {
     "build": "rsbuild build",
@@ -13,7 +13,7 @@
     "lint:styles": "stylint src --config ./node_modules/stylus-config-cozy-app/.stylintrc",
     "lint:js": "eslint '{src,test}/**/*.{js,jsx}'",
     "test": "env NODE_ENV='test' jest",
-    "version": "yarn version:photos",
+    "version": "1.73.0",
     "version:photos": "replace '\\d+\\.\\d+\\.\\d+' $npm_package_version manifest.webapp",
     "service": "yarn cozy-konnector-dev -m manifest.webapp"
   },
