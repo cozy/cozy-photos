@@ -1,8 +1,15 @@
 import React from 'react'
-import { default as UIQuotaAlert } from 'cozy-ui/transpiled/react/deprecated/QuotaAlert'
+import UIQuotaAlert from 'cozy-ui-plus/dist/Paywall/QuotaPaywall'
+
+import flag from 'cozy-flags'
 
 const QuotaAlert = ({ onClose }) => {
-  return <UIQuotaAlert onClose={onClose} />
+  return (
+    <UIQuotaAlert
+      isIapEnabled={flag('flagship.iap.enabled')}
+      onClose={onClose}
+    />
+  )
 }
 
 export default QuotaAlert

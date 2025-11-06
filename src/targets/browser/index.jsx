@@ -1,5 +1,6 @@
 import 'cozy-ui/dist/cozy-ui.utils.min.css'
 import 'cozy-ui/transpiled/react/stylesheet.css'
+import 'cozy-ui-plus/dist/stylesheet.css'
 import 'cozy-bar/dist/stylesheet.css'
 import 'cozy-sharing/dist/stylesheet.css'
 import 'cozy-viewer/dist/stylesheet.css'
@@ -25,7 +26,7 @@ import { BreakpointsProvider } from 'cozy-ui/transpiled/react/providers/Breakpoi
 import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
 import SharingProvider from 'cozy-sharing'
 import { WebviewIntentProvider } from 'cozy-intent'
-import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
+import CozyTheme from 'cozy-ui-plus/dist/providers/CozyTheme'
 import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 
 import { DOCTYPE_ALBUMS } from 'lib/doctypes'

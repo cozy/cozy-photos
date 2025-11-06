@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useClient, generateWebLink } from 'cozy-client'
 import { isAndroid } from 'cozy-device-helper'
 
-import AppLinker from 'cozy-ui/transpiled/react/AppLinker'
+import AppLinker from 'cozy-ui-plus/dist/AppLinker'
 import Button from 'cozy-ui/transpiled/react/Buttons'
 import { useI18n } from 'cozy-ui/transpiled/react/providers/I18n'
 

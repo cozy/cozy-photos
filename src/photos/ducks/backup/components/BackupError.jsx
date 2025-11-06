@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { QuotaPaywall } from 'cozy-ui/transpiled/react/Paywall'
+import flag from 'cozy-flags'
+import { QuotaPaywall } from 'cozy-ui-plus/dist/Paywall'
 import Snackbar from 'cozy-ui/transpiled/react/Snackbar'
 import Alert from 'cozy-ui/transpiled/react/Alert'
 
@@ -23,7 +24,10 @@ export const BackupError = () => {
   }
 
   return shouldDisplayQuotaPaywall(backupInfo) ? (
-    <QuotaPaywall onClose={onClose} />
+    <QuotaPaywall
+      isIapEnabled={flag('flagship.iap.enabled')}
+      onClose={onClose}
+    />
   ) : (
     <Snackbar
       open={backupError}
