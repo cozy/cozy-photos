@@ -5,7 +5,7 @@ import { createStore } from 'redux'
 
 import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
 import { I18n } from 'cozy-ui/transpiled/react/providers/I18n'
-import CozyTheme from 'cozy-ui/transpiled/react/providers/CozyTheme'
+import CozyTheme from 'cozy-ui-plus/dist/providers/CozyTheme'
 import { SharingContext } from 'cozy-sharing'
 import { BarProvider } from 'cozy-bar'
 import { Layout } from 'cozy-ui/transpiled/react/Layout'
